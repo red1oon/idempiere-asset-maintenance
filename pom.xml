@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--
+		Asset Maintenance Plugin for iDempiere
+
+		BUILD INSTRUCTIONS:
+		==================
+		Option 1 (Recommended): Build in Eclipse IDE
+		- Import this project into Eclipse workspace along with iDempiere
+		- Use iDempiere's target platform
+		- Right-click project > Export > Deployable plug-ins
+
+		Option 2: Build with Maven (requires iDempiere setup)
+		- Clone iDempiere source and build target platform first
+		- Then run: mvn clean verify
+
+		Option 3: Build as part of iDempiere
+		- Copy this project to iDempiere source folder
+		- Add module to iDempiere's parent pom.xml
+		- Build with: mvn clean verify -pl org.asset.maintenance
+	-->
+
+	<groupId>org.idempiere</groupId>
+	<artifactId>org.asset.maintenance</artifactId>
+	<version>13.0.0-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+	<name>Asset Maintenance Plugin for iDempiere</name>
+	<description>Preventive maintenance management for assets in iDempiere ERP</description>
+
+	<properties>
+		<tycho.version>3.0.5</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+
+	<repositories>
+		<!-- iDempiere p2 repository - adjust path as needed -->
+		<repository>
+			<id>idempiere-local</id>
+			<url>file://${user.home}/idempiere-dev-setup/idempiere/org.idempiere.p2/target/repository</url>
+			<layout>p2</layout>
+		</repository>
+		<!-- Eclipse platform -->
+		<repository>
+			<id>eclipse-2023-09</id>
+			<url>https://download.eclipse.org/eclipse/updates/4.29</url>
+			<layout>p2</layout>
+		</repository>
+		<!-- Eclipse Orbit -->
+		<repository>
+			<id>orbit-2023-09</id>
+			<url>https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.29.0</url>
+			<layout>p2</layout>
+		</repository>
+		<!-- Red Hat GA for transitive dependencies -->
+		<repository>
+			<id>redhat-ga</id>
+			<url>https://maven.repository.redhat.com/ga</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+					<executionEnvironmentDefault>JavaSE-17</executionEnvironmentDefault>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
