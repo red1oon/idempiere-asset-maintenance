@@ -69,7 +69,7 @@ public class MPAssetPlanning extends SvrProcess
 		byCalendar.append("SELECT MA.AD_CLIENT_ID,MA.AD_ORG_ID,MA.MP_MAINTAIN_ID,MA.DESCRIPTION,MA.PROGRAMMINGTYPE, A.A_ASSET_ID,DATENEXTRUN ,MA.DATELASTRUN,MA.INTERVAL");
 		byCalendar.append(" FROM MP_MAINTAIN MA");
 		byCalendar.append(" INNER JOIN A_ASSET A ON (MA.A_ASSET_ID=A.A_ASSET_ID OR A.A_ASSET_Group_ID=MA.A_ASSET_Group_ID)");
-		byCalendar.append(" WHERE PROGRAMMINGTYPE='C' AND DATENEXTRUN BETWEEN SYSDATE-60 AND SYSDATE+(7*"+ periodNo+")");
+		byCalendar.append(" WHERE PROGRAMMINGTYPE='C' AND DATENEXTRUN BETWEEN "+stringDate+"-60 AND "+stringDate+"+(7*"+ periodNo+")");
 		byCalendar.append(" AND MA.DOCSTATUS<>'IT' Order by DATENEXTRUN asc");
 		
 		
@@ -145,9 +145,9 @@ public class MPAssetPlanning extends SvrProcess
 		
 		byMeter.append("SELECT MA.AD_CLIENT_ID,MA.AD_ORG_ID,MA.MP_MAINTAIN_ID,MA.DESCRIPTION,MA.PROGRAMMINGTYPE, A.A_ASSET_ID,MA.MP_METER_ID, MA.RANGE, MA.NEXTMP");
 		byMeter.append(", (select MIN(log2.DateTrx) from MP_AssetMeter_Log log2 where  ME.MP_ASSETMETER_ID=log2.MP_ASSETMETER_ID");
-		byMeter.append(" and log2.DateTrx BETWEEN (SysDate-40) AND SysDate)as FirstDay, ");
+		byMeter.append(" and log2.DateTrx BETWEEN ("+stringDate+"-40) AND "+stringDate+")as FirstDay, ");
 		byMeter.append(" (select MAX(log2.DateTrx) from MP_AssetMeter_Log log2 where  ME.MP_ASSETMETER_ID=log2.MP_ASSETMETER_ID");
-		byMeter.append(" and log2.DateTrx BETWEEN (SysDate-40) AND SysDate) as LastDay, ");
+		byMeter.append(" and log2.DateTrx BETWEEN ("+stringDate+"-40) AND "+stringDate+") as LastDay, ");
 		byMeter.append(" Count(1)as Qty,ME.MP_ASSETMETER_ID,MS.Name");
 		byMeter.append(" FROM MP_MAINTAIN MA");
 		byMeter.append(" INNER JOIN A_ASSET A ON (MA.A_ASSET_ID=A.A_ASSET_ID OR A.A_ASSET_Group_ID=MA.A_ASSET_Group_ID)");
@@ -155,7 +155,7 @@ public class MPAssetPlanning extends SvrProcess
 		byMeter.append(" INNER JOIN MP_ASSETMETER ME ON (MS.MP_METER_ID=ME.MP_METER_ID and a.a_asset_id= me.a_asset_id)");
 		byMeter.append(" INNER JOIN MP_AssetMeter_Log MLOG ON (ME.MP_ASSETMETER_ID=MLOG.MP_ASSETMETER_ID)");
 		byMeter.append(" WHERE PROGRAMMINGTYPE='M' AND MA.DOCSTATUS<>'IT'");
-		byMeter.append(" AND Mlog.DateTrx BETWEEN (SysDate-40) AND SysDate");
+		byMeter.append(" AND Mlog.DateTrx BETWEEN ("+stringDate+"-40) AND "+stringDate);
 		byMeter.append(" Group by MA.AD_CLIENT_ID,MA.AD_ORG_ID,MA.MP_MAINTAIN_ID,MA.DESCRIPTION,MA.PROGRAMMINGTYPE, A.A_ASSET_ID,MA.MP_METER_ID,MA.RANGE, MA.NEXTMP,ME.MP_ASSETMETER_ID,MS.Name");
 																								
 	    

@@ -8,6 +8,7 @@
 package org.maintenance.component;
 //red1 - refactored model for both VMP and WMP GenerateOT classes
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
@@ -178,8 +179,8 @@ public class MPGenerateOT {
 		if(mp.getProgrammingType().equals("C"))
 			mp.setDateNextRun(new Timestamp(Datetrx.getTime()+(mp.getInterval().longValue()*86400000) ));
 		else{
-			mp.setnextmp(mp.getInterval().add(mp.getlastmp()).setScale(2, BigDecimal.ROUND_HALF_EVEN));
-			mp.setlastmp(new BigDecimal(Float.parseFloat(description.split(":")[description.split(":").length-1].replace(',', '.'))).setScale(2, BigDecimal.ROUND_HALF_EVEN));
+			mp.setnextmp(mp.getInterval().add(mp.getlastmp()).setScale(2, RoundingMode.HALF_EVEN));
+			mp.setlastmp(new BigDecimal(Float.parseFloat(description.split(":")[description.split(":").length-1].replace(',', '.'))).setScale(2, RoundingMode.HALF_EVEN));
 		}
 			//mp.setNEXTMP(mp.getNEXTMP().add(mp.getINTERVAL().add( new BigDecimal(mp.getLASTMP().longValue()%mp.getINTERVAL().longValue()))));
 		mp.save(); //update MP

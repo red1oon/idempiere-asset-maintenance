@@ -37,10 +37,10 @@ public class CalloutAssetMPLog extends CalloutEngine
 		if(AssetMeter_ID==null)
 			return "";
 		Integer Meter_ID=DB.getSQLValue(null, "select MP_Meter_ID from MP_AssetMeter " +
-				"where MP_AssetMeter_ID="+AssetMeter_ID);
-		
+				"where MP_AssetMeter_ID=?", AssetMeter_ID);
+
 		Integer Asset_ID = DB.getSQLValue(null, "select A_Asset_ID from MP_AssetMeter " +
-				"where MP_AssetMeter_ID="+AssetMeter_ID);
+				"where MP_AssetMeter_ID=?", AssetMeter_ID);
 		BigDecimal amt= (BigDecimal)mTab.getValue("Amt");
 		int count=DB.getSQLValue(null,"select count(1) from MP_AssetMeter" +
 				" WHERE MP_Meter_ID=?" +
@@ -87,9 +87,8 @@ public class CalloutAssetMPLog extends CalloutEngine
 		
 		amt=amt.add(oldAmt);
 		
-		DB.executeUpdate("Update MP_AssetMeter  m set" +
-				" Amt=" + (maxAmt.compareTo(amt)>0?maxAmt:amt)  +
-				" where m.MP_AssetMeter_ID="+AssetMeter_ID.intValue(), null);
+		DB.executeUpdateEx("Update MP_AssetMeter m set Amt=? where m.MP_AssetMeter_ID=?",
+				new Object[]{maxAmt.compareTo(amt)>0?maxAmt:amt, AssetMeter_ID}, null);
 		
 		return "";
 	}	//	charge

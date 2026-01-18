@@ -324,7 +324,7 @@ public class WMPProgrammingOT
 			while (rs.next())
 			{
 				List<Object> line = new ArrayList<Object>();
-				line.add(new Boolean(false));       //  0-Selection
+				line.add(Boolean.FALSE);       //  0-Selection
 				line.add(rs.getTimestamp(1));       //  1-fecha programada
 				line.add(rs.getString(2)); // 2-tipo OT
 				KeyNamePair pp = new KeyNamePair(rs.getInt(6), rs.getString(3));
@@ -546,7 +546,7 @@ public class WMPProgrammingOT
 					int copies = 1;
 					MPrintFormat format = MPrintFormat.get (Env.getCtx(), AD_PrintFormat_ID, false);
 					MQuery query = new MQuery("MP_OT");
-					query.addRestriction("MP_OT_ID", MQuery.EQUAL, new Integer(OT_ID));
+					query.addRestriction("MP_OT_ID", MQuery.EQUAL, Integer.valueOf(OT_ID));
 					PrintInfo info = new PrintInfo(
 							DocumentNo,
 							MMPOT.Table_ID,

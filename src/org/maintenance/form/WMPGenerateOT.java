@@ -8,6 +8,7 @@
 package org.maintenance.form;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -326,7 +327,7 @@ public class WMPGenerateOT
 			while (rs.next())
 			{
 				List<Object> line = new ArrayList<Object>();
-				line.add(new Boolean(false));       //  0-Selection
+				line.add(Boolean.FALSE);       //  0-Selection
 				//line.add(new Boolean(false));       //  1-new date
 				line.add(rs.getInt(8));       //  1-Ciclo
 				line.add(rs.getTimestamp(9)); //  2-Fecha
@@ -759,8 +760,8 @@ public class WMPGenerateOT
 		if(mp.getProgrammingType().equals("C"))
 			mp.setDateNextRun(new Timestamp(Datetrx.getTime()+(mp.getInterval().longValue()*86400000) ));
 		else{
-			mp.setnextmp(mp.getInterval().add(mp.getlastmp()).setScale(2, BigDecimal.ROUND_HALF_EVEN));
-			mp.setlastmp(new BigDecimal(Float.parseFloat(description.split(":")[description.split(":").length-1].replace(',', '.'))).setScale(2, BigDecimal.ROUND_HALF_EVEN));
+			mp.setnextmp(mp.getInterval().add(mp.getlastmp()).setScale(2, RoundingMode.HALF_EVEN));
+			mp.setlastmp(new BigDecimal(Float.parseFloat(description.split(":")[description.split(":").length-1].replace(',', '.'))).setScale(2, RoundingMode.HALF_EVEN));
 		}
 		mp.save(); //actualizacion MP
 	}

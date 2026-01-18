@@ -61,8 +61,8 @@ public class MPProcessOT extends SvrProcess
 	{
 		
 		X_MP_OT OT=new X_MP_OT(Env.getCtx(), Record_ID,get_TrxName());
-		String sql="Select count(1) from MP_OT_TASK where STATUS!='CO' and MP_OT_ID="+Record_ID;
-		if(DB.getSQLValue(get_TrxName(), sql)>0 && OT.getDocStatus().equals("DR"))
+		String sql="Select count(1) from MP_OT_TASK where STATUS!='CO' and MP_OT_ID=?";
+		if(DB.getSQLValue(get_TrxName(), sql, Record_ID)>0 && OT.getDocStatus().equals("DR"))
 			return "Task Not Completed";
 		
 			
@@ -100,8 +100,8 @@ public class MPProcessOT extends SvrProcess
 			
 			if(OT.getDocStatus().equals("DR") && P_DocAction.equals("CO"))
 			{
-				DB.executeUpdate("Update MP_OT_RESOURCE set Processed='Y' where MP_OT_TASK_ID IN (select MP_OT_TASK_ID from MP_OT_TASK where MP_OT_ID="+OT.getMP_OT_ID()+")", get_TrxName());
-				DB.executeUpdate("Update MP_OT_TASK set Processed='Y' where MP_OT_ID="+OT.getMP_OT_ID(), get_TrxName());
+				DB.executeUpdateEx("Update MP_OT_RESOURCE set Processed='Y' where MP_OT_TASK_ID IN (select MP_OT_TASK_ID from MP_OT_TASK where MP_OT_ID=?)", new Object[]{OT.getMP_OT_ID()}, get_TrxName());
+				DB.executeUpdateEx("Update MP_OT_TASK set Processed='Y' where MP_OT_ID=?", new Object[]{OT.getMP_OT_ID()}, get_TrxName());
 				OT.setDocStatus("CO");
 				OT.setDocAction("--");
 				OT.setProcessed(true);

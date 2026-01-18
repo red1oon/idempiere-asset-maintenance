@@ -333,7 +333,7 @@ public class WMPRequestOT
 			while (rs.next())
 			{
 				List<Object> line = new ArrayList<Object>();
-				line.add(new Boolean(false));       //  0-Selection
+				line.add(Boolean.FALSE);       //  0-Selection
 				if(rs.getString(14).equals("RV"))
 					tipo="Revision";
 				if(rs.getString(14).equals("RP"))
