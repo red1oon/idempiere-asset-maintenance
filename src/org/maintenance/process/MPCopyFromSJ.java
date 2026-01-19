@@ -85,7 +85,7 @@ public class MPCopyFromSJ extends SvrProcess
 					X_MP_Maintain_Resource re=new X_MP_Maintain_Resource(getCtx(), 0, get_TrxName());
 					re.setMP_Maintain_Task_ID(task.getMP_Maintain_Task_ID());
 					re.setCostAmt( rs2.getBigDecimal("CostAmt"));
-					re.setM_BOM_ID( rs2.getInt("M_BOM_ID"));
+					re.setPP_Product_BOM_ID( rs2.getInt("PP_Product_BOM_ID"));
 					re.setM_Product_ID( rs2.getInt("M_Product_ID"));
 					re.setResourceQty( rs2.getBigDecimal("ResourceQty"));
 					re.setResourceType( rs2.getString("ResourceType"));

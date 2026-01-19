@@ -19,8 +19,8 @@ package org.maintenance.model;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import org.compiere.model.I_M_BOM;
 import org.compiere.model.I_M_Product;
+import org.eevolution.model.I_PP_Product_BOM;
 import org.compiere.model.I_S_Resource;
 import org.compiere.model.MTable;
 import org.compiere.util.KeyNamePair;
@@ -109,20 +109,20 @@ public interface I_MP_JobStandar_Resource
 	  */
 	public boolean isActive();
 
-    /** Column name M_BOM_ID */
-    public static final String COLUMNNAME_M_BOM_ID = "M_BOM_ID";
+    /** Column name PP_Product_BOM_ID */
+    public static final String COLUMNNAME_PP_Product_BOM_ID = "PP_Product_BOM_ID";
 
 	/** Set BOM.
 	  * Bill of Material
 	  */
-	public void setM_BOM_ID (int M_BOM_ID);
+	public void setPP_Product_BOM_ID (int PP_Product_BOM_ID);
 
 	/** Get BOM.
 	  * Bill of Material
 	  */
-	public int getM_BOM_ID();
+	public int getPP_Product_BOM_ID();
 
-	public I_M_BOM getM_BOM() throws RuntimeException;
+	public I_PP_Product_BOM getPP_Product_BOM() throws RuntimeException;
 
     /** Column name M_Product_ID */
     public static final String COLUMNNAME_M_Product_ID = "M_Product_ID";

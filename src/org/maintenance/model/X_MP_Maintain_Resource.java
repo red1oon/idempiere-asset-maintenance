@@ -21,8 +21,8 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.util.Properties;
 
-import org.compiere.model.I_M_BOM;
 import org.compiere.model.I_M_Product;
+import org.eevolution.model.I_PP_Product_BOM;
 import org.compiere.model.I_Persistent;
 import org.compiere.model.I_S_Resource;
 import org.compiere.model.MTable;
@@ -100,29 +100,30 @@ public class X_MP_Maintain_Resource extends PO implements I_MP_Maintain_Resource
 		return bd;
 	}
 
-	public I_M_BOM getM_BOM() throws RuntimeException
-    {
-		return (I_M_BOM)MTable.get(getCtx(), I_M_BOM.Table_Name)
-			.getPO(getM_BOM_ID(), get_TrxName());	}
+	public I_PP_Product_BOM getPP_Product_BOM() throws RuntimeException
+	{
+		return (I_PP_Product_BOM)MTable.get(getCtx(), I_PP_Product_BOM.Table_Name)
+			.getPO(getPP_Product_BOM_ID(), get_TrxName());
+	}
 
 	/** Set BOM.
-		@param M_BOM_ID 
+		@param PP_Product_BOM_ID
 		Bill of Material
 	  */
-	public void setM_BOM_ID (int M_BOM_ID)
+	public void setPP_Product_BOM_ID (int PP_Product_BOM_ID)
 	{
-		if (M_BOM_ID < 1) 
-			set_Value (COLUMNNAME_M_BOM_ID, null);
-		else 
-			set_Value (COLUMNNAME_M_BOM_ID, Integer.valueOf(M_BOM_ID));
+		if (PP_Product_BOM_ID < 1)
+			set_Value (COLUMNNAME_PP_Product_BOM_ID, null);
+		else
+			set_Value (COLUMNNAME_PP_Product_BOM_ID, Integer.valueOf(PP_Product_BOM_ID));
 	}
 
 	/** Get BOM.
 		@return Bill of Material
 	  */
-	public int getM_BOM_ID () 
+	public int getPP_Product_BOM_ID ()
 	{
-		Integer ii = (Integer)get_Value(COLUMNNAME_M_BOM_ID);
+		Integer ii = (Integer)get_Value(COLUMNNAME_PP_Product_BOM_ID);
 		if (ii == null)
 			 return 0;
 		return ii.intValue();

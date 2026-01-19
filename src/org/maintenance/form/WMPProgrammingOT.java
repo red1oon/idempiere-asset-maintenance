@@ -36,7 +36,7 @@ import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.CustomForm;
 import org.adempiere.webui.panel.IFormController;
 import org.adempiere.webui.panel.StatusBarPanel;
-import org.adempiere.webui.window.FDialog;
+import org.adempiere.webui.window.Dialog;
 import org.compiere.model.MColumn;
 import org.compiere.model.MDocType;
 import org.compiere.model.MLookup;
@@ -244,7 +244,6 @@ public class WMPProgrammingOT
 		
 		//
 		center = new Center();
-		center.setFlex(true);
 		mainLayout.appendChild(center);
 		center.appendChild(otPanel);
 		/*
@@ -561,7 +560,7 @@ public class WMPProgrammingOT
 				}
 				catch (Exception e)
 				{
-					FDialog.warn(form.getWindowNo(),"No se Encuetra bien definido el formato de impresion");
+					Dialog.warn(form.getWindowNo(),"Print format is not properly defined");
 				}
 			}
 		}

@@ -249,7 +249,6 @@ public class WMPRequestOT
 		center.setStyle("border: none");
 		//
 		center = new Center();
-		center.setFlex(true);
 		mainLayout.appendChild(center);
 		center.appendChild(requestPanel);//infoPanel
 		/*
@@ -766,7 +765,7 @@ public class WMPRequestOT
 			re.setMP_OT_Task_ID(newTask_ID);
 			re.setCostAmt(job.getCostAmt());
 			re.setS_Resource_ID(job.getS_Resource_ID());
-			re.setM_BOM_ID(job.getM_BOM_ID());
+			re.setPP_Product_BOM_ID(job.getPP_Product_BOM_ID());
 			re.setResourceQty(job.getResourceQty());
 			re.setResourceType(job.getResourceType());
 			re.set_ValueOfColumn(job.COLUMNNAME_M_Product_ID, job.getM_Product_ID());

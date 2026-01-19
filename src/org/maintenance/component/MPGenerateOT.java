@@ -153,7 +153,7 @@ public class MPGenerateOT {
 				re.setMP_OT_Task_ID(newTask_ID);
 				re.setCostAmt(rs.getBigDecimal("CostAmt"));
 				re.setS_Resource_ID(rs.getInt("S_Resource_ID"));
-				re.setM_BOM_ID(rs.getInt("M_BOM_ID"));
+				re.setPP_Product_BOM_ID(rs.getInt("PP_Product_BOM_ID"));
 				re.setResourceQty(rs.getBigDecimal("RESOURCEQTY"));
 				re.setResourceType(rs.getString("RESOURCETYPE"));
 				re.set_ValueOfColumn("M_Product_ID", rs.getInt("M_Product_ID"));
