@@ -13,6 +13,15 @@
 -- Each set demonstrates different maintenance scenarios.
 -- See DemoGuide.md for detailed walkthrough.
 -- ============================================
+--
+-- *** IMPORTANT: AFTER LOADING THIS SQL ***
+-- Run "Sequence Check" from iDempiere to synchronize ID sequences:
+--   1. Login as System Administrator (SuperUser/System)
+--   2. Menu: System Admin → General Rules → System Rules → Sequence Check
+--   3. Click OK to run
+-- Without this, creating new records will cause duplicate key errors.
+-- See data/history/technical_notes.txt for details.
+-- ============================================
 
 -- ============================================
 -- SET 1: FLEET EQUIPMENT MAINTENANCE

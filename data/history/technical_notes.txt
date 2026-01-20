@@ -1,0 +1,89 @@
+================================================================================
+TECHNICAL NOTES - AssetMaintenance Module
+================================================================================
+Date: 2026-01-21
+For: User Guide / Implementation Reference
+================================================================================
+
+1. STANDARD JOB → MAINTENANCE LINKING (Copy From Design)
+--------------------------------------------------------------------------------
+The Standard Job field (mp_jobstandar_id) in the Maintenance window is
+READ-ONLY by design. This is intentional.
+
+WORKFLOW:
+1. Create a new Maintenance record
+2. Assign an Asset to the record first
+3. Click the "Copy From" button (not the field)
+4. Select the Standard Job template
+5. The process (MPCopyFromSJ) will:
+   - Copy all tasks from mp_jobstandar_task → mp_maintain_task
+   - Copy all resources for each task → mp_maintain_resource
+   - Set the mp_jobstandar_id on the Maintenance record
+
+RATIONALE:
+- Prevents users from changing the Standard Job link without updating tasks
+- Ensures tasks/resources are properly copied when a Standard Job is selected
+- Users can customize the copied tasks/resources for that specific Maintenance
+
+Reference: MPCopyFromSJ.java (org.maintenance.process)
+Manual Reference: Page 15 - "Maintenance record" section
+
+
+2. SQL DIRECT INJECTION vs SEQUENCE SYNCHRONIZATION
+--------------------------------------------------------------------------------
+ISSUE:
+When sample data is loaded via direct SQL INSERT (bypassing iDempiere's
+getNextID() routine), the AD_Sequence table is NOT automatically updated.
+This causes DUPLICATE KEY errors when creating new records via the UI.
+
+EXAMPLE ERROR MESSAGE:
+  "Could not save record - Require unique data: - Please change information.:
+   ERROR: duplicate key value violates unique constraint "mp_maintain_key"
+   Detail: Key (mp_maintain_id)=(1000003) already exists."
+
+EXAMPLE (after loading sample data):
+  - mp_maintain has records with IDs up to: 1000208
+  - AD_Sequence.CurrentNext for MP_Maintain: 1000004
+  - Next UI insert tries ID 1000004 → DUPLICATE KEY ERROR
+
+SOLUTION - Run "Sequence Check" Process:
+  Menu: System Admin → General Rules → System Rules → Sequence Check
+  Process Class: org.compiere.process.SequenceCheck
+  Description: "Check System and Document Sequences"
+
+This process scans all tables and updates AD_Sequence.CurrentNext to be
+greater than MAX(primary_key_id) + 1 for each table.
+
+IMPORTANT FOR USERS:
+After applying GardenWorld_SampleData.sql or any direct SQL inserts,
+ALWAYS run "Sequence Check" from System Admin before creating new records.
+
+Affected sequences after sample data load (all MP_* tables need sync):
+  MP_Maintain         - max: 1000208, seq was: 1000004
+  MP_Maintain_Task    - max: 1000079, seq was: 1000001
+  MP_JobStandar       - sample data IDs: 1000001-1000021
+  MP_JobStandar_Task  - sample data IDs: 1000001-1000071
+  MP_AssetMeter       - sample data IDs present
+  MP_AssetMeter_Log   - sample data IDs present
+  MP_Meter            - sample data IDs present
+
+HOW TO RUN SEQUENCE CHECK:
+  1. Login as System Administrator (SuperUser/System)
+  2. Menu: System Admin → General Rules → System Rules → Sequence Check
+  3. Click OK to run (no parameters needed)
+  4. Process will update all sequences to MAX(id)+1
+
+
+3. DOCUMENT SEQUENCE vs TABLE ID SEQUENCE
+--------------------------------------------------------------------------------
+Two types of sequences in iDempiere:
+- Table ID Sequence: For primary keys (e.g., MP_Maintain_ID)
+- Document Sequence: For document numbers (e.g., DocumentNo)
+
+Both are stored in AD_Sequence but serve different purposes.
+"Sequence Check" handles both types.
+
+
+================================================================================
+END OF NOTES
+================================================================================
