@@ -352,8 +352,8 @@ public class WMPGenerateOT
 		prognosisTable.getModel().removeTableModelListener(this);
 		//  Header Info
 		List<String> columnNames = new ArrayList<String>();
-		columnNames.add("Generar OT");
-		columnNames.add(Msg.getMsg(Env.getCtx(), "Ciclo"));
+		columnNames.add(Msg.getMsg(Env.getCtx(), "GenerateOT"));  // Was hardcoded Spanish "Generar OT"
+		columnNames.add(Msg.getMsg(Env.getCtx(), "Cycle"));
 		columnNames.add(Msg.translate(Env.getCtx(), "Date"));
 		columnNames.add(Util.cleanAmp(Msg.translate(Env.getCtx(), "Asset")));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "MP"));
@@ -603,11 +603,8 @@ public class WMPGenerateOT
 				//updating  MP
 				updateMP(MP_ID,Datetrx,description);
 				
-				String sql="Update MP_Prognosis set Processed='Y' where ciclo="+ciclo
-				+ " and MP_MAINTAIN_ID="+MP_ID+" and A_Asset_ID="+Asset_ID
-				+ " and PROGRAMMINGTYPE='"+ ProgramingType +"'";  
-				
-				DB.executeUpdate(sql);
+				DB.executeUpdateEx("UPDATE MP_Prognosis SET Processed='Y' WHERE ciclo=? AND MP_MAINTAIN_ID=? AND A_Asset_ID=? AND PROGRAMMINGTYPE=?",
+					new Object[]{ciclo, MP_ID, Asset_ID, ProgramingType}, null);
 				
 				
 			}

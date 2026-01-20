@@ -189,11 +189,8 @@ public class MPAssetPlanning extends SvrProcess
 		        	float days=Math.abs(rs.getTimestamp("LastDay").getTime()-rs.getTimestamp("FIRSTDAY").getTime());
 		        	prom=(lastM-firstM) / (days/(60*60*24*1000));
 		        	
-		        	StringBuffer update=new StringBuffer();
-		        	update.append("UPDATE MP_MAINTAIN ");
-		        	update.append(" SET PROMUSE="+prom);
-		        	update.append(" WHERE MP_MAINTAIN_ID="+rs.getInt("MP_MAINTAIN_ID"));
-		        	DB.executeUpdate(update.toString(), get_TrxName());	
+		        	DB.executeUpdateEx("UPDATE MP_MAINTAIN SET PROMUSE=? WHERE MP_MAINTAIN_ID=?",
+		        		new Object[]{prom, rs.getInt("MP_MAINTAIN_ID")}, get_TrxName());	
 		        
 		            int cont=0;
 		            cumple=0;
@@ -280,24 +277,26 @@ public class MPAssetPlanning extends SvrProcess
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next())
 			{
-				int MP_ID=DB.getSQLValue(get_TrxName(), "SELECT P.MP_MAINTAIN_ID  "+
-					"FROM MP_Prognosis P "+
-					"INNER JOIN MP_MAINTAIN M ON (P.MP_MAINTAIN_ID=M.MP_MAINTAIN_ID) "+
-					"WHERE M.MP_MAINTAINPARENT_ID="+ rs.getInt("MP_MAINTAIN_ID") +
-					"AND P.A_ASSET_ID="+rs.getInt("A_ASSET_ID")+" AND P.AD_PINSTANCE_ID="+p_PInstance_ID);
-				
+				int maintainParentId = rs.getInt("MP_MAINTAIN_ID");
+				int assetId = rs.getInt("A_ASSET_ID");
+				int ciclo = rs.getInt("ciclo");
+
+				int MP_ID = DB.getSQLValue(get_TrxName(),
+					"SELECT P.MP_MAINTAIN_ID FROM MP_Prognosis P " +
+					"INNER JOIN MP_MAINTAIN M ON (P.MP_MAINTAIN_ID=M.MP_MAINTAIN_ID) " +
+					"WHERE M.MP_MAINTAINPARENT_ID=? AND P.A_ASSET_ID=? AND P.AD_PINSTANCE_ID=?",
+					maintainParentId, assetId, p_PInstance_ID);
+
 				while(MP_ID>0){
-					DB.executeUpdate("UPDATE MP_Prognosis "+
-					"SET SELECTED='Y' "+
-			        "WHERE A_ASSET_ID="+rs.getInt("A_ASSET_ID")+"AND "+
-			        "MP_MAINTAIN_ID="+ MP_ID +" AND "+
-			        "AD_PINSTANCE_ID="+p_PInstance_ID+" AND CICLO="+rs.getInt("ciclo"), get_TrxName());
-					
-					 MP_ID=DB.getSQLValue(get_TrxName(), "SELECT P.MP_MAINTAIN_ID  "+
-								"FROM MP_Prognosis P "+
-								"INNER JOIN MP_MAINTAIN M ON (P.MP_MAINTAIN_ID=M.MP_MAINTAIN_ID) "+
-								"WHERE M.MP_MAINTAINPARENT_ID="+ MP_ID +
-								"AND P.A_ASSET_ID="+rs.getInt("ASSET_ID")+" AND P.AD_PINSTANCE_ID="+p_PInstance_ID);
+					DB.executeUpdateEx("UPDATE MP_Prognosis SET SELECTED='Y' " +
+						"WHERE A_ASSET_ID=? AND MP_MAINTAIN_ID=? AND AD_PINSTANCE_ID=? AND CICLO=?",
+						new Object[]{assetId, MP_ID, p_PInstance_ID, ciclo}, get_TrxName());
+
+					MP_ID = DB.getSQLValue(get_TrxName(),
+						"SELECT P.MP_MAINTAIN_ID FROM MP_Prognosis P " +
+						"INNER JOIN MP_MAINTAIN M ON (P.MP_MAINTAIN_ID=M.MP_MAINTAIN_ID) " +
+						"WHERE M.MP_MAINTAINPARENT_ID=? AND P.A_ASSET_ID=? AND P.AD_PINSTANCE_ID=?",
+						MP_ID, assetId, p_PInstance_ID);
 				}
 			}
 			

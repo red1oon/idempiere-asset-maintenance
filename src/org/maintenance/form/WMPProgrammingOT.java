@@ -355,7 +355,7 @@ public class WMPProgrammingOT
 		columnNames.add(Msg.getMsg(Env.getCtx(), "DocumentNo"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "Asset"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "AD_User_ID"));
-		columnNames.add("Descripcion");
+		columnNames.add(Msg.translate(Env.getCtx(), "Description"));
 		
 	//  Set Model
 		ListModelTable modelP = new ListModelTable(data);

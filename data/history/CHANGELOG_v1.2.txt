@@ -1,0 +1,124 @@
+================================================================================
+CHANGELOG - AssetMaintenance Module v1.2
+================================================================================
+Date: 2026-01-21
+For iDempiere Release 13
+================================================================================
+
+VERSION 1.2 CHANGES
+-------------------
+
+1. IMPROVED PROCESS FEEDBACK MESSAGES
+-------------------------------------
+
+1.1 MPCopyFromSJ.java (Copy From Standard Job)
+   - BEFORE: Return message was just "Copied"
+   - AFTER:  Returns "Copied X task(s) and Y resource(s)"
+   - USER BENEFIT: Users now see exactly how many tasks and resources
+     were copied from the Standard Job template to the Maintenance record
+
+1.2 MPProcessOT.java (Process Work Order)
+   - BEFORE: Return message was just "Task Not Completed"
+   - AFTER:  Returns "Task Not Completed: X task(s) still pending"
+   - USER BENEFIT: Users now know exactly how many tasks need to be
+     completed before they can process the Work Order
+
+
+2. SQL PREPARED STATEMENTS (Code Hygiene)
+-----------------------------------------
+
+2.1 MPAssetPlanning.java
+   - Line 192-196: UPDATE MP_MAINTAIN with string concat → prepared statement
+   - Line 280-300: SELECT/UPDATE in loop with string concat → prepared statements
+   - Also extracted rs.getInt() calls to local variables for cleaner code
+
+2.2 WMPGenerateOT.java
+   - Line 606-610: UPDATE MP_Prognosis with string concat → prepared statement
+
+
+3. INTERNATIONALIZATION (i18n) FIXES
+------------------------------------
+
+3.1 WMPGenerateOT.java (Generate OT Form)
+   - FIXED: Hardcoded Spanish "Generar OT" → Msg.getMsg("GenerateOT")
+   - FIXED: Hardcoded Spanish "Ciclo" → Msg.getMsg("Cycle")
+   - IMPACT: Form column headers now support translation
+
+3.2 WMPProgrammingOT.java (Programming OT Form)
+   - FIXED: Hardcoded Spanish "Descripcion" → Msg.translate("Description")
+   - IMPACT: Form column headers now support translation
+
+3.3 WMPRequestOT.java (Request OT Form)
+   - FIXED: Hardcoded Spanish "Descripcion" → Msg.translate("Description")
+   - IMPACT: Form column headers now support translation
+
+NOTE: New AD_Message entries may be required for:
+   - "GenerateOT" - "Generate Work Order" / "Generate OT"
+   - "Cycle" - "Cycle"
+   These can be added via System Admin → General Rules → Application Dictionary → Message
+
+
+4. SAMPLE DATA
+--------------
+
+4.1 GardenWorld_SampleData.sql
+   - Added header warning about running "Sequence Check" after loading
+   - Includes 3 business scenario sets:
+     * Set 1: Fleet Equipment (Trucks, Forklifts, Conveyor)
+     * Set 2: Building/Facility (HVAC, Elevators, Fire Systems)
+     * Set 3: Manufacturing (CNC Machines, Assembly Line)
+   - Total: 21 Standard Jobs, 71 Tasks, 23 Maintenance Schedules
+
+
+5. DOCUMENTATION
+----------------
+
+5.1 technical_notes.txt
+   - Documents Copy From design (why Standard Job field is read-only)
+   - Documents Sequence Check requirement after direct SQL loading
+   - Code review findings and recommendations
+   - Workflow notes for user guide
+
+4.2 DemoGuide.md
+   - Comprehensive demo guide for all 3 sample data sets
+   - Menu structure reference
+   - Key concepts and workflow steps
+
+
+================================================================================
+FILES MODIFIED
+================================================================================
+
+src/org/maintenance/process/MPCopyFromSJ.java
+   - Added taskCount and resourceCount tracking
+   - Improved return message with counts
+
+src/org/maintenance/process/MPProcessOT.java
+   - Added incompleteCount variable
+   - Improved return message with pending task count
+
+src/org/maintenance/form/WMPGenerateOT.java
+   - Fixed hardcoded "Generar OT" to use Msg.getMsg()
+   - Fixed hardcoded "Ciclo" to use Msg.getMsg()
+
+src/org/maintenance/form/WMPProgrammingOT.java
+   - Fixed hardcoded "Descripcion" to use Msg.translate()
+
+src/org/maintenance/form/WMPRequestOT.java
+   - Fixed hardcoded "Descripcion" to use Msg.translate()
+
+
+================================================================================
+UPGRADE NOTES
+================================================================================
+
+1. After installing v1.2, optionally add these AD_Message entries for i18n:
+   - GenerateOT: "Generate Work Order"
+   - Cycle: "Cycle"
+
+2. If loading sample data (GardenWorld_SampleData.sql):
+   - Run "Sequence Check" from System Admin after loading
+   - Menu: System Admin → General Rules → System Rules → Sequence Check
+
+
+================================================================================

@@ -374,7 +374,7 @@ public class WMPRequestOT
 		columnNames.add(Msg.getMsg(Env.getCtx(), "Date Request"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "AD_User_ID"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "Asset"));
-		columnNames.add("Descripcion");
+		columnNames.add(Msg.translate(Env.getCtx(), "Description"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "Priority"));
 		columnNames.add(Msg.getMsg(Env.getCtx(), "Standard Job"));
 

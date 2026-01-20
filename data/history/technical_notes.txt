@@ -84,6 +84,139 @@ Both are stored in AD_Sequence but serve different purposes.
 "Sequence Check" handles both types.
 
 
+4. CODE REVIEW - AREAS FOR IMPROVEMENT
+--------------------------------------------------------------------------------
+
+4.1 PROCESS FEEDBACK MESSAGES
+-----------------------------
+MPCopyFromSJ.java (line 112):
+  Current:  return "Copied";
+  Issue:    No indication of HOW MANY tasks/resources were copied
+  Suggest:  return "Copied " + taskCount + " tasks and " + resourceCount + " resources";
+
+MPProcessOT.java (line 66):
+  Current:  return "Task Not Completed";
+  Good:     Clear message, but could specify WHICH tasks are incomplete
+  Suggest:  return "Task Not Completed: " + incompleteCount + " task(s) still pending";
+
+MPAssetPlanning.java (line 315):
+  Current:  return("Number of records generated: "+counter);
+  Status:   GOOD - Already provides useful feedback
+
+4.2 HARDCODED SPANISH LABELS (Internationalization)
+---------------------------------------------------
+WMPGenerateOT.java:
+  Line 355: columnNames.add("Generar OT");      // Should use Msg.translate()
+  Line 356: columnNames.add(Msg.getMsg(Env.getCtx(), "Ciclo"));  // "Ciclo" needs AD_Message
+
+WMPProgrammingOT.java, WMPRequestOT.java:
+  Similar hardcoded labels exist - should use AD_Message for i18n
+
+NOTE: These are cosmetic/usability improvements, not critical bugs.
+
+4.3 SQL BEST PRACTICES
+----------------------
+Several files use string concatenation for SQL instead of prepared statements:
+  - MPAssetPlanning.java lines 192-196 (UPDATE with string concat)
+  - WMPGenerateOT.java line 606-610 (UPDATE with string concat)
+
+Current:  "UPDATE MP_MAINTAIN SET PROMUSE="+prom+" WHERE..."
+Better:   DB.executeUpdateEx("UPDATE MP_MAINTAIN SET PROMUSE=? WHERE...?", new Object[]{prom, id})
+
+Not a security risk (values from DB), but prepared statements are cleaner.
+
+4.4 WORKFLOW NOTES FOR USER GUIDE
+---------------------------------
+PROGNOSIS WORKFLOW:
+  1. Setup: Meter → Standard Job (with Tasks) → Maintenance (Copy From) → Asset Meter
+  2. Operations: Meter Log entries (daily/regular readings)
+  3. Office: Run Prognosis → Prognosis Approval → Generate OT
+  4. Workshop: Work Order → Complete Tasks → Process OT
+
+MAINTENANCE "COPY FROM" BUTTON:
+  - Appears on Maintenance window toolbar (gear icon menu)
+  - Must assign Asset FIRST before using Copy From
+  - Copy From populates Tasks and Resources tabs from selected Standard Job
+  - Sets mp_jobstandar_id as reference (read-only after copy)
+
+PROGRAMMING TYPES:
+  'C' = Calendar-based (uses DateNextRun, Interval in days)
+  'M' = Meter-based (uses NextMP, Interval in meter units, requires Meter Logs)
+
+DOCUMENT STATUS FLOW:
+  Drafted (DR) → Complete (CO) → Void (VO) if needed
+
+4.5 THINGS NOT AVAILABLE (from original manual, page 21)
+--------------------------------------------------------
+1. No reports defined - users must create via Print Formats
+2. No internal invoice generation for labor costing
+3. No automatic housekeeping of old Meter Logs
+4. Request OT generates Work Orders but no email notifications
+
+
+5. NINJA SEQUENCE HANDLING - CORRECT APPROACH
+--------------------------------------------------------------------------------
+
+5.1 OLD NINJA (org.red1.ninja - MigrateExcelData.java) - CORRECT
+----------------------------------------------------------------
+The original Ninja properly handles sequences using iDempiere's built-in functions:
+
+  MSequence seq = MSequence.get(Env.getCtx(), TableName);
+  if (seq != null)
+      REC_ID = "nextIDFunc(" + seq.getAD_Sequence_ID() + ", 'N') ";
+
+The nextIDFunc() is a PostgreSQL function that:
+  1. Reads CurrentNext from AD_Sequence
+  2. Increments CurrentNext atomically
+  3. Returns the ID for use in INSERT
+
+This approach ensures AD_Sequence stays synchronized with actual data.
+
+5.2 CURRENT NINJA (NinjaProcessor.java) - NEEDS FIX
+---------------------------------------------------
+FILE: org.idempiere.ninja/src/org/idempiere/ninja/core/NinjaProcessor.java
+
+CURRENT BEHAVIOR (lines 1389-1391):
+  int nextId = DB.getSQLValue(trxName,
+      "SELECT COALESCE(MAX(" + table.getTableName() + "_ID), 999999) + 1 FROM " + tableName);
+
+This uses MAX()+1 which does NOT update AD_Sequence - causing sequence mismatch.
+
+PROPOSED FIX - Use proper iDempiere sequence:
+  Replace MAX()+1 with MSequence approach:
+
+  MSequence seq = MSequence.get(Env.getCtx(), table.getTableName());
+  int nextId;
+  if (seq != null) {
+      // Use nextIDFunc which properly updates AD_Sequence
+      nextId = DB.getSQLValue(trxName,
+          "SELECT nextIDFunc(" + seq.getAD_Sequence_ID() + ", 'N')");
+  } else {
+      // Fallback for tables without sequence
+      nextId = DB.getSQLValue(trxName,
+          "SELECT COALESCE(MAX(" + table.getTableName() + "_ID), 999999) + 1 FROM " + table.getTableName());
+  }
+
+5.3 SILENTPIPER - STANDALONE OPERATION
+--------------------------------------
+SilentPiper operates without iDempiere runtime, so it cannot use MSequence.
+For standalone operation, post-import sequence sync is required.
+
+Option A: Call sequence sync SQL after all inserts:
+  UPDATE AD_Sequence SET CurrentNext =
+      (SELECT COALESCE(MAX(table_id), 0) + 1 FROM tablename)
+  WHERE Name = 'tablename'
+
+Option B: Document that user must run "Sequence Check" after pack application.
+
+5.4 WORKAROUND FOR DIRECT SQL
+-----------------------------
+When loading data via direct SQL (like GardenWorld_SampleData.sql):
+  1. Menu: System Admin → General Rules → System Rules → Sequence Check
+  2. Click OK to run (no parameters needed)
+  3. Process updates all sequences to MAX(id)+1
+
+
 ================================================================================
 END OF NOTES
 ================================================================================

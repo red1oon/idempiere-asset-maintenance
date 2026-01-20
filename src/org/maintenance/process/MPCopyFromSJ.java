@@ -59,6 +59,8 @@ public class MPCopyFromSJ extends SvrProcess
 	 */
 	protected String doIt() throws Exception
 	{
+		int taskCount = 0;
+		int resourceCount = 0;
 		String sql="select * from MP_JobStandar_Task where MP_JobStandar_ID=?";
 		PreparedStatement pstmt = null;
 		try
@@ -74,7 +76,8 @@ public class MPCopyFromSJ extends SvrProcess
 				task.setC_UOM_ID(rs.getInt("C_UOM_ID"));
 				task.setDuration(rs.getBigDecimal("Duration"));
 				task.saveEx();
-				
+				taskCount++;
+
 				String sql2="select * from MP_JobStandar_Resource where MP_JobStandar_Task_ID=?";
 				PreparedStatement pstmt2 = null;
 				pstmt2 = DB.prepareStatement(sql2, get_TrxName());
@@ -91,6 +94,7 @@ public class MPCopyFromSJ extends SvrProcess
 					re.setResourceType( rs2.getString("ResourceType"));
 					re.setS_Resource_ID( rs2.getInt("S_Resource_ID"));
 					re.saveEx();
+					resourceCount++;
 				}
 				rs2.close();
 				pstmt2.close();
@@ -99,7 +103,7 @@ public class MPCopyFromSJ extends SvrProcess
 			rs.close();
 			pstmt.close();
 			pstmt = null;
-			
+
 			X_MP_Maintain ma= new X_MP_Maintain(getCtx(), Record_ID, get_TrxName());
 			ma.setMP_JobStandar_ID(jobStandard_ID);
 			ma.saveEx();
@@ -108,8 +112,8 @@ public class MPCopyFromSJ extends SvrProcess
 		{
 			log.log(Level.SEVERE, sql, e);
 		}
-		
-		return "Copied";
+
+		return "Copied " + taskCount + " task(s) and " + resourceCount + " resource(s)";
 	}	//	doIt
 
 

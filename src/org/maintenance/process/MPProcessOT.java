@@ -62,8 +62,9 @@ public class MPProcessOT extends SvrProcess
 		
 		X_MP_OT OT=new X_MP_OT(Env.getCtx(), Record_ID,get_TrxName());
 		String sql="Select count(1) from MP_OT_TASK where STATUS!='CO' and MP_OT_ID=?";
-		if(DB.getSQLValue(get_TrxName(), sql, Record_ID)>0 && OT.getDocStatus().equals("DR"))
-			return "Task Not Completed";
+		int incompleteCount = DB.getSQLValue(get_TrxName(), sql, Record_ID);
+		if(incompleteCount > 0 && OT.getDocStatus().equals("DR"))
+			return "Task Not Completed: " + incompleteCount + " task(s) still pending";
 		
 			
 			String mysql="select distinct MP_MAINTAIN_ID from MP_OT_TASK where MP_OT_ID=?";
