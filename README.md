@@ -84,14 +84,13 @@ Key windows:
 ```
 org.asset.maintenance/
 ├── META-INF/
-│   ├── 2Pack.zip           # System dictionary (AD_Client_ID=0)
+│   ├── 2Pack.zip           # System dictionary (AD_Client_ID=0) with Help content
+│   ├── 2Pack_13.0.0.zip    # Versioned copy
 │   └── MANIFEST.MF
 ├── data/
 │   ├── GardenWorldSample.zip  # Sample data (AD_Client_ID=11)
-│   ├── scripts/            # SQL migration scripts
+│   ├── scripts/            # Development SQL scripts
 │   └── history/            # Archived files
-├── migration/
-│   └── postgresql/         # Database migrations
 ├── src/                    # Java source code
 └── doc/                    # Documentation
 ```
