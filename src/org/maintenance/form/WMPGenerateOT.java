@@ -2,8 +2,8 @@
  * Licensed under the KARMA v.1 Law of Sharing. As others have shared freely to you, so shall you share freely back to us.
  * If you shall try to cheat and find a loophole in this license, then KARMA will exact your share.
  * and your worldly gain shall come to naught and those who share shall gain eventually above you.
- * In compliance with previous GPLv2.0 works of ComPiere USA, OFBConsulting CHILE, Redhuan D. Oon (www.red1.org) and other contributors 
- * THIS ASSET MAINTENANCE module is contribution of Ramiro Vergara, OFB Consulting, CHILE.
+ * In compliance with previous GPLv2.0 works of ComPiere USA, Ramiro Vergara, OFB Consulting, CHILE. 
+ * Enhanced by Redhuan D. Oon (red1org@gmail.com). sponsored by Zeeshan@sysnova.com
 */
 package org.maintenance.form;
 
@@ -239,7 +239,7 @@ public class WMPGenerateOT
 		prognosisLayout.appendChild(center);
 		center.appendChild(prognosisTable);
 		prognosisTable.setWidth("99%");
-		prognosisTable.setHeight("99%");
+		// Note: Don't set height when vflex is set (ListboxFactory.newDataTable sets vflex)
 		center.setStyle("border: none");
 		
 		
