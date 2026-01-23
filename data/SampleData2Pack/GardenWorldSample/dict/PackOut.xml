@@ -1,1166 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<idempiere Name="GardenWorldSample" Version="1.0.0" Description="Sample data export" Author="red1" AuthorEmail="red1@red1.org" CreatedDate="2026-01-23 16:06:47" UpdatedDate="2026-01-23 16:06:47" PackOutVersion="100" Client="GardenWorld-GardenWorld">
-    <MP_Meter type="table">
-        <mp_meter_id>1100001</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <maxday>30</maxday>
-        <updated>2026-01-23 08:06:03</updated>
-        <isactive>Y</isactive>
-        <name>Kilometers</name>
-        <mp_meter_uu>4ac4c3b1-9afd-4e4b-95ab-0f670a45f702</mp_meter_uu>
-    </MP_Meter>
-    <MP_Meter type="table">
-        <mp_meter_id>1100002</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <maxday>7</maxday>
-        <updated>2026-01-23 08:06:03</updated>
-        <isactive>Y</isactive>
-        <name>Operating Hours</name>
-        <mp_meter_uu>8ffbd512-bd31-4335-9ce6-77a1f32566e8</mp_meter_uu>
-    </MP_Meter>
-    <MP_Meter type="table">
-        <mp_meter_id>1100003</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <updated>2026-01-23 08:06:03</updated>
-        <isactive>Y</isactive>
-        <name>Calendar Days</name>
-        <mp_meter_uu>f92e6e54-e9ee-4c43-b064-128a0053f3b7</mp_meter_uu>
-    </MP_Meter>
-    <MP_JobStandar type="table">
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <name>Vehicle Oil Change</name>
-        <ad_org_id>11</ad_org_id>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <jobstandartype>AA</jobstandartype>
-        <maintainarea>ME</maintainarea>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <isactive>Y</isactive>
-        <mp_jobstandar_uu>e660e0be-72d2-4b19-84b8-6e1973aa60af</mp_jobstandar_uu>
-    </MP_JobStandar>
-    <MP_JobStandar type="table">
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <name>HVAC Filter Replacement</name>
-        <ad_org_id>11</ad_org_id>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <jobstandartype>AA</jobstandartype>
-        <maintainarea>ME</maintainarea>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <isactive>Y</isactive>
-        <mp_jobstandar_uu>442b1346-a1bc-4e1b-96b5-2ba0f8486fff</mp_jobstandar_uu>
-    </MP_JobStandar>
-    <MP_JobStandar type="table">
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <name>Forklift Battery Service</name>
-        <ad_org_id>11</ad_org_id>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <jobstandartype>AA</jobstandartype>
-        <maintainarea>EL</maintainarea>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <isactive>Y</isactive>
-        <mp_jobstandar_uu>661cdb33-abde-4c74-b6f7-c59725a43ebf</mp_jobstandar_uu>
-    </MP_JobStandar>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100001</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Drain old oil completely</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.5</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>57a432cd-9c7f-414d-894c-a225eb6ff555</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100002</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Replace oil filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>ebd17a47-ed2b-42e9-b244-aacbfc8cf818</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100003</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add 5L synthetic oil</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>e861e67c-2625-4440-ae32-f82ff70515de</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100004</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Turn off HVAC system</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>788c93bf-e819-4e43-91d6-453cde1a00a7</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100005</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Remove old filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>8b7476c5-8230-4f63-9b3b-d03e8e6482bd</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100006</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Install new filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>80d0e465-173a-4cb6-9df8-08a1173ec381</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100007</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test system operation</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>30c51873-e903-43cc-8abd-cc4a5f8e9392</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100008</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Safety check - power off</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>e67bac96-d34a-4f86-ac44-509016f2fd0f</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100009</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Check water level</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>e09ce223-f42c-441d-a729-db82eb16d85e</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100010</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add distilled water</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>d80e09e4-119b-4f01-8166-f4b9f7b18044</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100011</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Clean terminals</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>9a5e7e07-30ce-48a0-9897-6d9cbad38fcb</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <MP_JobStandar_Task type="table">
-        <mp_jobstandar_task_id>1100012</mp_jobstandar_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test voltage</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_jobstandar_task_uu>eb97127e-eba0-4c2b-becb-e9ef5340d684</mp_jobstandar_task_uu>
-    </MP_JobStandar_Task>
-    <A_Asset type="table">
-        <a_asset_id>1100001</a_asset_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <value>VH-001</value>
-        <name>Delivery Truck #1</name>
-        <description>Ford F-150 for local deliveries</description>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <m_product_id>200001</m_product_id>
-        <assetservicedate>2024-01-15 00:00:00</assetservicedate>
-        <isowned>Y</isowned>
-        <isdisposed>N</isdisposed>
-        <isinposession>Y</isinposession>
-        <processing>N</processing>
-        <isdepreciated>N</isdepreciated>
-        <isfullydepreciated>N</isfullydepreciated>
-        <m_attributesetinstance_id>0</m_attributesetinstance_id>
-        <a_asset_uu>31b09772-6f5c-4d8d-a0dd-f8cb8ef35cd6</a_asset_uu>
-        <a_asset_status>NW</a_asset_status>
-        <a_asset_action>MD</a_asset_action>
-        <processed>N</processed>
-        <a_assettype>MFX</a_assettype>
-    </A_Asset>
-    <A_Asset type="table">
-        <a_asset_id>1100002</a_asset_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <value>HVAC-001</value>
-        <name>Office HVAC Unit #1</name>
-        <description>Main office air conditioning</description>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <m_product_id>200002</m_product_id>
-        <assetservicedate>2023-06-01 00:00:00</assetservicedate>
-        <isowned>Y</isowned>
-        <isdisposed>N</isdisposed>
-        <isinposession>Y</isinposession>
-        <processing>N</processing>
-        <isdepreciated>N</isdepreciated>
-        <isfullydepreciated>N</isfullydepreciated>
-        <m_attributesetinstance_id>0</m_attributesetinstance_id>
-        <a_asset_uu>e34bfaa5-1cb9-42c9-9150-5c927f0296aa</a_asset_uu>
-        <a_asset_status>NW</a_asset_status>
-        <a_asset_action>MD</a_asset_action>
-        <processed>N</processed>
-        <a_assettype>MFX</a_assettype>
-    </A_Asset>
-    <A_Asset type="table">
-        <a_asset_id>1100003</a_asset_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <value>FL-001</value>
-        <name>Forklift #1</name>
-        <description>Toyota electric forklift 2-ton</description>
-        <a_asset_group_id>50003</a_asset_group_id>
-        <m_product_id>200001</m_product_id>
-        <assetservicedate>2023-03-01 00:00:00</assetservicedate>
-        <isowned>Y</isowned>
-        <isdisposed>N</isdisposed>
-        <isinposession>Y</isinposession>
-        <processing>N</processing>
-        <isdepreciated>N</isdepreciated>
-        <isfullydepreciated>N</isfullydepreciated>
-        <m_attributesetinstance_id>0</m_attributesetinstance_id>
-        <a_asset_uu>87f26744-2116-4ea4-9633-088bf577fd3d</a_asset_uu>
-        <a_asset_status>NW</a_asset_status>
-        <a_asset_action>MD</a_asset_action>
-        <processed>N</processed>
-        <a_assettype>MFX</a_assettype>
-    </A_Asset>
-    <MP_AssetMeter type="table">
-        <mp_assetmeter_id>1100001</mp_assetmeter_id>
-        <a_asset_id>1100001</a_asset_id>
-        <mp_meter_id>1100001</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <amt>45000</amt>
-        <value>VH001-KM</value>
-        <name>Truck Odometer</name>
-        <mp_assetmeter_uu>25e8ded8-bbcd-47fa-8f64-007074b1181a</mp_assetmeter_uu>
-    </MP_AssetMeter>
-    <MP_AssetMeter type="table">
-        <mp_assetmeter_id>1100002</mp_assetmeter_id>
-        <a_asset_id>1100002</a_asset_id>
-        <mp_meter_id>1100003</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <amt>0</amt>
-        <value>HVAC001-DAYS</value>
-        <name>HVAC Tracker</name>
-        <mp_assetmeter_uu>2d4b172a-26db-4528-a57b-9696c720a8fa</mp_assetmeter_uu>
-    </MP_AssetMeter>
-    <MP_AssetMeter type="table">
-        <mp_assetmeter_id>1100003</mp_assetmeter_id>
-        <a_asset_id>1100003</a_asset_id>
-        <mp_meter_id>1100002</mp_meter_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <isactive>Y</isactive>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updated>2026-01-23 08:06:03</updated>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <amt>1200</amt>
-        <value>FL001-HRS</value>
-        <name>Forklift Hours</name>
-        <mp_assetmeter_uu>fcef7ae3-4f4a-44c8-aec8-327ae41dd573</mp_assetmeter_uu>
-    </MP_AssetMeter>
-    <MP_Maintain type="table">
-        <mp_maintain_id>1100001</mp_maintain_id>
-        <documentno>MP-001</documentno>
-        <ischild>N</ischild>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100001</a_asset_id>
-        <currentmp>45000</currentmp>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datelastrun>2024-11-01 00:00:00</datelastrun>
-        <docstatus>AT</docstatus>
-        <interval>5000</interval>
-        <isactive>Y</isactive>
-        <lastmp>40000</lastmp>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <nextmp>45000</nextmp>
-        <programmingtype>M</programmingtype>
-        <promuse>500</promuse>
-        <range>1000</range>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <mp_meter_id>1100001</mp_meter_id>
-        <mp_maintain_uu>48e75379-6f51-400e-8526-9688b0d768b0</mp_maintain_uu>
-    </MP_Maintain>
-    <MP_Maintain type="table">
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <documentno>MP-002</documentno>
-        <ischild>N</ischild>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100002</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datelastrun>2025-10-30 08:06:03</datelastrun>
-        <datenextrun>2026-01-28 08:06:03</datenextrun>
-        <docstatus>AT</docstatus>
-        <interval>90</interval>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <programmingtype>C</programmingtype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <mp_maintain_uu>22579769-cea1-4688-a732-f4db9cfeee3b</mp_maintain_uu>
-    </MP_Maintain>
-    <MP_Maintain type="table">
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <documentno>MP-003</documentno>
-        <ischild>N</ischild>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100003</a_asset_id>
-        <currentmp>1200</currentmp>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datelastrun>2024-10-15 00:00:00</datelastrun>
-        <docstatus>AT</docstatus>
-        <interval>250</interval>
-        <isactive>Y</isactive>
-        <lastmp>1000</lastmp>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <nextmp>1250</nextmp>
-        <programmingtype>M</programmingtype>
-        <promuse>25</promuse>
-        <range>50</range>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <mp_meter_id>1100002</mp_meter_id>
-        <mp_maintain_uu>0118ffec-2529-4584-a5c6-e0ea0ecac5ec</mp_maintain_uu>
-    </MP_Maintain>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100001</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Drain old oil completely</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.5</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100001</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>f865469e-8458-4c58-8c1b-20c624b956e0</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100002</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Replace oil filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100001</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>b0c33486-7940-401e-915d-17266f7f4b6d</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100003</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add 5L synthetic oil</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100001</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>e1becee9-96a7-44d8-9b25-44a23b544d90</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100004</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Turn off HVAC system</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>19daff97-ea86-4109-83cb-47897fb0ba6f</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100005</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Remove old filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>20810568-05cc-4ca4-8556-a4f2b313e437</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100006</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Install new filter</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>2f1a48bb-0dc6-4ce3-b48c-4d85879bc4fb</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100007</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test system operation</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>cec3f9fa-0848-4e67-ac17-5c86ec2d8b8b</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100008</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Safety check - power off</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>53871499-eb3b-45dd-9376-c1660dd43926</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100009</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Check water level</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>6f85ba9e-daff-4b7c-aafa-55cff525dd27</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100010</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add distilled water</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>0866368a-408e-43a8-bf69-9e2e3fb01ebc</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100011</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Clean terminals</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>b5508d47-73ae-461e-83ca-d491f64655aa</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_Maintain_Task type="table">
-        <mp_maintain_task_id>1100012</mp_maintain_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test voltage</description>
-        <ad_org_id>11</ad_org_id>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <mp_maintain_task_uu>2431bd36-ffa3-4250-8fab-83440be9dab6</mp_maintain_task_uu>
-    </MP_Maintain_Task>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100001</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>44200</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-02 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100001</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Weekly reading</description>
-        <mp_assetmeter_log_uu>6aa9017c-c09c-4d6c-9bfa-47e1f134b48f</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100002</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>44500</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-09 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100001</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Weekly reading</description>
-        <mp_assetmeter_log_uu>cfcecd16-7e24-4a0e-9b67-32affa26818d</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100003</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>44800</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-16 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100001</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Weekly reading</description>
-        <mp_assetmeter_log_uu>d748c41e-bcff-42d6-9103-77fc2279b624</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100004</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>45000</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100001</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Maintenance due!</description>
-        <mp_assetmeter_log_uu>f2102275-4a9d-47bd-b75a-298478ac96be</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100005</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>1150</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-13 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100003</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Daily reading</description>
-        <mp_assetmeter_log_uu>6acf1d63-e2d2-4bfe-81b1-c4168d2519b0</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100006</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>1175</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-18 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100003</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Daily reading</description>
-        <mp_assetmeter_log_uu>6489b42f-0105-469f-bc66-a6a669da0051</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_AssetMeter_Log type="table">
-        <mp_assetmeter_log_id>1100007</mp_assetmeter_log_id>
-        <ad_client_id>11</ad_client_id>
-        <ad_org_id>11</ad_org_id>
-        <amt>1200</amt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <updatedby>101</updatedby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <isactive>Y</isactive>
-        <mp_assetmeter_id>1100003</mp_assetmeter_id>
-        <updated>2026-01-23 08:06:03</updated>
-        <description>Approaching maintenance</description>
-        <mp_assetmeter_log_uu>aa142950-82bc-4357-9ead-2c89d8439592</mp_assetmeter_log_uu>
-    </MP_AssetMeter_Log>
-    <MP_OT_Request type="table">
-        <mp_ot_request_id>1100001</mp_ot_request_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>REQ-001</documentno>
-        <updatedby>101</updatedby>
-        <ad_user_id>101</ad_user_id>
-        <a_asset_id>1100001</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datedoc>2026-01-21 08:06:03</datedoc>
-        <daterequired>2026-01-28 08:06:03</daterequired>
-        <description>Truck oil warning light on</description>
-        <docstatus>WC</docstatus>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <ot_request_type>RP</ot_request_type>
-        <priorityrule>5</priorityrule>
-        <processed>Y</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_request_uu>8eff1708-eae4-46da-9801-c08ee597a38b</mp_ot_request_uu>
-    </MP_OT_Request>
-    <MP_OT_Request type="table">
-        <mp_ot_request_id>1100002</mp_ot_request_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>REQ-002</documentno>
-        <updatedby>101</updatedby>
-        <ad_user_id>101</ad_user_id>
-        <a_asset_id>1100003</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datedoc>2026-01-18 08:06:03</datedoc>
-        <daterequired>2026-01-25 08:06:03</daterequired>
-        <description>Forklift battery not holding charge</description>
-        <docstatus>AP</docstatus>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <ot_request_type>RV</ot_request_type>
-        <priorityrule>7</priorityrule>
-        <processed>Y</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_request_uu>e8fd5ed5-3e88-4333-b36a-7a0df2ce9385</mp_ot_request_uu>
-    </MP_OT_Request>
-    <MP_OT_Request type="table">
-        <mp_ot_request_id>1100003</mp_ot_request_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>REQ-003</documentno>
-        <updatedby>101</updatedby>
-        <ad_user_id>101</ad_user_id>
-        <a_asset_id>1100002</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datedoc>2026-01-13 08:06:03</datedoc>
-        <daterequired>2026-01-20 08:06:03</daterequired>
-        <description>Quarterly HVAC filter change</description>
-        <docstatus>AP</docstatus>
-        <isactive>Y</isactive>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <ot_request_type>RP</ot_request_type>
-        <priorityrule>3</priorityrule>
-        <processed>Y</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_request_uu>3161a37b-4a14-4b26-9e44-8536190be252</mp_ot_request_uu>
-    </MP_OT_Request>
-    <MP_OT type="table">
-        <mp_ot_id>1100001</mp_ot_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>WO-001</documentno>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100001</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datetrx>2026-01-23 08:06:03</datetrx>
-        <description>Oil change for Truck #1</description>
-        <docaction>CO</docaction>
-        <docstatus>DR</docstatus>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100001</mp_maintain_id>
-        <processed>N</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_jobstandar_id>1100001</mp_jobstandar_id>
-        <mp_ot_uu>c4d6d6c8-88d1-40a6-91f2-94fec384e62c</mp_ot_uu>
-    </MP_OT>
-    <MP_OT type="table">
-        <mp_ot_id>1100002</mp_ot_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>WO-002</documentno>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100003</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datetrx>2026-01-22 08:06:03</datetrx>
-        <description>Battery service Forklift #1</description>
-        <docaction>CO</docaction>
-        <docstatus>IP</docstatus>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100003</mp_maintain_id>
-        <processed>N</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_jobstandar_id>1100003</mp_jobstandar_id>
-        <mp_ot_uu>2c4ec041-cb72-49ce-89c4-a7a53317e165</mp_ot_uu>
-    </MP_OT>
-    <MP_OT type="table">
-        <mp_ot_id>1100003</mp_ot_id>
-        <ad_client_id>11</ad_client_id>
-        <documentno>WO-003</documentno>
-        <updatedby>101</updatedby>
-        <a_asset_id>1100002</a_asset_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <datetrx>2026-01-18 08:06:03</datetrx>
-        <description>HVAC filter completed</description>
-        <docaction>--</docaction>
-        <docstatus>CO</docstatus>
-        <isactive>Y</isactive>
-        <mp_maintain_id>1100002</mp_maintain_id>
-        <processed>Y</processed>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_jobstandar_id>1100002</mp_jobstandar_id>
-        <mp_ot_uu>60ed4062-3199-4ca0-9cbe-b39f2b0e097a</mp_ot_uu>
-    </MP_OT>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100001</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Drain old oil</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.5</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100001</mp_ot_id>
-        <processed>N</processed>
-        <status>NS</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>8e00a392-56f7-4b3d-b3ff-e351798e9572</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100002</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Replace filter</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100001</mp_ot_id>
-        <processed>N</processed>
-        <status>NS</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>932e8811-03b8-46de-8328-9e307cfe5736</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100003</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add new oil</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100001</mp_ot_id>
-        <processed>N</processed>
-        <status>NS</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>632cad35-6146-4465-82c8-62e85bacac38</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100004</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Safety check</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100002</mp_ot_id>
-        <processed>N</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>d4526fe1-feab-4f13-ac38-a9a61715c030</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100005</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Check water level</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100002</mp_ot_id>
-        <processed>N</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>87f7a59e-8032-48ba-a419-cdb02b09b2af</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100006</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Add water</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100002</mp_ot_id>
-        <processed>N</processed>
-        <status>IP</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>965e238b-5d7a-4399-aee0-eab53770b128</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100007</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Clean terminals</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100002</mp_ot_id>
-        <processed>N</processed>
-        <status>NS</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>73b44a65-c802-403b-ba8a-fcd7c5b95039</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100008</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test voltage</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100002</mp_ot_id>
-        <processed>N</processed>
-        <status>NS</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>bf3b90a3-750f-41ab-9173-063afde03114</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100009</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Turn off unit</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.1</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100003</mp_ot_id>
-        <processed>Y</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>9dab7ba9-f2fd-4415-a4e8-7f90aeca5161</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100010</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Remove filter</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100003</mp_ot_id>
-        <processed>Y</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>aeec23cb-b569-45c5-95cb-b7706b83f145</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100011</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Install filter</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100003</mp_ot_id>
-        <processed>Y</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>c80679db-4c0a-40d5-9c69-1fc80b702cca</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Task type="table">
-        <mp_ot_task_id>1100012</mp_ot_task_id>
-        <ad_client_id>11</ad_client_id>
-        <description>Test system</description>
-        <updatedby>101</updatedby>
-        <c_uom_id>101</c_uom_id>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <duration>0.25</duration>
-        <isactive>Y</isactive>
-        <mp_ot_id>1100003</mp_ot_id>
-        <processed>Y</processed>
-        <status>CO</status>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_task_uu>1c5f81b2-acb0-4e40-b7dc-95a59340080e</mp_ot_task_uu>
-    </MP_OT_Task>
-    <MP_OT_Resource type="table">
-        <mp_ot_resource_id>1100001</mp_ot_resource_id>
-        <ad_client_id>11</ad_client_id>
-        <updatedby>101</updatedby>
-        <costamt>15.00</costamt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <isactive>Y</isactive>
-        <mp_ot_task_id>1100002</mp_ot_task_id>
-        <processed>N</processed>
-        <resourceqty>1</resourceqty>
-        <resourcetype>RR</resourcetype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_resource_uu>31fe0ddb-e985-4fc0-97bd-cfa1cea19cd6</mp_ot_resource_uu>
-    </MP_OT_Resource>
-    <MP_OT_Resource type="table">
-        <mp_ot_resource_id>1100002</mp_ot_resource_id>
-        <ad_client_id>11</ad_client_id>
-        <updatedby>101</updatedby>
-        <costamt>45.00</costamt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <isactive>Y</isactive>
-        <mp_ot_task_id>1100003</mp_ot_task_id>
-        <processed>N</processed>
-        <resourceqty>5</resourceqty>
-        <resourcetype>RR</resourcetype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_resource_uu>4bb07b23-ebb2-4b16-8bb9-443b65db22fe</mp_ot_resource_uu>
-    </MP_OT_Resource>
-    <MP_OT_Resource type="table">
-        <mp_ot_resource_id>1100003</mp_ot_resource_id>
-        <ad_client_id>11</ad_client_id>
-        <updatedby>101</updatedby>
-        <costamt>8.00</costamt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <isactive>Y</isactive>
-        <mp_ot_task_id>1100006</mp_ot_task_id>
-        <processed>N</processed>
-        <resourceqty>2</resourceqty>
-        <resourcetype>RR</resourcetype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_resource_uu>2cba7a44-63ec-4f41-ab71-57f04743a090</mp_ot_resource_uu>
-    </MP_OT_Resource>
-    <MP_OT_Resource type="table">
-        <mp_ot_resource_id>1100004</mp_ot_resource_id>
-        <ad_client_id>11</ad_client_id>
-        <updatedby>101</updatedby>
-        <costamt>12.00</costamt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <isactive>Y</isactive>
-        <mp_ot_task_id>1100007</mp_ot_task_id>
-        <processed>N</processed>
-        <resourceqty>1</resourceqty>
-        <resourcetype>TT</resourcetype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_resource_uu>84577a11-21f8-4c86-b07a-3613a209a788</mp_ot_resource_uu>
-    </MP_OT_Resource>
-    <MP_OT_Resource type="table">
-        <mp_ot_resource_id>1100005</mp_ot_resource_id>
-        <ad_client_id>11</ad_client_id>
-        <updatedby>101</updatedby>
-        <costamt>35.00</costamt>
-        <created>2026-01-23 08:06:03</created>
-        <createdby>101</createdby>
-        <isactive>Y</isactive>
-        <mp_ot_task_id>1100011</mp_ot_task_id>
-        <processed>Y</processed>
-        <resourceqty>1</resourceqty>
-        <resourcetype>RR</resourcetype>
-        <updated>2026-01-23 08:06:03</updated>
-        <ad_org_id>11</ad_org_id>
-        <mp_ot_resource_uu>4fb7c257-8b39-490c-a819-744e2d8bddfe</mp_ot_resource_uu>
-    </MP_OT_Resource>
+<idempiere Name="GardenWorldSample" Version="1.0.0" Description="Sample data export" Author="red1" AuthorEmail="red1@red1.org" CreatedDate="2026-01-23 17:38:44" UpdatedDate="2026-01-23 17:38:44" PackOutVersion="100" Client="11-GardenWorld">
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_meter (mp_meter_id, ad_client_id, ad_org_id, created, createdby, updatedby, maxday, updated, isactive, name, mp_meter_uu) VALUES (1100001, 11, 11, '2026-01-23 09:38:33', 101, 101, 30, '2026-01-23 09:38:33', 'Y', 'Kilometers', 'c786b782-2c7d-4fac-ac31-caf48fe3b66b')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_meter (mp_meter_id, ad_client_id, ad_org_id, created, createdby, updatedby, maxday, updated, isactive, name, mp_meter_uu) VALUES (1100002, 11, 11, '2026-01-23 09:38:33', 101, 101, 7, '2026-01-23 09:38:33', 'Y', 'Operating Hours', '8dcece91-7f5f-4b7b-8ec1-cd82e2853023')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_meter (mp_meter_id, ad_client_id, ad_org_id, created, createdby, updatedby, updated, isactive, name, mp_meter_uu) VALUES (1100003, 11, 11, '2026-01-23 09:38:33', 101, 101, '2026-01-23 09:38:33', 'Y', 'Calendar Days', 'f08f709f-d039-4030-99de-8cbf93f4ed76')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar (mp_jobstandar_id, name, ad_org_id, a_asset_group_id, created, createdby, updatedby, jobstandartype, maintainarea, updated, ad_client_id, isactive, mp_jobstandar_uu) VALUES (1100001, 'Vehicle Oil Change', 11, 50003, '2026-01-23 09:38:33', 101, 101, 'AA', 'ME', '2026-01-23 09:38:33', 11, 'Y', 'cb6250a8-cd34-4c90-aea1-f13fae77e4fd')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar (mp_jobstandar_id, name, ad_org_id, a_asset_group_id, created, createdby, updatedby, jobstandartype, maintainarea, updated, ad_client_id, isactive, mp_jobstandar_uu) VALUES (1100002, 'HVAC Filter Replacement', 11, 50003, '2026-01-23 09:38:33', 101, 101, 'AA', 'ME', '2026-01-23 09:38:33', 11, 'Y', '1a1aebe4-bfd0-4c96-b783-6fd5b671fb98')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar (mp_jobstandar_id, name, ad_org_id, a_asset_group_id, created, createdby, updatedby, jobstandartype, maintainarea, updated, ad_client_id, isactive, mp_jobstandar_uu) VALUES (1100003, 'Forklift Battery Service', 11, 50003, '2026-01-23 09:38:33', 101, 101, 'AA', 'EL', '2026-01-23 09:38:33', 11, 'Y', '231ebbb9-ff66-4078-b617-d7a06647fee1')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100001, 11, 'Drain old oil completely', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.5, 'Y', 1100001, '2026-01-23 09:38:33', '2f7e6e84-d226-49c1-93b5-ebbe1a12ea19')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100002, 11, 'Replace oil filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100001, '2026-01-23 09:38:33', '7b80896a-e4bc-4f9c-859f-b7c9da818041')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100003, 11, 'Add 5L synthetic oil', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100001, '2026-01-23 09:38:33', 'cb16e045-bba5-40b7-b23d-413b33d88267')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100004, 11, 'Turn off HVAC system', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.1, 'Y', 1100002, '2026-01-23 09:38:33', 'f10a5bbe-0c45-48a8-b859-5fd9408eb686')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100005, 11, 'Remove old filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', '6d6c2269-8834-4696-beda-99e9182a3abd')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100006, 11, 'Install new filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', '705ffaaf-6b4c-40ad-ae32-0fde8f34f2cc')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100007, 11, 'Test system operation', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', 'd33e9c7e-4087-4599-9d63-4646edf19ba7')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100008, 11, 'Safety check - power off', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.1, 'Y', 1100003, '2026-01-23 09:38:33', 'c3e9d43c-0adf-473c-90e2-b8d919a5e33d')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100009, 11, 'Check water level', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '6d5a9e05-a161-45b1-a1be-1e252954aa48')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100010, 11, 'Add distilled water', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '1da88cca-dbad-46b2-85f2-bd2dc3ed49dd')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100011, 11, 'Clean terminals', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '4441369d-704d-4b74-bfe9-fb32a3257348')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_jobstandar_task (mp_jobstandar_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_jobstandar_id, updated, mp_jobstandar_task_uu) VALUES (1100012, 11, 'Test voltage', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '750a67cd-5ac2-4e98-9aa0-0d81c8db700f')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO a_asset (a_asset_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, value, name, description, a_asset_group_id, m_product_id, assetservicedate, isowned, isdisposed, isinposession, processing, isdepreciated, isfullydepreciated, m_attributesetinstance_id, a_asset_uu, a_asset_status, a_asset_action, processed, a_assettype) VALUES (1100001, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, 'VH-001', 'Delivery Truck #1', 'Ford F-150 for local deliveries', 50003, 200001, '2024-01-15 00:00:00', 'Y', 'N', 'Y', 'N', 'N', 'N', 0, 'ca8670d4-f8d9-4b02-9dbe-8fbc6cdd3457', 'NW', 'MD', 'N', 'MFX')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO a_asset (a_asset_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, value, name, description, a_asset_group_id, m_product_id, assetservicedate, isowned, isdisposed, isinposession, processing, isdepreciated, isfullydepreciated, m_attributesetinstance_id, a_asset_uu, a_asset_status, a_asset_action, processed, a_assettype) VALUES (1100002, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, 'HVAC-001', 'Office HVAC Unit #1', 'Main office air conditioning', 50003, 200002, '2023-06-01 00:00:00', 'Y', 'N', 'Y', 'N', 'N', 'N', 0, '159c79b8-ea73-468a-98a5-fbbee7c42c5b', 'NW', 'MD', 'N', 'MFX')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO a_asset (a_asset_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, value, name, description, a_asset_group_id, m_product_id, assetservicedate, isowned, isdisposed, isinposession, processing, isdepreciated, isfullydepreciated, m_attributesetinstance_id, a_asset_uu, a_asset_status, a_asset_action, processed, a_assettype) VALUES (1100003, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, 'FL-001', 'Forklift #1', 'Toyota electric forklift 2-ton', 50003, 200001, '2023-03-01 00:00:00', 'Y', 'N', 'Y', 'N', 'N', 'N', 0, 'a13960ad-4ec1-43e4-8499-88919e611834', 'NW', 'MD', 'N', 'MFX')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter (mp_assetmeter_id, a_asset_id, mp_meter_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, datetrx, amt, value, name, mp_assetmeter_uu) VALUES (1100001, 1100001, 1100001, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 45000, 'VH001-KM', 'Truck Odometer', '889e1924-9a48-4f94-b657-1b02d4da1f43')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter (mp_assetmeter_id, a_asset_id, mp_meter_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, datetrx, amt, value, name, mp_assetmeter_uu) VALUES (1100002, 1100002, 1100003, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 0, 'HVAC001-DAYS', 'HVAC Tracker', 'a7157b07-dfbc-4ea6-8c95-2c43db95fb3f')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter (mp_assetmeter_id, a_asset_id, mp_meter_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedby, datetrx, amt, value, name, mp_assetmeter_uu) VALUES (1100003, 1100003, 1100002, 11, 11, 'Y', '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 1200, 'FL001-HRS', 'Forklift Hours', '32687073-bd7b-4bdc-86c9-69e434c0b4c9')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain (mp_maintain_id, documentno, ischild, updatedby, a_asset_id, currentmp, created, createdby, datelastrun, docstatus, interval, isactive, lastmp, mp_jobstandar_id, nextmp, programmingtype, promuse, range, updated, ad_client_id, ad_org_id, mp_meter_id, mp_maintain_uu) VALUES (1100001, 'MP-001', 'N', 101, 1100001, 45000, '2026-01-23 09:38:33', 101, '2024-11-01 00:00:00', 'AT', 5000, 'Y', 40000, 1100001, 45000, 'M', 500, 1000, '2026-01-23 09:38:33', 11, 11, 1100001, '064344ab-bebc-4b14-b941-40700d3d12b0')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain (mp_maintain_id, documentno, ischild, updatedby, a_asset_id, created, createdby, datelastrun, datenextrun, docstatus, interval, isactive, mp_jobstandar_id, programmingtype, updated, ad_client_id, ad_org_id, mp_maintain_uu) VALUES (1100002, 'MP-002', 'N', 101, 1100002, '2026-01-23 09:38:33', 101, '2025-10-30 09:38:33', '2026-01-28 09:38:33', 'AT', 90, 'Y', 1100002, 'C', '2026-01-23 09:38:33', 11, 11, 'df91a791-7892-4ee2-b2a3-d783eabf5f43')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain (mp_maintain_id, documentno, ischild, updatedby, a_asset_id, currentmp, created, createdby, datelastrun, docstatus, interval, isactive, lastmp, mp_jobstandar_id, nextmp, programmingtype, promuse, range, updated, ad_client_id, ad_org_id, mp_meter_id, mp_maintain_uu) VALUES (1100003, 'MP-003', 'N', 101, 1100003, 1200, '2026-01-23 09:38:33', 101, '2024-10-15 00:00:00', 'AT', 250, 'Y', 1000, 1100003, 1250, 'M', 25, 50, '2026-01-23 09:38:33', 11, 11, 1100002, 'b5d2f12f-31dc-4962-9563-38e3167cda55')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100001, 11, 'Drain old oil completely', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.5, 'Y', 1100001, '2026-01-23 09:38:33', '41191c3f-7024-4f50-8846-94665e9f0c4f')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100002, 11, 'Replace oil filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100001, '2026-01-23 09:38:33', '4642d7ab-3266-407e-ab19-d440e3ed653a')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100003, 11, 'Add 5L synthetic oil', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100001, '2026-01-23 09:38:33', '9ed786ff-b56b-4925-b3d0-88a04215891c')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100004, 11, 'Turn off HVAC system', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.1, 'Y', 1100002, '2026-01-23 09:38:33', 'b66b2d93-2019-4dbc-b71f-a337276ce847')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100005, 11, 'Remove old filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', 'c8e6897e-196a-4bf9-ba49-7b079323e539')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100006, 11, 'Install new filter', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', '6cea0295-3d43-41a8-9b61-395e417d07fd')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100007, 11, 'Test system operation', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100002, '2026-01-23 09:38:33', 'ffc531d9-97e4-4fdf-9361-b02f65a383de')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100008, 11, 'Safety check - power off', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.1, 'Y', 1100003, '2026-01-23 09:38:33', '3e3ad015-7c21-409d-9868-fe9c2f4f6f9c')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100009, 11, 'Check water level', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '5a03a27b-0708-402f-b464-6cebc9a49a9a')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100010, 11, 'Add distilled water', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', 'e1077328-34e0-45ac-89a3-223c646a786a')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100011, 11, 'Clean terminals', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', '3046b2eb-f6b9-4e00-abcd-2b3e7fc51c41')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, description, ad_org_id, c_uom_id, created, createdby, updatedby, duration, isactive, mp_maintain_id, updated, mp_maintain_task_uu) VALUES (1100012, 11, 'Test voltage', 11, 101, '2026-01-23 09:38:33', 101, 101, 0.25, 'Y', 1100003, '2026-01-23 09:38:33', 'd677900c-bb2f-4f80-b6d6-a8442ca41c42')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100001, 11, 11, 44200, '2026-01-23 09:38:33', 101, 101, '2026-01-02 09:38:33', 'Y', 1100001, '2026-01-23 09:38:33', 'Weekly reading', '7ccd8c5f-e23a-4a89-836e-ba090aaf2fdc')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100002, 11, 11, 44500, '2026-01-23 09:38:33', 101, 101, '2026-01-09 09:38:33', 'Y', 1100001, '2026-01-23 09:38:33', 'Weekly reading', '463e8b9c-1b8a-4850-afff-a4c31db57bdb')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100003, 11, 11, 44800, '2026-01-23 09:38:33', 101, 101, '2026-01-16 09:38:33', 'Y', 1100001, '2026-01-23 09:38:33', 'Weekly reading', '5da71165-816b-4f95-970f-acd62e97257e')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100004, 11, 11, 45000, '2026-01-23 09:38:33', 101, 101, '2026-01-23 09:38:33', 'Y', 1100001, '2026-01-23 09:38:33', 'Maintenance due!', '6b1e0f8f-76b2-4315-9ac0-01db8224b813')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100005, 11, 11, 1150, '2026-01-23 09:38:33', 101, 101, '2026-01-13 09:38:33', 'Y', 1100003, '2026-01-23 09:38:33', 'Daily reading', '2e94fae9-e483-44f9-b1b9-b47fb96e6253')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100006, 11, 11, 1175, '2026-01-23 09:38:33', 101, 101, '2026-01-18 09:38:33', 'Y', 1100003, '2026-01-23 09:38:33', 'Daily reading', 'c8d3b7e5-3956-48c5-b79c-0e2285035935')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, amt, created, createdby, updatedby, datetrx, isactive, mp_assetmeter_id, updated, description, mp_assetmeter_log_uu) VALUES (1100007, 11, 11, 1200, '2026-01-23 09:38:33', 101, 101, '2026-01-23 09:38:33', 'Y', 1100003, '2026-01-23 09:38:33', 'Approaching maintenance', '21d40eb9-b905-4858-89e0-680a74c4ebd5')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_request (mp_ot_request_id, ad_client_id, documentno, updatedby, ad_user_id, a_asset_id, created, createdby, datedoc, daterequired, description, docstatus, isactive, mp_jobstandar_id, ot_request_type, priorityrule, processed, updated, ad_org_id, mp_ot_request_uu) VALUES (1100001, 11, 'REQ-001', 101, 101, 1100001, '2026-01-23 09:38:33', 101, '2026-01-21 09:38:33', '2026-01-28 09:38:33', 'Truck oil warning light on', 'WC', 'Y', 1100001, 'RP', '5', 'Y', '2026-01-23 09:38:33', 11, '60ff0c1c-8cae-40c6-a529-c72683f07516')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_request (mp_ot_request_id, ad_client_id, documentno, updatedby, ad_user_id, a_asset_id, created, createdby, datedoc, daterequired, description, docstatus, isactive, mp_jobstandar_id, ot_request_type, priorityrule, processed, updated, ad_org_id, mp_ot_request_uu) VALUES (1100002, 11, 'REQ-002', 101, 101, 1100003, '2026-01-23 09:38:33', 101, '2026-01-18 09:38:33', '2026-01-25 09:38:33', 'Forklift battery not holding charge', 'AP', 'Y', 1100003, 'RV', '7', 'Y', '2026-01-23 09:38:33', 11, '6ffb32c2-884c-432e-8964-bb86edf8a45c')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_request (mp_ot_request_id, ad_client_id, documentno, updatedby, ad_user_id, a_asset_id, created, createdby, datedoc, daterequired, description, docstatus, isactive, mp_jobstandar_id, ot_request_type, priorityrule, processed, updated, ad_org_id, mp_ot_request_uu) VALUES (1100003, 11, 'REQ-003', 101, 101, 1100002, '2026-01-23 09:38:33', 101, '2026-01-13 09:38:33', '2026-01-20 09:38:33', 'Quarterly HVAC filter change', 'AP', 'Y', 1100002, 'RP', '3', 'Y', '2026-01-23 09:38:33', 11, 'e1c0ca03-177b-4079-b10d-3a1634ad39b0')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot (mp_ot_id, ad_client_id, documentno, updatedby, a_asset_id, created, createdby, datetrx, description, docaction, docstatus, isactive, mp_maintain_id, processed, updated, ad_org_id, mp_jobstandar_id, mp_ot_uu) VALUES (1100001, 11, 'WO-001', 101, 1100001, '2026-01-23 09:38:33', 101, '2026-01-23 09:38:33', 'Oil change for Truck #1', 'CO', 'DR', 'Y', 1100001, 'N', '2026-01-23 09:38:33', 11, 1100001, 'e1dcf38e-b237-41b5-bfd4-fdb4e1894faf')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot (mp_ot_id, ad_client_id, documentno, updatedby, a_asset_id, created, createdby, datetrx, description, docaction, docstatus, isactive, mp_maintain_id, processed, updated, ad_org_id, mp_jobstandar_id, mp_ot_uu) VALUES (1100002, 11, 'WO-002', 101, 1100003, '2026-01-23 09:38:33', 101, '2026-01-22 09:38:33', 'Battery service Forklift #1', 'CO', 'IP', 'Y', 1100003, 'N', '2026-01-23 09:38:33', 11, 1100003, 'c399e5b9-1e59-4765-90e9-acffeee6fc7a')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot (mp_ot_id, ad_client_id, documentno, updatedby, a_asset_id, created, createdby, datetrx, description, docaction, docstatus, isactive, mp_maintain_id, processed, updated, ad_org_id, mp_jobstandar_id, mp_ot_uu) VALUES (1100003, 11, 'WO-003', 101, 1100002, '2026-01-23 09:38:33', 101, '2026-01-18 09:38:33', 'HVAC filter completed', '--', 'CO', 'Y', 1100002, 'Y', '2026-01-23 09:38:33', 11, 1100002, '04e8a4a4-6060-47b9-bc87-17788f1d2553')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100001, 11, 'Drain old oil', 101, 101, '2026-01-23 09:38:33', 101, 0.5, 'Y', 1100001, 'N', 'NS', '2026-01-23 09:38:33', 11, '0371f494-6690-4165-b67a-47e1aa108bbf')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100002, 11, 'Replace filter', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100001, 'N', 'NS', '2026-01-23 09:38:33', 11, 'f319adbc-423d-46f5-b68a-613e563800af')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100003, 11, 'Add new oil', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100001, 'N', 'NS', '2026-01-23 09:38:33', 11, '6d78f581-088f-4b3f-bbdd-4ae5c5bc420e')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100004, 11, 'Safety check', 101, 101, '2026-01-23 09:38:33', 101, 0.1, 'Y', 1100002, 'N', 'CO', '2026-01-23 09:38:33', 11, '5be15576-1bde-4a89-a0bf-807536a08952')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100005, 11, 'Check water level', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100002, 'N', 'CO', '2026-01-23 09:38:33', 11, '44adffb3-f161-41e2-a744-25da95733132')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100006, 11, 'Add water', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100002, 'N', 'IP', '2026-01-23 09:38:33', 11, 'd9a4b9af-e4e6-48a3-8016-fc7e89319998')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100007, 11, 'Clean terminals', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100002, 'N', 'NS', '2026-01-23 09:38:33', 11, '4df3f913-f4e4-4f4b-8c6c-7134132c4753')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100008, 11, 'Test voltage', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100002, 'N', 'NS', '2026-01-23 09:38:33', 11, 'ff3aa4a3-4b37-4627-8aab-af0d383453ab')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100009, 11, 'Turn off unit', 101, 101, '2026-01-23 09:38:33', 101, 0.1, 'Y', 1100003, 'Y', 'CO', '2026-01-23 09:38:33', 11, '11fcc739-d323-46b3-87d1-c4f6d8264af5')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100010, 11, 'Remove filter', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100003, 'Y', 'CO', '2026-01-23 09:38:33', 11, '321b0bca-7150-47ab-8c30-6802f906a9f5')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100011, 11, 'Install filter', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100003, 'Y', 'CO', '2026-01-23 09:38:33', 11, '1c8e2bb2-9d34-48d1-84ba-155f3b585dcb')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_task (mp_ot_task_id, ad_client_id, description, updatedby, c_uom_id, created, createdby, duration, isactive, mp_ot_id, processed, status, updated, ad_org_id, mp_ot_task_uu) VALUES (1100012, 11, 'Test system', 101, 101, '2026-01-23 09:38:33', 101, 0.25, 'Y', 1100003, 'Y', 'CO', '2026-01-23 09:38:33', 11, '9d20fc61-2d42-48f9-a729-703f80d28255')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, updatedby, costamt, created, createdby, isactive, mp_ot_task_id, processed, resourceqty, resourcetype, updated, ad_org_id, mp_ot_resource_uu) VALUES (1100001, 11, 101, 15.00, '2026-01-23 09:38:33', 101, 'Y', 1100002, 'N', 1, 'RR', '2026-01-23 09:38:33', 11, 'd2534f94-27b4-4ce5-a3a1-7609ec3373f2')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, updatedby, costamt, created, createdby, isactive, mp_ot_task_id, processed, resourceqty, resourcetype, updated, ad_org_id, mp_ot_resource_uu) VALUES (1100002, 11, 101, 45.00, '2026-01-23 09:38:33', 101, 'Y', 1100003, 'N', 5, 'RR', '2026-01-23 09:38:33', 11, 'e5da21fa-09b7-4b6f-a1c8-2ddf6c1637c8')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, updatedby, costamt, created, createdby, isactive, mp_ot_task_id, processed, resourceqty, resourcetype, updated, ad_org_id, mp_ot_resource_uu) VALUES (1100003, 11, 101, 8.00, '2026-01-23 09:38:33', 101, 'Y', 1100006, 'N', 2, 'RR', '2026-01-23 09:38:33', 11, '4c69fe89-3f92-4d46-b8b3-bb4f6209e6dd')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, updatedby, costamt, created, createdby, isactive, mp_ot_task_id, processed, resourceqty, resourcetype, updated, ad_org_id, mp_ot_resource_uu) VALUES (1100004, 11, 101, 12.00, '2026-01-23 09:38:33', 101, 'Y', 1100007, 'N', 1, 'TT', '2026-01-23 09:38:33', 11, '746e8ae0-1d8d-4c7d-b34e-675ea2d93f2d')]]></statement>
+    </SQLStatement>
+    <SQLStatement type="custom">
+        <DBType>ALL</DBType>
+        <statement><![CDATA[INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, updatedby, costamt, created, createdby, isactive, mp_ot_task_id, processed, resourceqty, resourcetype, updated, ad_org_id, mp_ot_resource_uu) VALUES (1100005, 11, 101, 35.00, '2026-01-23 09:38:33', 101, 'Y', 1100011, 'Y', 1, 'RR', '2026-01-23 09:38:33', 11, '783ddc82-bbde-4d6a-8e31-3941f8fd4686')]]></statement>
+    </SQLStatement>
 </idempiere>

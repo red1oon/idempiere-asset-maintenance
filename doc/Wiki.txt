@@ -1,0 +1,29 @@
+Maintainer: Red1 (talk) - RED1.org
+Based on: OFB-Consulting, Chile
+Copyright: red1org@gmail.com
+Sponsor: zeeshan@sysnova.com
+Current Version: 2.0 for iDempiere 13
+License: GPLv2
+Source: https://github.com/red1oon/idempiere-asset-maintenance
+Binary: org.asset.maintenance_2.0.0.jar (available in target/ folder)
+Guide: AssetMaintenanceUserGuide.docx (in doc/ folder)
+
+Description
+Asset Maintenance is a lightweight plugin for preventive maintenance of enterprise assets in iDempiere.
+
+Features:
+* Meter-based scheduling (kilometers, operating hours, etc.)
+* Calendar-based scheduling (days, weeks, months)
+* Standard Job templates with predefined tasks
+* Maintenance Forecast for upcoming maintenance
+* Work Order generation and tracking
+* Asset Meter logging
+
+The plugin is server-side only (no Swing client) - simplified as a single OSGi bundle.
+
+Installation:
+1. Deploy JAR to iDempiere plugins folder
+2. Run 2Pack import from META-INF/2Pack.zip
+3. Load sample data from data/GardenWorld_SampleData.sql (optional)
+
+For comments and questions, use the Discussion page.
