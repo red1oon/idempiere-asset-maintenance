@@ -182,11 +182,11 @@ VALUES
     'REQ-002', 1100003, 1100003, 101,
     NOW() - INTERVAL '5 days', NOW() + INTERVAL '2 days',
     'Forklift battery not holding charge', '7', 'RV', 'AP', 'Y', uuid_generate_v4()),
--- Completed
+-- Completed (AP = Approved, since Reference 53393 doesn't have CO)
 (1100003, 11, 11, NOW(), 101, NOW(), 101, 'Y',
     'REQ-003', 1100002, 1100002, 101,
     NOW() - INTERVAL '10 days', NOW() - INTERVAL '3 days',
-    'Quarterly HVAC filter change', '3', 'RP', 'CO', 'Y', uuid_generate_v4());
+    'Quarterly HVAC filter change', '3', 'RP', 'AP', 'Y', uuid_generate_v4());
 
 -- ============================================
 -- 10. WORK ORDERS
@@ -234,14 +234,15 @@ VALUES
 -- ============================================
 -- 12. WORK ORDER RESOURCES
 -- ============================================
+-- resourcetype: RR=Part, TT=Tool, HH=Human Resource, BP=BOM Parts, BT=BOM Tools
 INSERT INTO mp_ot_resource (mp_ot_resource_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
     isactive, mp_ot_task_id, resourcetype, resourceqty, costamt, processed, mp_ot_resource_uu)
 VALUES
-(1100001, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100002, 'PT', 1, 15.00, 'N', uuid_generate_v4()),
-(1100002, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100003, 'PT', 5, 45.00, 'N', uuid_generate_v4()),
-(1100003, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100006, 'PT', 2, 8.00, 'N', uuid_generate_v4()),
-(1100004, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100007, 'PT', 1, 12.00, 'N', uuid_generate_v4()),
-(1100005, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100011, 'PT', 1, 35.00, 'Y', uuid_generate_v4());
+(1100001, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100002, 'RR', 1, 15.00, 'N', uuid_generate_v4()),
+(1100002, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100003, 'RR', 5, 45.00, 'N', uuid_generate_v4()),
+(1100003, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100006, 'RR', 2, 8.00, 'N', uuid_generate_v4()),
+(1100004, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100007, 'TT', 1, 12.00, 'N', uuid_generate_v4()),
+(1100005, 11, 11, NOW(), 101, NOW(), 101, 'Y', 1100011, 'RR', 1, 35.00, 'Y', uuid_generate_v4());
 
 -- ============================================
 -- VERIFICATION
