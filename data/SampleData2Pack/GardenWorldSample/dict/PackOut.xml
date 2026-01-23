@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idempiere Name="GardenWorldSample" Version="1.0.0" Description="Sample data for Asset Maintenance module - 3 assets with full workflow" Author="red1" AuthorEmail="red1@red1.org" CreatedDate="2026-01-23 13:46:31" UpdatedDate="2026-01-23 13:46:31" PackOutVersion="100" Client="11-GardenWorld">
+    <GenericPO ADTableNameID="MP_METER">
+        <mp_meter_id>1100001</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <maxday>30</maxday>
+        <updated>2026-01-23 05:46:04</updated>
+        <isactive>Y</isactive>
+        <name>Kilometers</name>
+        <mp_meter_uu>5699aca1-0db4-424f-9561-0628b665ff62</mp_meter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_METER">
+        <mp_meter_id>1100002</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <maxday>7</maxday>
+        <updated>2026-01-23 05:46:04</updated>
+        <isactive>Y</isactive>
+        <name>Operating Hours</name>
+        <mp_meter_uu>f9c15a98-9ffb-4f08-8f0c-96b1a4ffe606</mp_meter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_METER">
+        <mp_meter_id>1100003</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <updated>2026-01-23 05:46:04</updated>
+        <isactive>Y</isactive>
+        <name>Calendar Days</name>
+        <mp_meter_uu>7fafb6d6-be1a-4a08-a39d-a1ec6d5ba71d</mp_meter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR">
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <name>Vehicle Oil Change</name>
+        <ad_org_id>11</ad_org_id>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <jobstandartype>AA</jobstandartype>
+        <maintainarea>ME</maintainarea>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <isactive>Y</isactive>
+        <mp_jobstandar_uu>8f956323-0773-42ca-bebb-5484c03c8db2</mp_jobstandar_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR">
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <name>HVAC Filter Replacement</name>
+        <ad_org_id>11</ad_org_id>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <jobstandartype>AA</jobstandartype>
+        <maintainarea>ME</maintainarea>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <isactive>Y</isactive>
+        <mp_jobstandar_uu>11fbfb1b-6383-402d-9e39-1c1ea7a4d900</mp_jobstandar_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR">
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <name>Forklift Battery Service</name>
+        <ad_org_id>11</ad_org_id>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <jobstandartype>AA</jobstandartype>
+        <maintainarea>EL</maintainarea>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <isactive>Y</isactive>
+        <mp_jobstandar_uu>b4b2c9c8-f9aa-4fc7-8f11-12f798de392b</mp_jobstandar_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100001</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Drain old oil completely</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.5</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>7cc8331c-5e61-4a7e-bc1a-88724917261c</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100002</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Replace oil filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>65cb8df7-744d-418d-a4e1-66f97046155f</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100003</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add 5L synthetic oil</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>e71276a4-9ae1-4c29-a96a-b9e86bcf7d5c</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100004</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Turn off HVAC system</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>d885a2f7-903a-4d66-83da-cdb7426a7c06</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100005</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Remove old filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>93088eae-a761-4fd4-8799-c92076fd570e</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100006</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Install new filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>302cb142-2d57-4f2f-ba2a-52b2a60b0da2</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100007</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test system operation</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>e6aec7d6-19b1-44a3-9b91-ff76a405a30b</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100008</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Safety check - power off</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>ede568e8-d3bd-47c9-bdbc-63ccee1058aa</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100009</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Check water level</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>b1131be2-e476-4d22-b0a3-bef001f916b9</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100010</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add distilled water</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>b5b3c8d1-0bfc-4418-999d-f261cbbc23e6</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100011</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Clean terminals</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>3f05ed59-4eab-41b8-82ce-a0bd06748a0b</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_JOBSTANDAR_TASK">
+        <mp_jobstandar_task_id>1100012</mp_jobstandar_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test voltage</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_jobstandar_task_uu>c72eca23-2091-4ae1-a1ad-d598ee1baaf0</mp_jobstandar_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="A_ASSET">
+        <a_asset_id>1100001</a_asset_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <value>VH-001</value>
+        <name>Delivery Truck #1</name>
+        <description>Ford F-150 for local deliveries</description>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <m_product_id>200001</m_product_id>
+        <assetservicedate>2024-01-15 00:00:00</assetservicedate>
+        <isowned>Y</isowned>
+        <isdisposed>N</isdisposed>
+        <isinposession>Y</isinposession>
+        <processing>N</processing>
+        <isdepreciated>N</isdepreciated>
+        <isfullydepreciated>N</isfullydepreciated>
+        <m_attributesetinstance_id>0</m_attributesetinstance_id>
+        <a_asset_uu>e7b2e691-3d02-4798-beca-07cd01624aed</a_asset_uu>
+        <a_asset_status>NW</a_asset_status>
+        <a_asset_action>MD</a_asset_action>
+        <processed>N</processed>
+        <a_assettype>MFX</a_assettype>
+    </GenericPO>
+    <GenericPO ADTableNameID="A_ASSET">
+        <a_asset_id>1100002</a_asset_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <value>HVAC-001</value>
+        <name>Office HVAC Unit #1</name>
+        <description>Main office air conditioning</description>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <m_product_id>200002</m_product_id>
+        <assetservicedate>2023-06-01 00:00:00</assetservicedate>
+        <isowned>Y</isowned>
+        <isdisposed>N</isdisposed>
+        <isinposession>Y</isinposession>
+        <processing>N</processing>
+        <isdepreciated>N</isdepreciated>
+        <isfullydepreciated>N</isfullydepreciated>
+        <m_attributesetinstance_id>0</m_attributesetinstance_id>
+        <a_asset_uu>eb3289f4-2715-4f0b-8ce7-65c7726df8fd</a_asset_uu>
+        <a_asset_status>NW</a_asset_status>
+        <a_asset_action>MD</a_asset_action>
+        <processed>N</processed>
+        <a_assettype>MFX</a_assettype>
+    </GenericPO>
+    <GenericPO ADTableNameID="A_ASSET">
+        <a_asset_id>1100003</a_asset_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <value>FL-001</value>
+        <name>Forklift #1</name>
+        <description>Toyota electric forklift 2-ton</description>
+        <a_asset_group_id>50003</a_asset_group_id>
+        <m_product_id>200001</m_product_id>
+        <assetservicedate>2023-03-01 00:00:00</assetservicedate>
+        <isowned>Y</isowned>
+        <isdisposed>N</isdisposed>
+        <isinposession>Y</isinposession>
+        <processing>N</processing>
+        <isdepreciated>N</isdepreciated>
+        <isfullydepreciated>N</isfullydepreciated>
+        <m_attributesetinstance_id>0</m_attributesetinstance_id>
+        <a_asset_uu>c2541be7-b3c4-42ef-9e24-9a43e926774c</a_asset_uu>
+        <a_asset_status>NW</a_asset_status>
+        <a_asset_action>MD</a_asset_action>
+        <processed>N</processed>
+        <a_assettype>MFX</a_assettype>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER">
+        <mp_assetmeter_id>1100001</mp_assetmeter_id>
+        <a_asset_id>1100001</a_asset_id>
+        <mp_meter_id>1100001</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <amt>45000</amt>
+        <value>VH001-KM</value>
+        <name>Truck Odometer</name>
+        <mp_assetmeter_uu>6ec6760e-bc21-4daa-bd0e-cf42ce110b93</mp_assetmeter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER">
+        <mp_assetmeter_id>1100002</mp_assetmeter_id>
+        <a_asset_id>1100002</a_asset_id>
+        <mp_meter_id>1100003</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <amt>0</amt>
+        <value>HVAC001-DAYS</value>
+        <name>HVAC Tracker</name>
+        <mp_assetmeter_uu>e070f65c-af58-4882-b6d4-fee45b39625e</mp_assetmeter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER">
+        <mp_assetmeter_id>1100003</mp_assetmeter_id>
+        <a_asset_id>1100003</a_asset_id>
+        <mp_meter_id>1100002</mp_meter_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <isactive>Y</isactive>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updated>2026-01-23 05:46:04</updated>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <amt>1200</amt>
+        <value>FL001-HRS</value>
+        <name>Forklift Hours</name>
+        <mp_assetmeter_uu>e0e47695-7c36-4565-a88a-ffb34f12872a</mp_assetmeter_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN">
+        <mp_maintain_id>1100001</mp_maintain_id>
+        <documentno>MP-001</documentno>
+        <ischild>N</ischild>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100001</a_asset_id>
+        <currentmp>45000</currentmp>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datelastrun>2024-11-01 00:00:00</datelastrun>
+        <docstatus>AT</docstatus>
+        <interval>5000</interval>
+        <isactive>Y</isactive>
+        <lastmp>40000</lastmp>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <nextmp>45000</nextmp>
+        <programmingtype>M</programmingtype>
+        <promuse>500</promuse>
+        <range>1000</range>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <mp_meter_id>1100001</mp_meter_id>
+        <mp_maintain_uu>831c4124-8fd5-4738-a576-002848ea03de</mp_maintain_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN">
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <documentno>MP-002</documentno>
+        <ischild>N</ischild>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100002</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datelastrun>2025-10-30 05:46:04</datelastrun>
+        <datenextrun>2026-01-28 05:46:04</datenextrun>
+        <docstatus>AT</docstatus>
+        <interval>90</interval>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <programmingtype>C</programmingtype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <mp_maintain_uu>f9be8adf-3766-4097-a6c7-d45dc8361593</mp_maintain_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN">
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <documentno>MP-003</documentno>
+        <ischild>N</ischild>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100003</a_asset_id>
+        <currentmp>1200</currentmp>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datelastrun>2024-10-15 00:00:00</datelastrun>
+        <docstatus>AT</docstatus>
+        <interval>250</interval>
+        <isactive>Y</isactive>
+        <lastmp>1000</lastmp>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <nextmp>1250</nextmp>
+        <programmingtype>M</programmingtype>
+        <promuse>25</promuse>
+        <range>50</range>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <mp_meter_id>1100002</mp_meter_id>
+        <mp_maintain_uu>db363da1-156c-4101-8f00-0b89b981bc04</mp_maintain_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100001</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Drain old oil completely</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.5</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100001</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>edf7bbdb-f96e-41d3-b0eb-8abbae25c760</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100002</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Replace oil filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100001</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>feb9c3e2-4244-41e8-831c-9712214d5942</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100003</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add 5L synthetic oil</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100001</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>87deaf5b-0f9a-4d27-990c-15a445ec8292</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100004</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Turn off HVAC system</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>eb69017c-368f-43dc-bfcb-98935735d4e5</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100005</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Remove old filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>888b3549-64ad-4efd-b037-f7d8772128e9</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100006</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Install new filter</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>04e7f974-0ac4-4cc9-a3a8-0f5c4b55eda1</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100007</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test system operation</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>be971f94-3ed8-4381-90eb-c566470b0e09</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100008</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Safety check - power off</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>3db04fe4-811a-4592-a6cb-586f85b09bc8</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100009</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Check water level</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>4f00eb73-853e-41f2-b220-fd8241867c62</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100010</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add distilled water</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>86a8e1df-df11-493a-81b1-68388ca9ff87</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100011</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Clean terminals</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>47bc03a7-9205-465a-b2b2-59491367b760</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_MAINTAIN_TASK">
+        <mp_maintain_task_id>1100012</mp_maintain_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test voltage</description>
+        <ad_org_id>11</ad_org_id>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <mp_maintain_task_uu>531a2267-c965-415e-af3a-d38c954c5232</mp_maintain_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100001</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>44200</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-02 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100001</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Weekly reading</description>
+        <mp_assetmeter_log_uu>728ba04a-27f4-4bf5-9261-01df99a1b6f3</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100002</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>44500</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-09 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100001</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Weekly reading</description>
+        <mp_assetmeter_log_uu>f973c176-34eb-4b1d-aa7d-bf53b9e8feea</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100003</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>44800</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-16 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100001</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Weekly reading</description>
+        <mp_assetmeter_log_uu>a25d3d78-0de3-479f-91ff-17b623c1b908</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100004</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>45000</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100001</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Maintenance due!</description>
+        <mp_assetmeter_log_uu>f21e7fa7-85e8-4308-9593-488ecee350dd</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100005</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>1150</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-13 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100003</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Daily reading</description>
+        <mp_assetmeter_log_uu>744c8172-fdff-416c-a7e9-1f0c33d1f0f3</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100006</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>1175</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-18 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100003</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Daily reading</description>
+        <mp_assetmeter_log_uu>92aa6269-1d2d-480b-acc5-5e2e74e8851f</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_ASSETMETER_LOG">
+        <mp_assetmeter_log_id>1100007</mp_assetmeter_log_id>
+        <ad_client_id>11</ad_client_id>
+        <ad_org_id>11</ad_org_id>
+        <amt>1200</amt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <updatedby>101</updatedby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <isactive>Y</isactive>
+        <mp_assetmeter_id>1100003</mp_assetmeter_id>
+        <updated>2026-01-23 05:46:04</updated>
+        <description>Approaching maintenance</description>
+        <mp_assetmeter_log_uu>73782086-d9a2-4eda-872b-d317ad1dc8a4</mp_assetmeter_log_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_REQUEST">
+        <mp_ot_request_id>1100001</mp_ot_request_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>REQ-001</documentno>
+        <updatedby>101</updatedby>
+        <ad_user_id>101</ad_user_id>
+        <a_asset_id>1100001</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datedoc>2026-01-21 05:46:04</datedoc>
+        <daterequired>2026-01-28 05:46:04</daterequired>
+        <description>Truck oil warning light on</description>
+        <docstatus>WC</docstatus>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <ot_request_type>RP</ot_request_type>
+        <priorityrule>5</priorityrule>
+        <processed>Y</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_request_uu>9ffc72b0-7f3c-4ef4-8b63-e6396624c87d</mp_ot_request_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_REQUEST">
+        <mp_ot_request_id>1100002</mp_ot_request_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>REQ-002</documentno>
+        <updatedby>101</updatedby>
+        <ad_user_id>101</ad_user_id>
+        <a_asset_id>1100003</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datedoc>2026-01-18 05:46:04</datedoc>
+        <daterequired>2026-01-25 05:46:04</daterequired>
+        <description>Forklift battery not holding charge</description>
+        <docstatus>AP</docstatus>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <ot_request_type>RV</ot_request_type>
+        <priorityrule>7</priorityrule>
+        <processed>Y</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_request_uu>37220965-9713-4803-bbc2-79b663427efd</mp_ot_request_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_REQUEST">
+        <mp_ot_request_id>1100003</mp_ot_request_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>REQ-003</documentno>
+        <updatedby>101</updatedby>
+        <ad_user_id>101</ad_user_id>
+        <a_asset_id>1100002</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datedoc>2026-01-13 05:46:04</datedoc>
+        <daterequired>2026-01-20 05:46:04</daterequired>
+        <description>Quarterly HVAC filter change</description>
+        <docstatus>CO</docstatus>
+        <isactive>Y</isactive>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <ot_request_type>RP</ot_request_type>
+        <priorityrule>3</priorityrule>
+        <processed>Y</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_request_uu>7d2633a7-4bd8-4330-9a64-f07842113872</mp_ot_request_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT">
+        <mp_ot_id>1100001</mp_ot_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>WO-001</documentno>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100001</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datetrx>2026-01-23 05:46:04</datetrx>
+        <description>Oil change for Truck #1</description>
+        <docaction>CO</docaction>
+        <docstatus>DR</docstatus>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100001</mp_maintain_id>
+        <processed>N</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_jobstandar_id>1100001</mp_jobstandar_id>
+        <mp_ot_uu>025cc9e6-ed1e-482d-b145-5b5dad9f22d1</mp_ot_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT">
+        <mp_ot_id>1100002</mp_ot_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>WO-002</documentno>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100003</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datetrx>2026-01-22 05:46:04</datetrx>
+        <description>Battery service Forklift #1</description>
+        <docaction>CO</docaction>
+        <docstatus>IP</docstatus>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100003</mp_maintain_id>
+        <processed>N</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_jobstandar_id>1100003</mp_jobstandar_id>
+        <mp_ot_uu>2a8fc6a4-247e-453e-a73b-033c07b499fb</mp_ot_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT">
+        <mp_ot_id>1100003</mp_ot_id>
+        <ad_client_id>11</ad_client_id>
+        <documentno>WO-003</documentno>
+        <updatedby>101</updatedby>
+        <a_asset_id>1100002</a_asset_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <datetrx>2026-01-18 05:46:04</datetrx>
+        <description>HVAC filter completed</description>
+        <docaction>--</docaction>
+        <docstatus>CO</docstatus>
+        <isactive>Y</isactive>
+        <mp_maintain_id>1100002</mp_maintain_id>
+        <processed>Y</processed>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_jobstandar_id>1100002</mp_jobstandar_id>
+        <mp_ot_uu>4460e44e-1ec4-435c-910b-c50969ad5ca9</mp_ot_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100001</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Drain old oil</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.5</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100001</mp_ot_id>
+        <processed>N</processed>
+        <status>NS</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>f24cec92-eeec-47c6-9fc3-aabc447a7c2f</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100002</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Replace filter</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100001</mp_ot_id>
+        <processed>N</processed>
+        <status>NS</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>2ecd5f08-c886-41b0-bdb8-6204962e2d25</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100003</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add new oil</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100001</mp_ot_id>
+        <processed>N</processed>
+        <status>NS</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>2309df51-d3f2-4601-9adc-9cf9d7d125ca</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100004</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Safety check</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100002</mp_ot_id>
+        <processed>N</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>57d53cc2-035f-4559-bbbc-0d9aa1720e3f</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100005</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Check water level</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100002</mp_ot_id>
+        <processed>N</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>59d66beb-906d-4ff2-ae65-defbc83ba057</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100006</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Add water</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100002</mp_ot_id>
+        <processed>N</processed>
+        <status>IP</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>8fba416b-f7fb-48e4-9ab3-22d9a0250cf6</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100007</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Clean terminals</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100002</mp_ot_id>
+        <processed>N</processed>
+        <status>NS</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>d0decf34-cb1b-4e9c-aaeb-0873defab58d</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100008</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test voltage</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100002</mp_ot_id>
+        <processed>N</processed>
+        <status>NS</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>b434c27c-2e15-4912-b8aa-041d6166b6ef</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100009</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Turn off unit</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.1</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100003</mp_ot_id>
+        <processed>Y</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>87c66389-f939-4523-b15a-d58ef9b8833b</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100010</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Remove filter</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100003</mp_ot_id>
+        <processed>Y</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>aedc2f60-a745-4cff-a676-43b63f472a26</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100011</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Install filter</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100003</mp_ot_id>
+        <processed>Y</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>07ef30f7-7bfc-495b-a214-39ed1736b092</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_TASK">
+        <mp_ot_task_id>1100012</mp_ot_task_id>
+        <ad_client_id>11</ad_client_id>
+        <description>Test system</description>
+        <updatedby>101</updatedby>
+        <c_uom_id>101</c_uom_id>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <duration>0.25</duration>
+        <isactive>Y</isactive>
+        <mp_ot_id>1100003</mp_ot_id>
+        <processed>Y</processed>
+        <status>CO</status>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_task_uu>9b6be4be-4375-4ada-8714-464995b3ea0b</mp_ot_task_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_RESOURCE">
+        <mp_ot_resource_id>1100001</mp_ot_resource_id>
+        <ad_client_id>11</ad_client_id>
+        <updatedby>101</updatedby>
+        <costamt>15.00</costamt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <isactive>Y</isactive>
+        <mp_ot_task_id>1100002</mp_ot_task_id>
+        <processed>N</processed>
+        <resourceqty>1</resourceqty>
+        <resourcetype>PT</resourcetype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_resource_uu>848eb628-434c-4ead-af53-914c6b0c12c9</mp_ot_resource_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_RESOURCE">
+        <mp_ot_resource_id>1100002</mp_ot_resource_id>
+        <ad_client_id>11</ad_client_id>
+        <updatedby>101</updatedby>
+        <costamt>45.00</costamt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <isactive>Y</isactive>
+        <mp_ot_task_id>1100003</mp_ot_task_id>
+        <processed>N</processed>
+        <resourceqty>5</resourceqty>
+        <resourcetype>PT</resourcetype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_resource_uu>7caf085e-66d0-4848-a27a-1066508c662d</mp_ot_resource_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_RESOURCE">
+        <mp_ot_resource_id>1100003</mp_ot_resource_id>
+        <ad_client_id>11</ad_client_id>
+        <updatedby>101</updatedby>
+        <costamt>8.00</costamt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <isactive>Y</isactive>
+        <mp_ot_task_id>1100006</mp_ot_task_id>
+        <processed>N</processed>
+        <resourceqty>2</resourceqty>
+        <resourcetype>PT</resourcetype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_resource_uu>aaa6b467-712f-4232-94d6-f79bfa6e0574</mp_ot_resource_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_RESOURCE">
+        <mp_ot_resource_id>1100004</mp_ot_resource_id>
+        <ad_client_id>11</ad_client_id>
+        <updatedby>101</updatedby>
+        <costamt>12.00</costamt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <isactive>Y</isactive>
+        <mp_ot_task_id>1100007</mp_ot_task_id>
+        <processed>N</processed>
+        <resourceqty>1</resourceqty>
+        <resourcetype>PT</resourcetype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_resource_uu>26811e4a-59f6-4bff-9935-d48bcad13874</mp_ot_resource_uu>
+    </GenericPO>
+    <GenericPO ADTableNameID="MP_OT_RESOURCE">
+        <mp_ot_resource_id>1100005</mp_ot_resource_id>
+        <ad_client_id>11</ad_client_id>
+        <updatedby>101</updatedby>
+        <costamt>35.00</costamt>
+        <created>2026-01-23 05:46:04</created>
+        <createdby>101</createdby>
+        <isactive>Y</isactive>
+        <mp_ot_task_id>1100011</mp_ot_task_id>
+        <processed>Y</processed>
+        <resourceqty>1</resourceqty>
+        <resourcetype>PT</resourcetype>
+        <updated>2026-01-23 05:46:04</updated>
+        <ad_org_id>11</ad_org_id>
+        <mp_ot_resource_uu>23dc37a8-ce46-47d1-a773-1fd52dd965cd</mp_ot_resource_uu>
+    </GenericPO>
+</idempiere>

@@ -12,3 +12,6 @@ bin/
 # OS
 .DS_Store
 Thumbs.db
+
+# Private office files
+office/

@@ -248,15 +248,44 @@ Three business model scenarios are included for reference:
 
 ## Loading Sample Data
 
+### Quick Start (Recommended for Newbies)
+
 ```bash
-# Load all 3 sets
-psql -d idempiere -f data/GardenWorld_SampleData.sql
+# Load simplified 3-asset sample (recommended first)
+psql -d idempiere -f data/GardenWorldSample.sql
+```
+
+This creates:
+- 3 Meters (Kilometers, Operating Hours, Calendar Days)
+- 3 Assets (Truck, HVAC, Forklift)
+- 3 Standard Jobs with 12 tasks
+- 3 Maintenance Schedules (1 due, 1 soon, 1 upcoming)
+- 3 Work Order Requests
+- 3 Work Orders (draft, in-progress, completed)
+
+### Full Sample Data (19 Assets)
+
+```bash
+# Load all 3 business model sets
+psql -d idempiere -f data/history/GardenWorld_SampleData.sql
 
 # Or load individual sets
-psql -d idempiere -f data/Set1_FleetEquipment.sql
-psql -d idempiere -f data/Set2_BuildingFacility.sql
-psql -d idempiere -f data/Set3_Manufacturing.sql
+psql -d idempiere -f data/history/Set1_FleetEquipment.sql
+psql -d idempiere -f data/history/Set2_BuildingFacility.sql
+psql -d idempiere -f data/history/Set3_Manufacturing.sql
 ```
+
+### IMPORTANT: Run Sequence Check After Loading
+
+After loading sample data via SQL, you MUST run "Sequence Check" to synchronize ID sequences:
+
+1. Login as **System Administrator** (SuperUser/System)
+2. Menu: **System Admin > General Rules > System Rules > Sequence Check**
+3. Click **OK** to run (no parameters needed)
+
+**Why?** Direct SQL inserts bypass iDempiere's sequence management. Without this step, creating new records via the UI will cause "duplicate key" errors.
+
+See `data/history/technical_notes.txt` for details.
 
 ---
 
@@ -271,6 +300,28 @@ psql -d idempiere -f data/Set3_Manufacturing.sql
 | Asset Meters | 5 | 6 | 6 | 17 |
 | Maintenance Schedules | 6 | 9 | 8 | 23 |
 | Meter Logs | 17 | 18 | 20 | 55 |
+
+---
+
+## Quick Start with Simplified Sample
+
+After loading `GardenWorldSample.sql`:
+
+| Window | What You'll See |
+|--------|-----------------|
+| **Meter** | 3 meters: Kilometers, Operating Hours, Calendar Days |
+| **Standard Job** | 3 jobs with tasks: Oil Change, HVAC Filter, Battery Service |
+| **Preventive Maintenance** | 3 schedules: MP-001 (due!), MP-002 (5 days), MP-003 (soon) |
+| **Work Order Request** | 3 requests: pending, approved, completed |
+| **Work Order** | 3 WOs: draft, in-progress, completed |
+| **Meter Log** | 7 readings showing truck & forklift history |
+
+### Test Workflow
+
+1. **Office > Forecast** - Run to see MP-001 (Truck) is DUE NOW
+2. **Office > Forecast Approval** - Select and generate Work Order
+3. **Work Shop > Work Order** - View generated WO, mark tasks complete
+4. **Work Shop > Meter Log** - Add new reading (e.g., 45100 km)
 
 ---
 
