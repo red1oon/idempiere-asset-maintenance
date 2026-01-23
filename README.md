@@ -2,7 +2,9 @@
 
 Preventive and corrective maintenance management for iDempiere assets.
 
-Originally developed by OFB Consulting (Chile). Converted to OSGi plugin by RED1.
+Originally developed by OFB Consulting (Chile). 
+Converted to OSGi plugin by red1org@gmail.com.
+Sponsored by Zeeshan@SYSNOVA.com
 
 ## Features
 
