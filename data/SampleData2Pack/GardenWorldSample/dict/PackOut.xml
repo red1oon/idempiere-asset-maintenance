@@ -809,7 +809,7 @@
         <datedoc>2026-01-13 06:41:30</datedoc>
         <daterequired>2026-01-20 06:41:30</daterequired>
         <description>Quarterly HVAC filter change</description>
-        <docstatus>CO</docstatus>
+        <docstatus>AP</docstatus>
         <isactive>Y</isactive>
         <mp_jobstandar_id>1100002</mp_jobstandar_id>
         <ot_request_type>RP</ot_request_type>
