@@ -1,29 +1,101 @@
 Maintainer: Red1 (talk) - RED1.org
+
 Based on: OFB-Consulting, Chile
+
 Copyright: red1org@gmail.com
+
 Sponsor: zeeshan@sysnova.com
-Current Version: 2.0 for iDempiere 13
+
+Current Version: 2.1.0.3 for iDempiere 13
+
 License: GPLv2
+
 Source: https://github.com/red1oon/idempiere-asset-maintenance
+
 Binary: org.asset.maintenance_2.0.0.jar (available in target/ folder)
-Guide: AssetMaintenanceUserGuide.docx (in doc/ folder)
+
+Garden World Sample Data
+
+Guide: AssetMaintenanceUserGuide.docx (in doc/ folder) IN PROGRESS (come back tomorrow)
+
+
+(THIS PAGE IS UNDER CONSTRUCTION)
 
 Description
+
 Asset Maintenance is a lightweight plugin for preventive maintenance of enterprise assets in iDempiere.
 
 Features:
-* Meter-based scheduling (kilometers, operating hours, etc.)
-* Calendar-based scheduling (days, weeks, months)
-* Standard Job templates with predefined tasks
-* Maintenance Forecast for upcoming maintenance
-* Work Order generation and tracking
-* Asset Meter logging
+
+Core Functionality:
+* Meter-based scheduling (kilometers, operating hours, calendar days)
+* Calendar-based scheduling with configurable intervals
+* Standard Job templates with predefined task sequences
+* Maintenance Plans linked to assets with scheduling rules
+* Work Order (OT) generation from maintenance plans or requests
+* Work Order task tracking with duration and resource allocation
+* Asset Meter logging with reading history
+* Maintenance Request workflow (Draft → Approved → Work Order)
+
+Windows:
+* Meter - Define meter types (Kilometers, Operating Hours, Calendar Days)
+* Job Standard - Create reusable job templates with task lists
+* Maintenance - Asset maintenance plans with scheduling
+* Order/Work Order (OT) - Work order management and execution
+* Request - Maintenance request submission and approval
+
+Reference Lists:
+* Job Standard Type (AA-Asset Adjustment, CM-Corrective, PM-Preventive, PD-Predictive)
+* Maintain Area (EL-Electrical, ME-Mechanical, OP-Operational, SF-Safety)
+* Document Status for Request (AP-Approved, VO-Voided, WC-Waiting Confirmation)
+* Resource Type (BP-Business Partner, BT-B.Partner Type, HH-Human, RR-Resource, TT-Tool/Equipment)
 
 The plugin is server-side only (no Swing client) - simplified as a single OSGi bundle.
 
-Installation:
-1. Deploy JAR to iDempiere plugins folder
-2. Run 2Pack import from META-INF/2Pack.zip
-3. Load sample data from data/GardenWorld_SampleData.sql (optional)
+---
 
-For comments and questions, use the Discussion page.
+Release Notes:
+
+Version 2.1.0.3 (January 2026) - iDempiere 13
+* NEW: Silent pack-in support with proper filename format
+* NEW: SQLStatement format for sample data (FK-safe import)
+* NEW: GardenWorld sample data with 3 assets, 3 job standards, 3 maintenance plans
+* FIX: MP_RefList values aligned with AD_Reference definitions
+* FIX: Document Status values (AP/VO/WC) for Request workflow
+* FIX: Resource Type values (BP/BT/HH/RR/TT) for work order resources
+* FIX: HELP text added at AD_Tab level for all windows
+* TOOL: Dict2Pack - silent dictionary export from PostgreSQL
+* TOOL: GenericPO2Pack --sql - FK-safe sample data export
+
+Version 2.0.0 (2024)
+* Initial release for iDempiere 12
+* Core maintenance management functionality
+* Based on OFB-Consulting Chile original work
+
+Version 1.x (Legacy)
+* Original ADempiere/Compiere version by OFB-Consulting
+
+Installation:
+
+1. Deploy JAR to iDempiere plugins folder
+   - Copy org.asset.maintenance_2.0.0.jar to $IDEMPIERE_HOME/plugins/
+
+2. Import dictionary 2Pack (as System Admin)
+   - System Admin > Pack In > META-INF/2Pack_1.0.3.zip
+   - Or silent: copy to packin folder as 202601231700_SYSTEM_AssetMaintenance.zip
+
+3. Load sample data (as GardenWorld Admin)
+   - Pack In > data/SampleData2Pack.zip
+   - Or silent: copy as 202601231700_GardenWorld_SampleData.zip
+   - Or SQL: psql -d idempiere -f data/GardenWorldSample.sql
+
+4. Sync sequences (System Admin)
+   - System Admin > Sequence Check (process)
+
+Silent Pack-In Filename Format:
+   <timestamp>_<AD_Client.Value>_<Description>.zip
+   Examples:
+   - 202601231700_SYSTEM_AssetMaintenance.zip (dictionary to System)
+   - 202601231700_GardenWorld_SampleData.zip (data to GardenWorld)
+
+For comments and questions, use the Discussion page or GitHub Issues.
