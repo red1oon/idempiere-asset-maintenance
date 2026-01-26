@@ -1,0 +1,75 @@
+!1 Test MP_Maintain - Maintenance Schedules
+
+Verify preventive maintenance schedules.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Maintenance Schedules
+
+!|Set Variable|
+|@MaintainCount@|@SQL=SELECT COUNT(*) FROM mp_maintain WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@MaintainCount@|3|
+
+----
+!2 Verify Truck Oil Change Schedule (Meter-based)
+
+!|Assert Record|
+|*Table*        |MP_Maintain    |
+|mp_maintain_id |1100001        |
+|*Read*         |               |
+|documentno     |MP-001         |
+|programmingtype|M              |
+|interval       |5000           |
+|lastmp         |40000          |
+|nextmp         |45000          |
+|currentmp      |45000          |
+|promuse        |500            |
+|range          |1000           |
+|docstatus      |AT             |
+|ischild        |N              |
+
+----
+!2 Verify HVAC Schedule (Calendar-based)
+
+!|Assert Record|
+|*Table*        |MP_Maintain    |
+|mp_maintain_id |1100002        |
+|*Read*         |               |
+|documentno     |MP-002         |
+|programmingtype|C              |
+|interval       |90             |
+|docstatus      |AT             |
+
+----
+!2 Verify Forklift Schedule (Meter-based)
+
+!|Assert Record|
+|*Table*        |MP_Maintain    |
+|mp_maintain_id |1100003        |
+|*Read*         |               |
+|documentno     |MP-003         |
+|programmingtype|M              |
+|interval       |250            |
+|lastmp         |1000           |
+|nextmp         |1250           |
+
+----
+!2 Verify Schedule-Asset Links
+
+!|Set Variable|
+|@MP001Asset@  |@SQL=SELECT a.name FROM a_asset a JOIN mp_maintain m ON a.a_asset_id=m.a_asset_id WHERE m.mp_maintain_id=1100001|
+
+!|Assert Variable|
+|@MP001Asset@  |Delivery Truck #1|
+
+----
+!2 Verify Schedule-JobStandar Links
+
+!|Set Variable|
+|@MP001Job@   |@SQL=SELECT j.name FROM mp_jobstandar j JOIN mp_maintain m ON j.mp_jobstandar_id=m.mp_jobstandar_id WHERE m.mp_maintain_id=1100001|
+
+!|Assert Variable|
+|@MP001Job@   |Vehicle Oil Change|

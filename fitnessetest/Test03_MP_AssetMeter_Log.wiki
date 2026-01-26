@@ -1,0 +1,68 @@
+!1 Test MP_AssetMeter_Log - Meter Reading History
+
+Verify meter reading log entries.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Meter Logs
+
+!|Set Variable|
+|@LogCount@   |@SQL=SELECT COUNT(*) FROM mp_assetmeter_log WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@LogCount@   |7|
+
+----
+!2 Verify Truck Odometer Readings
+
+!|Set Variable|
+|@TruckLogs@  |@SQL=SELECT COUNT(*) FROM mp_assetmeter_log WHERE mp_assetmeter_id=1100001|
+
+!|Assert Variable|
+|@TruckLogs@  |4|
+
+----
+!2 Verify Latest Truck Reading
+
+!|Assert Record|
+|*Table*            |MP_AssetMeter_Log      |
+|mp_assetmeter_log_id|1100004               |
+|*Read*             |                       |
+|amt                |45000                  |
+|description        |Maintenance due!       |
+
+----
+!2 Verify Forklift Hour Logs
+
+!|Set Variable|
+|@ForkliftLogs@|@SQL=SELECT COUNT(*) FROM mp_assetmeter_log WHERE mp_assetmeter_id=1100003|
+
+!|Assert Variable|
+|@ForkliftLogs@|3|
+
+----
+!2 Create New Meter Log Entry
+
+!|Create Record|
+|*Table*            |MP_AssetMeter_Log      |
+|ad_org_id          |11                     |
+|mp_assetmeter_id   |1100001                |
+|amt                |45100                  |
+|datetrx            |@SQL=SELECT CURRENT_DATE|
+|description        |FitNesse test reading  |
+|*Save*             |                       |
+
+!|Assert Record|
+|*Table*            |MP_AssetMeter_Log      |
+|mp_assetmeter_log_id|@MP_AssetMeter_Log.MP_AssetMeter_Log_ID@|
+|*Read*             |                       |
+|amt                |45100                  |
+
+----
+!2 Cleanup
+
+!|Delete Record|
+|*Table*            |MP_AssetMeter_Log                        |
+|*Where*            |description='FitNesse test reading'      |
+|*Delete*           |                                         |

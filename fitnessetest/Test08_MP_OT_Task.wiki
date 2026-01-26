@@ -1,0 +1,63 @@
+!1 Test MP_OT_Task - Work Order Tasks
+
+Verify work order task records.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count All WO Tasks
+
+!|Set Variable|
+|@WOTaskCount@|@SQL=SELECT COUNT(*) FROM mp_ot_task WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@WOTaskCount@|12|
+
+----
+!2 Count Tasks per Work Order
+
+!|Set Variable|
+|@WO1Tasks@   |@SQL=SELECT COUNT(*) FROM mp_ot_task WHERE mp_ot_id=1100001|
+
+!|Assert Variable|
+|@WO1Tasks@   |3|
+
+!|Set Variable|
+|@WO2Tasks@   |@SQL=SELECT COUNT(*) FROM mp_ot_task WHERE mp_ot_id=1100002|
+
+!|Assert Variable|
+|@WO2Tasks@   |5|
+
+!|Set Variable|
+|@WO3Tasks@   |@SQL=SELECT COUNT(*) FROM mp_ot_task WHERE mp_ot_id=1100003|
+
+!|Assert Variable|
+|@WO3Tasks@   |4|
+
+----
+!2 Verify Task Status Values
+
+!|Assert Record|
+|*Table*      |MP_OT_Task     |
+|mp_ot_task_id|1100001        |
+|*Read*       |               |
+|description  |Drain old oil  |
+|status       |NS             |
+|processed    |N              |
+
+!|Assert Record|
+|*Table*      |MP_OT_Task     |
+|mp_ot_task_id|1100009        |
+|*Read*       |               |
+|description  |Turn off unit  |
+|status       |CO             |
+|processed    |Y              |
+
+----
+!2 Verify Completed WO Tasks
+
+!|Set Variable|
+|@WO3CompletedTasks@|@SQL=SELECT COUNT(*) FROM mp_ot_task WHERE mp_ot_id=1100003 AND status='CO'|
+
+!|Assert Variable|
+|@WO3CompletedTasks@|4|

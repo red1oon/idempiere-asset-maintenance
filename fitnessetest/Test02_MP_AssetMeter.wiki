@@ -1,0 +1,61 @@
+!1 Test MP_AssetMeter - Asset Meter Links
+
+Verify asset-to-meter associations and readings.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Asset Meters
+
+!|Set Variable|
+|@AssetMeterCount@|@SQL=SELECT COUNT(*) FROM mp_assetmeter WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@AssetMeterCount@|3|
+
+----
+!2 Verify Truck Odometer
+
+!|Assert Record|
+|*Table*         |MP_AssetMeter   |
+|mp_assetmeter_id|1100001         |
+|*Read*          |                |
+|value           |VH001-KM        |
+|name            |Truck Odometer  |
+|amt             |45000           |
+
+!|Set Variable|
+|@TruckAsset@    |@SQL=SELECT name FROM a_asset WHERE a_asset_id=(SELECT a_asset_id FROM mp_assetmeter WHERE mp_assetmeter_id=1100001)|
+
+!|Assert Variable|
+|@TruckAsset@    |Delivery Truck #1|
+
+----
+!2 Verify HVAC Tracker
+
+!|Assert Record|
+|*Table*         |MP_AssetMeter   |
+|mp_assetmeter_id|1100002         |
+|*Read*          |                |
+|value           |HVAC001-DAYS    |
+|name            |HVAC Tracker    |
+
+----
+!2 Verify Forklift Hours
+
+!|Assert Record|
+|*Table*         |MP_AssetMeter   |
+|mp_assetmeter_id|1100003         |
+|*Read*          |                |
+|value           |FL001-HRS       |
+|name            |Forklift Hours  |
+|amt             |1200            |
+
+----
+!2 Verify Asset-Meter-MeterType Links
+
+!|Set Variable|
+|@TruckMeterType@|@SQL=SELECT m.name FROM mp_meter m JOIN mp_assetmeter am ON m.mp_meter_id=am.mp_meter_id WHERE am.mp_assetmeter_id=1100001|
+
+!|Assert Variable|
+|@TruckMeterType@|Kilometers|

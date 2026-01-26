@@ -1,0 +1,68 @@
+!1 Test MP_Meter - Meter Types
+
+Verify meter type master data.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Meters
+
+!|Set Variable|
+|@MeterCount@ |@SQL=SELECT COUNT(*) FROM mp_meter WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@MeterCount@ |3|
+
+----
+!2 Verify Kilometers Meter
+
+!|Assert Record|
+|*Table*      |MP_Meter    |
+|mp_meter_id  |1100001     |
+|*Read*       |            |
+|name         |Kilometers  |
+|maxday       |30          |
+|isactive     |Y           |
+
+----
+!2 Verify Operating Hours Meter
+
+!|Assert Record|
+|*Table*      |MP_Meter       |
+|mp_meter_id  |1100002        |
+|*Read*       |               |
+|name         |Operating Hours|
+|maxday       |7              |
+
+----
+!2 Verify Calendar Days Meter
+
+!|Assert Record|
+|*Table*      |MP_Meter      |
+|mp_meter_id  |1100003       |
+|*Read*       |              |
+|name         |Calendar Days |
+
+----
+!2 Create New Meter
+
+!|Create Record|
+|*Table*      |MP_Meter           |
+|ad_org_id    |11                 |
+|name         |FitNesse Test Meter|
+|maxday       |14                 |
+|*Save*       |                   |
+
+!|Assert Record|
+|*Table*      |MP_Meter           |
+|mp_meter_id  |@MP_Meter.MP_Meter_ID@|
+|*Read*       |                   |
+|name         |FitNesse Test Meter|
+
+----
+!2 Cleanup
+
+!|Delete Record|
+|*Table*      |MP_Meter                              |
+|*Where*      |name='FitNesse Test Meter'            |
+|*Delete*     |                                      |

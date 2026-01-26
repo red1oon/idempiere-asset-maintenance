@@ -1,0 +1,104 @@
+!1 Test Create Work Order (Full Workflow)
+
+Create a new Work Order, add task, and complete it.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Pre-Condition: Get Asset and Job Standard
+
+!|Read Record|
+|*Table*         |A_Asset          |
+|a_asset_id      |1100001          |
+|*Read*          |                 |
+|name            |                 |
+
+!|Read Record|
+|*Table*         |MP_JobStandar    |
+|mp_jobstandar_id|1100001          |
+|*Read*          |                 |
+|name            |                 |
+
+----
+!2 Create Work Order (DocType auto-set by default)
+
+!|Create Record|
+|*Table*         |MP_OT                        |
+|ad_org_id       |11                           |
+|a_asset_id      |@A_Asset.A_Asset_ID@         |
+|mp_jobstandar_id|@MP_JobStandar.MP_JobStandar_ID@|
+|datetrx         |@SQL=SELECT CURRENT_DATE     |
+|description     |FitNesse Test Work Order     |
+|docstatus       |DR                           |
+|docaction       |CO                           |
+|processed       |N                            |
+|*Save*          |                             |
+
+----
+!2 Verify Work Order Created with Default DocType
+
+!|Assert Record|
+|*Table*      |MP_OT                        |
+|mp_ot_id     |@MP_OT.MP_OT_ID@             |
+|*Read*       |                             |
+|description  |FitNesse Test Work Order     |
+|docstatus    |DR                           |
+|c_doctype_id |50010                        |
+
+The c_doctype_id=50010 (Maintenance Order) was auto-set by the AD_Column default.
+
+----
+!2 Add Work Order Task
+
+!|Create Record|
+|*Table*      |MP_OT_Task                   |
+|ad_org_id    |11                           |
+|mp_ot_id     |@MP_OT.MP_OT_ID@             |
+|description  |FitNesse Test Task           |
+|duration     |1.0                          |
+|c_uom_id     |101                          |
+|status       |NS                           |
+|processed    |N                            |
+|*Save*       |                             |
+
+----
+!2 Verify Task Created
+
+!|Assert Record|
+|*Table*      |MP_OT_Task                   |
+|mp_ot_task_id|@MP_OT_Task.MP_OT_Task_ID@   |
+|*Read*       |                             |
+|description  |FitNesse Test Task           |
+|status       |NS                           |
+
+----
+!2 Complete Work Order
+
+!|Set DocAction|
+|*Table*      |MP_OT                        |
+|MP_OT_ID     |@MP_OT.MP_OT_ID@             |
+|docAction    |CO                           |
+|*Save*       |                             |
+
+----
+!2 Verify Work Order Completed
+
+!|Assert Record|
+|*Table*      |MP_OT                        |
+|mp_ot_id     |@MP_OT.MP_OT_ID@             |
+|*Read*       |                             |
+|docstatus    |CO                           |
+|processed    |Y                            |
+
+----
+!2 Cleanup Test Data
+
+!|Delete Record|
+|*Table*      |MP_OT_Task                              |
+|*Where*      |description='FitNesse Test Task'        |
+|*Delete*     |                                        |
+
+!|Delete Record|
+|*Table*      |MP_OT                                   |
+|*Where*      |description='FitNesse Test Work Order'  |
+|*Delete*     |                                        |

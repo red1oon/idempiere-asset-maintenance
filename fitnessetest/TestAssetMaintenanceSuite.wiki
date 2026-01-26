@@ -1,0 +1,48 @@
+!1 Asset Maintenance Test Suite
+
+Comprehensive tests for the Preventive Maintenance module.
+
+!contents -R2 -g -p -f -h
+
+----
+!2 Test Coverage
+
+|#|Test Page|Model|Description|
+|1|Test01_MP_Meter|MP_Meter|Meter type master data|
+|2|Test02_MP_AssetMeter|MP_AssetMeter|Asset-meter associations|
+|3|Test03_MP_AssetMeter_Log|MP_AssetMeter_Log|Meter reading history|
+|4|Test04_MP_JobStandar|MP_JobStandar|Standard job definitions|
+|5|Test05_MP_JobStandar_Task|MP_JobStandar_Task|Job task templates|
+|6|Test06_MP_Maintain|MP_Maintain|Maintenance schedules|
+|7|Test07_MP_OT|MP_OT|Work orders & DocType|
+|8|Test08_MP_OT_Task|MP_OT_Task|Work order tasks|
+|9|Test09_MP_OT_Resource|MP_OT_Resource|Work order resources|
+|10|Test10_MP_OT_Request|MP_OT_Request|Maintenance requests|
+|11|Test11_CreateWorkOrder|Full Workflow|Create & complete WO|
+
+----
+!2 Models Covered
+
+| Model | Tables Tested |
+|-------|---------------|
+| Meter | MP_Meter |
+| Asset Meter | MP_AssetMeter, MP_AssetMeter_Log |
+| Job Standard | MP_JobStandar, MP_JobStandar_Task |
+| Maintenance | MP_Maintain |
+| Work Order | MP_OT, MP_OT_Task, MP_OT_Resource |
+| Request | MP_OT_Request |
+
+----
+!2 Prerequisites
+
+ * iDempiere running with FitNesse plugins
+ * Asset Maintenance 2Pack installed (SYSTEM)
+ * Sample Data 2Pack installed (GardenWorld)
+
+----
+!2 2Pack Files
+
+| Type | Filename | Client |
+|------|----------|--------|
+| Dictionary | 202601261000_SYSTEM_PreventiveMaintenance.zip | SYSTEM |
+| Sample Data | 202601261000_GardenWorld_SampleData.zip | GardenWorld |

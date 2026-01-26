@@ -1,0 +1,76 @@
+!1 Test MP_OT - Work Orders
+
+Verify work order records and DocType.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Work Orders
+
+!|Set Variable|
+|@WOCount@    |@SQL=SELECT COUNT(*) FROM mp_ot WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@WOCount@    |3|
+
+----
+!2 Verify Work Order 1 (Draft)
+
+!|Assert Record|
+|*Table*      |MP_OT                    |
+|mp_ot_id     |1100001                  |
+|*Read*       |                         |
+|documentno   |WO-001                   |
+|description  |Oil change for Truck #1  |
+|docstatus    |DR                       |
+|processed    |N                        |
+
+----
+!2 Verify Work Order 2 (In Progress)
+
+!|Assert Record|
+|*Table*      |MP_OT                         |
+|mp_ot_id     |1100002                       |
+|*Read*       |                              |
+|documentno   |WO-002                        |
+|description  |Battery service Forklift #1   |
+|docstatus    |IP                            |
+
+----
+!2 Verify Work Order 3 (Completed)
+
+!|Assert Record|
+|*Table*      |MP_OT                    |
+|mp_ot_id     |1100003                  |
+|*Read*       |                         |
+|documentno   |WO-003                   |
+|description  |HVAC filter completed    |
+|docstatus    |CO                       |
+|processed    |Y                        |
+
+----
+!2 Verify DocType = Maintenance Order (Auto-Default)
+
+!|Set Variable|
+|@WODocType@  |@SQL=SELECT dt.name FROM c_doctype dt JOIN mp_ot ot ON dt.c_doctype_id=ot.c_doctype_id WHERE ot.mp_ot_id=1100001|
+
+!|Assert Variable|
+|@WODocType@  |Maintenance Order|
+
+----
+!2 Verify All WOs Use Same DocType
+
+!|Set Variable|
+|@UniqueDocTypes@|@SQL=SELECT COUNT(DISTINCT c_doctype_id) FROM mp_ot WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@UniqueDocTypes@|1|
+
+----
+!2 Verify DocType Default (DocBaseType=MOF)
+
+!|Set Variable|
+|@DocBaseType@|@SQL=SELECT docbasetype FROM c_doctype WHERE c_doctype_id=50010|
+
+!|Assert Variable|
+|@DocBaseType@|MOF|

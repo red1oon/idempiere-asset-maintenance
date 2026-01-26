@@ -1,0 +1,66 @@
+!1 Test MP_OT_Resource - Work Order Resources
+
+Verify work order resource allocations.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count All WO Resources
+
+!|Set Variable|
+|@WOResCount@ |@SQL=SELECT COUNT(*) FROM mp_ot_resource WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@WOResCount@ |5|
+
+----
+!2 Verify Resource Types
+
+!|Set Variable|
+|@RRCount@    |@SQL=SELECT COUNT(*) FROM mp_ot_resource WHERE resourcetype='RR' AND ad_client_id=11|
+
+!|Assert Variable|
+|@RRCount@    |4|
+
+!|Set Variable|
+|@TTCount@    |@SQL=SELECT COUNT(*) FROM mp_ot_resource WHERE resourcetype='TT' AND ad_client_id=11|
+
+!|Assert Variable|
+|@TTCount@    |1|
+
+----
+!2 Verify Resource Details
+
+!|Assert Record|
+|*Table*          |MP_OT_Resource |
+|mp_ot_resource_id|1100001        |
+|*Read*           |               |
+|resourcetype     |RR             |
+|resourceqty      |1              |
+|costamt          |15.00          |
+
+!|Assert Record|
+|*Table*          |MP_OT_Resource |
+|mp_ot_resource_id|1100002        |
+|*Read*           |               |
+|resourcetype     |RR             |
+|resourceqty      |5              |
+|costamt          |45.00          |
+
+----
+!2 Verify Resource-Task Links
+
+!|Set Variable|
+|@Res1Task@   |@SQL=SELECT t.description FROM mp_ot_task t JOIN mp_ot_resource r ON t.mp_ot_task_id=r.mp_ot_task_id WHERE r.mp_ot_resource_id=1100001|
+
+!|Assert Variable|
+|@Res1Task@   |Replace filter|
+
+----
+!2 Total Resource Cost
+
+!|Set Variable|
+|@TotalCost@  |@SQL=SELECT SUM(costamt) FROM mp_ot_resource WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@TotalCost@  |115.00|

@@ -1,0 +1,73 @@
+!1 Test MP_JobStandar_Task - Standard Job Tasks
+
+Verify task templates for standard jobs.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count All Job Tasks
+
+!|Set Variable|
+|@TaskCount@  |@SQL=SELECT COUNT(*) FROM mp_jobstandar_task WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@TaskCount@  |12|
+
+----
+!2 Count Oil Change Tasks
+
+!|Set Variable|
+|@OilTasks@   |@SQL=SELECT COUNT(*) FROM mp_jobstandar_task WHERE mp_jobstandar_id=1100001|
+
+!|Assert Variable|
+|@OilTasks@   |3|
+
+----
+!2 Verify Oil Change Task Details
+
+!|Assert Record|
+|*Table*              |MP_JobStandar_Task       |
+|mp_jobstandar_task_id|1100001                  |
+|*Read*               |                         |
+|description          |Drain old oil completely |
+|duration             |0.5                      |
+
+!|Assert Record|
+|*Table*              |MP_JobStandar_Task       |
+|mp_jobstandar_task_id|1100002                  |
+|*Read*               |                         |
+|description          |Replace oil filter       |
+|duration             |0.25                     |
+
+!|Assert Record|
+|*Table*              |MP_JobStandar_Task       |
+|mp_jobstandar_task_id|1100003                  |
+|*Read*               |                         |
+|description          |Add 5L synthetic oil     |
+|duration             |0.25                     |
+
+----
+!2 Count HVAC Filter Tasks
+
+!|Set Variable|
+|@HVACTasks@  |@SQL=SELECT COUNT(*) FROM mp_jobstandar_task WHERE mp_jobstandar_id=1100002|
+
+!|Assert Variable|
+|@HVACTasks@  |4|
+
+----
+!2 Count Forklift Battery Tasks
+
+!|Set Variable|
+|@ForkTasks@  |@SQL=SELECT COUNT(*) FROM mp_jobstandar_task WHERE mp_jobstandar_id=1100003|
+
+!|Assert Variable|
+|@ForkTasks@  |5|
+
+----
+!2 Verify Task UOM (Hours)
+
+!|Set Variable|
+|@TaskUOM@    |@SQL=SELECT u.name FROM c_uom u WHERE c_uom_id=(SELECT c_uom_id FROM mp_jobstandar_task WHERE mp_jobstandar_task_id=1100001)|
+
+Tasks should use Hour UOM for duration.

@@ -1,0 +1,9 @@
+!1 Login as GardenWorld Admin
+
+!|Login|
+|User         |GardenAdmin|
+|Password     |GardenAdmin|
+|AD_Client_ID |11         |
+|AD_Role_ID   |102        |
+|AD_Org_ID    |11         |
+|*Login*      |           |

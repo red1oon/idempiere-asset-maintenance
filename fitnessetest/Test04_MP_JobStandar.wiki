@@ -1,0 +1,55 @@
+!1 Test MP_JobStandar - Standard Job Definitions
+
+Verify standard maintenance job templates.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Job Standards
+
+!|Set Variable|
+|@JobCount@   |@SQL=SELECT COUNT(*) FROM mp_jobstandar WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@JobCount@   |3|
+
+----
+!2 Verify Vehicle Oil Change Job
+
+!|Assert Record|
+|*Table*         |MP_JobStandar      |
+|mp_jobstandar_id|1100001            |
+|*Read*          |                   |
+|name            |Vehicle Oil Change |
+|jobstandartype  |AA                 |
+|maintainarea    |ME                 |
+|isactive        |Y                  |
+
+----
+!2 Verify HVAC Filter Replacement Job
+
+!|Assert Record|
+|*Table*         |MP_JobStandar           |
+|mp_jobstandar_id|1100002                 |
+|*Read*          |                        |
+|name            |HVAC Filter Replacement |
+|jobstandartype  |AA                      |
+|maintainarea    |ME                      |
+
+----
+!2 Verify Forklift Battery Service Job
+
+!|Assert Record|
+|*Table*         |MP_JobStandar            |
+|mp_jobstandar_id|1100003                  |
+|*Read*          |                         |
+|name            |Forklift Battery Service |
+|maintainarea    |EL                       |
+
+----
+!2 Verify Job Links to Asset Group
+
+!|Set Variable|
+|@AssetGroup@ |@SQL=SELECT name FROM a_asset_group WHERE a_asset_group_id=(SELECT a_asset_group_id FROM mp_jobstandar WHERE mp_jobstandar_id=1100001)|
+
+Asset Group should be defined for the job standard.

@@ -1,0 +1,87 @@
+!1 Test MP_OT_Request - Maintenance Requests
+
+Verify maintenance request records.
+
+!include -c TestLoginGardenWorld
+
+----
+!2 Count Maintenance Requests
+
+!|Set Variable|
+|@ReqCount@   |@SQL=SELECT COUNT(*) FROM mp_ot_request WHERE ad_client_id=11|
+
+!|Assert Variable|
+|@ReqCount@   |3|
+
+----
+!2 Verify Request 1 (Work Complete)
+
+!|Assert Record|
+|*Table*         |MP_OT_Request               |
+|mp_ot_request_id|1100001                     |
+|*Read*          |                            |
+|documentno      |REQ-001                     |
+|description     |Truck oil warning light on  |
+|priorityrule    |5                           |
+|ot_request_type |RP                          |
+|docstatus       |WC                          |
+|processed       |Y                           |
+
+----
+!2 Verify Request 2 (Approved)
+
+!|Assert Record|
+|*Table*         |MP_OT_Request                      |
+|mp_ot_request_id|1100002                            |
+|*Read*          |                                   |
+|documentno      |REQ-002                            |
+|description     |Forklift battery not holding charge|
+|priorityrule    |7                                  |
+|ot_request_type |RV                                 |
+|docstatus       |AP                                 |
+
+----
+!2 Verify Request 3 (Approved)
+
+!|Assert Record|
+|*Table*         |MP_OT_Request               |
+|mp_ot_request_id|1100003                     |
+|*Read*          |                            |
+|documentno      |REQ-003                     |
+|description     |Quarterly HVAC filter change|
+|priorityrule    |3                           |
+|ot_request_type |RP                          |
+|docstatus       |AP                          |
+
+----
+!2 Verify Request-Asset Links
+
+!|Set Variable|
+|@Req1Asset@  |@SQL=SELECT a.name FROM a_asset a JOIN mp_ot_request r ON a.a_asset_id=r.a_asset_id WHERE r.mp_ot_request_id=1100001|
+
+!|Assert Variable|
+|@Req1Asset@  |Delivery Truck #1|
+
+----
+!2 Verify Request-Job Links
+
+!|Set Variable|
+|@Req1Job@    |@SQL=SELECT j.name FROM mp_jobstandar j JOIN mp_ot_request r ON j.mp_jobstandar_id=r.mp_jobstandar_id WHERE r.mp_ot_request_id=1100001|
+
+!|Assert Variable|
+|@Req1Job@    |Vehicle Oil Change|
+
+----
+!2 Count by Status
+
+!|Set Variable|
+|@ApprovedReqs@|@SQL=SELECT COUNT(*) FROM mp_ot_request WHERE docstatus='AP' AND ad_client_id=11|
+
+!|Assert Variable|
+|@ApprovedReqs@|2|
+
+!|Set Variable|
+|@CompletedReqs@|@SQL=SELECT COUNT(*) FROM mp_ot_request WHERE docstatus='WC' AND ad_client_id=11|
+
+!|Assert Variable|
+|@CompletedReqs@|1|
