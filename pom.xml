@@ -25,7 +25,7 @@
 
 	<groupId>org.idempiere</groupId>
 	<artifactId>org.asset.maintenance</artifactId>
-	<version>13.0.0-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<name>Asset Maintenance Plugin for iDempiere</name>
 	<description>Preventive maintenance management for assets in iDempiere ERP</description>

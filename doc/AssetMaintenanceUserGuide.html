@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Asset Maintenance User Guide</title>
+<style>
+@page {
+    size: A4;
+    margin: 2.5cm;
+}
+body {
+    font-family: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #161616;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+h1 {
+    font-size: 28pt;
+    font-weight: 600;
+    color: #0f62fe;
+    border-bottom: 4px solid #0f62fe;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+h2 {
+    font-size: 18pt;
+    font-weight: 600;
+    color: #161616;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-top: 40px;
+}
+h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    color: #393939;
+    margin-top: 24px;
+}
+h4 {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #525252;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 10pt;
+}
+th {
+    background-color: #393939;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+}
+td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 8px;
+}
+tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+code {
+    font-family: 'IBM Plex Mono', 'Consolas', monospace;
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10pt;
+}
+pre {
+    background-color: #262626;
+    color: #f4f4f4;
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'IBM Plex Mono', 'Consolas', monospace;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+.page-break {
+    page-break-before: always;
+    margin-top: 60px;
+    padding-top: 20px;
+}
+.cover-page {
+    text-align: center;
+    padding-top: 150px;
+}
+.cover-title {
+    font-size: 36pt;
+    font-weight: 700;
+    color: #0f62fe;
+    margin-bottom: 20px;
+}
+.cover-subtitle {
+    font-size: 18pt;
+    color: #525252;
+    margin-bottom: 40px;
+}
+.cover-version {
+    font-size: 14pt;
+    color: #161616;
+    margin-top: 60px;
+}
+.cover-meta {
+    font-size: 11pt;
+    color: #6f6f6f;
+    margin-top: 100px;
+}
+.note-box {
+    background-color: #d0e2ff;
+    border-left: 4px solid #0f62fe;
+    padding: 16px;
+    margin: 16px 0;
+}
+.warning-box {
+    background-color: #fff1c2;
+    border-left: 4px solid #f1c21b;
+    padding: 16px;
+    margin: 16px 0;
+}
+.toc {
+    background-color: #f4f4f4;
+    padding: 20px 30px;
+    margin: 20px 0;
+}
+.toc-title {
+    font-size: 16pt;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+.toc li {
+    margin: 8px 0;
+}
+.toc a {
+    color: #0f62fe;
+    text-decoration: none;
+}
+.footer {
+    font-size: 9pt;
+    color: #6f6f6f;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-page">
+    <div class="cover-title">Asset Maintenance</div>
+    <div class="cover-subtitle">User Guide for iDempiere</div>
+    <div style="margin-top: 40px;">
+        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='%230f62fe'><path d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-4H8v-2h2V9h2v2h2v2h-2v4z'/></svg>" alt="Logo" width="120">
+    </div>
+    <div class="cover-version">
+        <strong>Version 2.1.0.4</strong><br>
+        for iDempiere Release 13
+    </div>
+    <div class="cover-meta">
+        <p><strong>Maintainer:</strong> Red1 - RED1.org</p>
+        <p><strong>Based on:</strong> OFB-Consulting, Chile</p>
+        <p><strong>License:</strong> GPLv2</p>
+        <p><strong>Document Date:</strong> January 2026</p>
+    </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="page-break">
+<h1>Table of Contents</h1>
+<div class="toc">
+<ul>
+    <li><strong>1.</strong> <a href="#overview">Overview</a></li>
+    <li><strong>2.</strong> <a href="#release-notes">Release Notes</a></li>
+    <li><strong>3.</strong> <a href="#installation">Installation</a></li>
+    <li><strong>4.</strong> <a href="#fitnesse">FitNesse Testing</a></li>
+    <li><strong>5.</strong> <a href="#menu-structure">Menu Structure</a></li>
+    <li><strong>6.</strong> <a href="#core-concepts">Core Concepts</a></li>
+    <li><strong>7.</strong> <a href="#windows">Windows Reference</a></li>
+    <li><strong>8.</strong> <a href="#workflow">Workflow Guide</a></li>
+    <li><strong>9.</strong> <a href="#sample-data">Sample Data</a></li>
+    <li><strong>10.</strong> <a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</div>
+</div>
+
+<!-- 1. OVERVIEW -->
+<div class="page-break" id="overview">
+<h1>1. Overview</h1>
+
+<h2>1.1 Purpose</h2>
+<p>Asset Maintenance is a lightweight plugin for <strong>preventive maintenance management</strong> of enterprise assets in iDempiere. It enables organizations to schedule, track, and execute maintenance activities based on usage meters or calendar intervals.</p>
+
+<h2>1.2 Key Features</h2>
+<table>
+<tr><th>Feature</th><th>Description</th></tr>
+<tr><td>Meter-based Scheduling</td><td>Trigger maintenance by kilometers, operating hours, or production cycles</td></tr>
+<tr><td>Calendar-based Scheduling</td><td>Schedule maintenance by days, weeks, or months</td></tr>
+<tr><td>Standard Job Templates</td><td>Reusable job definitions with predefined task sequences</td></tr>
+<tr><td>Work Order Management</td><td>Create, track, and complete maintenance work orders</td></tr>
+<tr><td>Maintenance Requests</td><td>Request workflow with approval process</td></tr>
+<tr><td>Resource Tracking</td><td>Allocate tools, parts, and personnel to work orders</td></tr>
+<tr><td>Meter Logging</td><td>Record and track asset usage over time</td></tr>
+</table>
+
+<h2>1.3 System Requirements</h2>
+<ul>
+    <li>iDempiere Release 13 or higher</li>
+    <li>PostgreSQL database</li>
+    <li>Server-side deployment (OSGi plugin)</li>
+</ul>
+
+<div class="note-box">
+<strong>Note:</strong> This plugin is server-side only. No Swing client support is provided.
+</div>
+</div>
+
+<!-- 2. RELEASE NOTES -->
+<div class="page-break" id="release-notes">
+<h1>2. Release Notes</h1>
+
+<h2>Version 2.1.0.4 (January 2026)</h2>
+<p><strong>Target:</strong> iDempiere 13</p>
+
+<h3>New Features</h3>
+<ul>
+    <li><strong>FitNesse Test Suite</strong> - Comprehensive acceptance tests for all models</li>
+    <li><strong>Silent Test Runner</strong> - Command-line FitNesse execution for CI/CD</li>
+    <li><strong>Silent Pack-In</strong> - Proper filename format for automated imports</li>
+    <li><strong>SQLStatement Format</strong> - FK-safe sample data export</li>
+    <li><strong>GardenWorld Sample Data</strong> - 3 assets, 3 jobs, 3 schedules, 3 work orders</li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+    <li>MP_RefList values aligned with AD_Reference definitions</li>
+    <li>Document Status values (AP/VO/WC) for Request workflow</li>
+    <li>Resource Type values (BP/BT/HH/RR/TT) for work order resources</li>
+    <li>HELP text added at AD_Tab level for all windows</li>
+    <li>DocType default set to "Maintenance Order" (DocBaseType=MOF)</li>
+</ul>
+
+<h3>Tools</h3>
+<ul>
+    <li><code>RUN_FitNesseTest.sh</code> - Generic silent test runner</li>
+    <li><code>RUN_AssetMaintenanceTests.sh</code> - Run all AM tests</li>
+</ul>
+
+<h2>Version 2.1.0.3 (January 2026)</h2>
+<ul>
+    <li>Silent pack-in support with proper filename format</li>
+    <li>Dict2Pack - silent dictionary export from PostgreSQL</li>
+    <li>GenericPO2Pack --sql - FK-safe sample data export</li>
+</ul>
+
+<h2>Version 2.0.0 (2024)</h2>
+<ul>
+    <li>Initial release for iDempiere 12</li>
+    <li>Core maintenance management functionality</li>
+    <li>Based on OFB-Consulting Chile original work</li>
+</ul>
+
+<h2>Version 1.x (Legacy)</h2>
+<ul>
+    <li>Original ADempiere/Compiere version by OFB-Consulting</li>
+</ul>
+</div>
+
+<!-- 3. INSTALLATION -->
+<div class="page-break" id="installation">
+<h1>3. Installation</h1>
+
+<h2>3.1 Prerequisites</h2>
+<ul>
+    <li>iDempiere 13 installed and running</li>
+    <li>PostgreSQL accessible (Docker: <code>docker start postgres</code>)</li>
+    <li>System Administrator access</li>
+</ul>
+
+<h2>3.2 Step 1: Deploy Plugin JAR</h2>
+<pre>
+# Copy JAR to plugins folder
+cp org.asset.maintenance_2.0.0.jar $IDEMPIERE_HOME/plugins/
+
+# Restart iDempiere or install via OSGi console
+</pre>
+
+<h2>3.3 Step 2: Import Dictionary 2Pack</h2>
+<p><strong>Option A: Via iDempiere UI</strong></p>
+<ol>
+    <li>Login as <strong>System Administrator</strong></li>
+    <li>Navigate to <strong>System Admin → Pack In</strong></li>
+    <li>Select <code>META-INF/2Pack_1.0.4.zip</code></li>
+    <li>Click <strong>Pack In</strong></li>
+</ol>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 3.1 Pack In window showing 2Pack file selection</em></p>
+
+<p><strong>Option B: Silent Pack-In (Recommended)</strong></p>
+<pre>
+# Filename format: yyyymmddHHMM_ClientValue_Description.zip
+cp 2Pack_1.0.4.zip /tmp/packin/202601261000_SYSTEM_PreventiveMaintenance.zip
+
+# Run silent pack-in
+cd $IDEMPIERE_HOME
+java -Dosgi.compatibility.bootdelegation=true -Dosgi.noShutdown=false \
+    -jar plugins/org.eclipse.equinox.launcher_1.*.jar \
+    -application org.adempiere.base.PackInFolderApplication /tmp/packin/
+</pre>
+
+<div class="warning-box">
+<strong>Important:</strong> ClientValue must match <code>AD_Client.Value</code> exactly (case-sensitive).
+<br>SYSTEM = AD_Client_ID 0, GardenWorld = AD_Client_ID 11
+</div>
+
+<h2>3.4 Step 3: Import Sample Data</h2>
+<p><strong>Option A: Via iDempiere UI</strong></p>
+<ol>
+    <li>Login as <strong>GardenWorld Admin</strong></li>
+    <li>Navigate to <strong>System Admin → Pack In</strong></li>
+    <li>Select <code>data/SampleData2Pack.zip</code></li>
+</ol>
+
+<p><strong>Option B: Silent Pack-In</strong></p>
+<pre>
+cp SampleData2Pack.zip /tmp/packin/202601261000_GardenWorld_SampleData.zip
+
+java -Dosgi.compatibility.bootdelegation=true -Dosgi.noShutdown=false \
+    -jar plugins/org.eclipse.equinox.launcher_1.*.jar \
+    -application org.adempiere.base.PackInFolderApplication /tmp/packin/
+</pre>
+
+<p><strong>Option C: Direct SQL</strong></p>
+<pre>
+psql -U adempiere -d idempiere -f data/GardenWorldSample.sql
+</pre>
+
+<h2>3.5 Step 4: Sync Sequences</h2>
+<ol>
+    <li>Login as <strong>System Administrator</strong></li>
+    <li>Navigate to <strong>System Admin → General Rules → System Rules → Sequence Check</strong></li>
+    <li>Click <strong>OK</strong> to run</li>
+</ol>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 3.2 Sequence Check process dialog</em></p>
+
+<div class="note-box">
+<strong>Why?</strong> Direct SQL inserts bypass iDempiere's sequence management. Without this step, creating new records may cause duplicate key errors.
+</div>
+</div>
+
+<!-- 4. FITNESSE TESTING -->
+<div class="page-break" id="fitnesse">
+<h1>4. FitNesse Testing</h1>
+
+<h2>4.1 Overview</h2>
+<p>FitNesse is an acceptance testing framework with a wiki-based interface. Tests are written as simple tables that describe expected behavior.</p>
+
+<h2>4.2 Test Coverage</h2>
+<table>
+<tr><th>Test</th><th>Model</th><th>Description</th></tr>
+<tr><td>Test01_MP_Meter</td><td>MP_Meter</td><td>Meter types (Km, Hours, Days)</td></tr>
+<tr><td>Test02_MP_AssetMeter</td><td>MP_AssetMeter</td><td>Asset-meter associations</td></tr>
+<tr><td>Test03_MP_AssetMeter_Log</td><td>MP_AssetMeter_Log</td><td>Meter reading history</td></tr>
+<tr><td>Test04_MP_JobStandar</td><td>MP_JobStandar</td><td>Standard job definitions</td></tr>
+<tr><td>Test05_MP_JobStandar_Task</td><td>MP_JobStandar_Task</td><td>Job task templates</td></tr>
+<tr><td>Test06_MP_Maintain</td><td>MP_Maintain</td><td>Maintenance schedules</td></tr>
+<tr><td>Test07_MP_OT</td><td>MP_OT</td><td>Work orders & DocType</td></tr>
+<tr><td>Test08_MP_OT_Task</td><td>MP_OT_Task</td><td>Work order tasks</td></tr>
+<tr><td>Test09_MP_OT_Resource</td><td>MP_OT_Resource</td><td>Work order resources</td></tr>
+<tr><td>Test10_MP_OT_Request</td><td>MP_OT_Request</td><td>Maintenance requests</td></tr>
+<tr><td>Test11_CreateWorkOrder</td><td>Full Workflow</td><td>Create & complete WO</td></tr>
+</table>
+
+<h2>4.3 Running Tests via Wiki (Interactive)</h2>
+<ol>
+    <li>Start FitNesse plugins in iDempiere OSGi console:
+<pre>
+osgi> start org.idempiere.fitnesse.server
+osgi> start org.idempiere.fitnesse.fixture
+</pre>
+    </li>
+    <li>Start FitNesse application:
+<pre>
+cd idempiere-fitnesse
+./run.sh
+</pre>
+    </li>
+    <li>Open browser: <code>http://localhost:8089</code></li>
+    <li>Import test pages from <code>fitnessetest/*.wiki</code></li>
+    <li>Click <strong>Test</strong> to run individual tests or <strong>Suite</strong> for all</li>
+</ol>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 4.1 FitNesse wiki interface showing test suite</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 4.2 FitNesse test results - green indicates passed assertions</em></p>
+
+<h2>4.4 Running Tests Silently (CI/CD)</h2>
+<pre>
+# Run all Asset Maintenance tests
+cd AssetMaintenance/fitnessetest
+./RUN_AssetMaintenanceTests.sh
+
+# Run with XML output for CI
+./RUN_AssetMaintenanceTests.sh xml
+
+# Run single test
+$ROUNDTRIP_HOME/RUN_FitNesseTest.sh Test07_MP_OT test
+</pre>
+
+<h3>Exit Codes</h3>
+<table>
+<tr><th>Code</th><th>Meaning</th></tr>
+<tr><td>0</td><td>All tests passed</td></tr>
+<tr><td>N</td><td>N tests failed</td></tr>
+</table>
+
+<h2>4.5 Sample Test: DocType Auto-Default</h2>
+<p>This test verifies that Work Orders automatically get the "Maintenance Order" DocType:</p>
+<pre>
+!|Create Record|
+|*Table*      |MP_OT                    |
+|description  |Test Work Order          |
+|*Save*       |                         |
+
+!|Assert Record|
+|*Table*      |MP_OT                    |
+|mp_ot_id     |@MP_OT.MP_OT_ID@         |
+|*Read*       |                         |
+|c_doctype_id |50010                    |
+</pre>
+
+<div class="note-box">
+<strong>Key Point:</strong> The <code>c_doctype_id</code> is NOT manually set. It is auto-populated by the AD_Column default: <code>@SQL=SELECT ... WHERE DocBaseType='MOF'</code>
+</div>
+
+<h2>4.6 Environment Variables</h2>
+<table>
+<tr><th>Variable</th><th>Default</th><th>Description</th></tr>
+<tr><td>FITNESSE_HOME</td><td>-</td><td>FitNesse installation directory</td></tr>
+<tr><td>FITNESSE_PORT</td><td>8089</td><td>FitNesse server port</td></tr>
+<tr><td>IDEMPIERE_HOME</td><td>/opt/idempiere</td><td>iDempiere installation</td></tr>
+<tr><td>ROUNDTRIP_HOME</td><td>-</td><td>Path to red1-ninja-roundtrip</td></tr>
+</table>
+</div>
+
+<!-- 5. MENU STRUCTURE -->
+<div class="page-break" id="menu-structure">
+<h1>5. Menu Structure</h1>
+
+<pre>
+Maintenance Prevention (MP)
+├── Work Shop (Operational)
+│   ├── Meter Log          - Record meter readings
+│   ├── Request OT         - Create maintenance requests
+│   └── Work Order (OT)    - Execute work orders
+├── Office (Management)
+│   ├── Prognosis (Forecast)    - Forecast upcoming maintenance
+│   ├── Prognosis Approval      - Approve forecasts
+│   └── Requests Approval       - Approve requests
+└── Setup (Configuration)
+    ├── Meter              - Define measurement types
+    ├── Maintenance        - Schedule maintenance plans
+    ├── Standard Job       - Job templates with tasks
+    ├── Department         - Organizational units
+    └── Cost Center        - Cost tracking
+</pre>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 5.1 Maintenance Prevention menu tree in iDempiere navigation</em></p>
+
+<h2>5.1 Role-Based Access</h2>
+<table>
+<tr><th>Menu Section</th><th>Typical User</th><th>Purpose</th></tr>
+<tr><td>Work Shop</td><td>Technicians</td><td>Day-to-day operations</td></tr>
+<tr><td>Office</td><td>Supervisors</td><td>Planning and approval</td></tr>
+<tr><td>Setup</td><td>Administrators</td><td>Configuration</td></tr>
+</table>
+</div>
+
+<!-- 6. CORE CONCEPTS -->
+<div class="page-break" id="core-concepts">
+<h1>6. Core Concepts</h1>
+
+<h2>6.1 Programming Types</h2>
+<table>
+<tr><th>Type</th><th>Code</th><th>When to Use</th><th>Example</th></tr>
+<tr><td>Meter-based</td><td>M</td><td>Usage-driven maintenance</td><td>Oil change every 5,000 km</td></tr>
+<tr><td>Calendar-based</td><td>C</td><td>Time-driven maintenance</td><td>Filter change every 90 days</td></tr>
+</table>
+
+<h2>6.2 Meter-based Fields</h2>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>Interval</td><td>Units between maintenance</td><td>5000 (km)</td></tr>
+<tr><td>LastMP</td><td>Last maintenance point</td><td>40000</td></tr>
+<tr><td>NextMP</td><td>Next maintenance due point</td><td>45000</td></tr>
+<tr><td>CurrentMP</td><td>Current meter reading</td><td>44800</td></tr>
+<tr><td>Promuse</td><td>Warning threshold before due</td><td>500</td></tr>
+<tr><td>Range</td><td>Overdue tolerance</td><td>1000</td></tr>
+</table>
+
+<h2>6.3 Calendar-based Fields</h2>
+<table>
+<tr><th>Field</th><th>Description</th><th>Example</th></tr>
+<tr><td>Interval</td><td>Days between maintenance</td><td>90</td></tr>
+<tr><td>DateLastRun</td><td>When last performed</td><td>2026-01-01</td></tr>
+<tr><td>DateNextRun</td><td>When next due</td><td>2026-04-01</td></tr>
+</table>
+
+<h2>6.4 Job Standard Types</h2>
+<table>
+<tr><th>Code</th><th>Name</th><th>Description</th></tr>
+<tr><td>AA</td><td>Asset Adjustment</td><td>Routine preventive maintenance</td></tr>
+<tr><td>CM</td><td>Corrective</td><td>Repair after failure</td></tr>
+<tr><td>PM</td><td>Preventive</td><td>Scheduled maintenance</td></tr>
+<tr><td>PD</td><td>Predictive</td><td>Condition-based maintenance</td></tr>
+</table>
+
+<h2>6.5 Maintain Areas</h2>
+<table>
+<tr><th>Code</th><th>Name</th></tr>
+<tr><td>EL</td><td>Electrical</td></tr>
+<tr><td>ME</td><td>Mechanical</td></tr>
+<tr><td>OP</td><td>Operational</td></tr>
+<tr><td>SF</td><td>Safety</td></tr>
+</table>
+
+<h2>6.6 Document Status (Request)</h2>
+<table>
+<tr><th>Code</th><th>Name</th><th>Description</th></tr>
+<tr><td>DR</td><td>Draft</td><td>Initial state</td></tr>
+<tr><td>AP</td><td>Approved</td><td>Ready for work order</td></tr>
+<tr><td>VO</td><td>Voided</td><td>Cancelled</td></tr>
+<tr><td>WC</td><td>Work Complete</td><td>Work order created</td></tr>
+</table>
+</div>
+
+<!-- 7. WINDOWS REFERENCE -->
+<div class="page-break" id="windows">
+<h1>7. Windows Reference</h1>
+
+<h2>7.1 Meter</h2>
+<p>Define measurement types for tracking asset usage.</p>
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Name</td><td>Meter name (e.g., "Kilometers")</td></tr>
+<tr><td>Max Day</td><td>Maximum days between readings</td></tr>
+</table>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.1 Meter window showing Kilometers, Operating Hours, and Calendar Days</em></p>
+
+<h2>7.2 Standard Job</h2>
+<p>Create reusable job templates with predefined tasks.</p>
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Name</td><td>Job name (e.g., "Oil Change")</td></tr>
+<tr><td>Job Standard Type</td><td>AA, CM, PM, or PD</td></tr>
+<tr><td>Maintain Area</td><td>EL, ME, OP, or SF</td></tr>
+</table>
+<p><strong>Tabs:</strong> Task (task list), Resource (required resources)</p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.2 Standard Job window with Oil Change job selected</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.3 Standard Job - Task tab showing task sequence</em></p>
+
+<h2>7.3 Maintenance</h2>
+<p>Define maintenance schedules for assets.</p>
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Asset</td><td>The asset to maintain</td></tr>
+<tr><td>Job Standard</td><td>Job template to use</td></tr>
+<tr><td>Programming Type</td><td>M (Meter) or C (Calendar)</td></tr>
+<tr><td>Interval</td><td>Units or days between maintenance</td></tr>
+</table>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.4 Maintenance window showing schedule for Delivery Truck</em></p>
+
+<h2>7.4 Work Order (OT)</h2>
+<p>Manage maintenance work orders.</p>
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Document No</td><td>Auto-generated WO number</td></tr>
+<tr><td>Asset</td><td>Asset being maintained</td></tr>
+<tr><td>Job Standard</td><td>Job template used</td></tr>
+<tr><td>Doc Type</td><td>Auto-set to "Maintenance Order"</td></tr>
+<tr><td>Doc Status</td><td>DR, IP, CO (Complete)</td></tr>
+</table>
+<p><strong>Tabs:</strong> Task, Resource</p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.5 Work Order (OT) window - header with DocType auto-set</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.6 Work Order - Task tab showing work items</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.7 Work Order - Resource tab showing allocated resources</em></p>
+
+<h2>7.5 Request OT</h2>
+<p>Submit maintenance requests for approval.</p>
+<table>
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Asset</td><td>Asset requiring maintenance</td></tr>
+<tr><td>Description</td><td>Problem description</td></tr>
+<tr><td>Priority Rule</td><td>1 (Low) to 9 (High)</td></tr>
+<tr><td>Request Type</td><td>RP (Repair), RV (Review)</td></tr>
+</table>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 7.8 Request OT window for submitting maintenance requests</em></p>
+</div>
+
+<!-- 8. WORKFLOW -->
+<div class="page-break" id="workflow">
+<h1>8. Workflow Guide</h1>
+
+<h2>8.1 Setup (One-time)</h2>
+<ol>
+    <li>Define <strong>Meters</strong> (measurement types)</li>
+    <li>Create <strong>Standard Jobs</strong> with tasks</li>
+    <li>Link <strong>Assets</strong> to meters (Asset → Asset Meter tab)</li>
+    <li>Create <strong>Maintenance</strong> schedules</li>
+</ol>
+
+<h2>8.2 Daily Operations</h2>
+<ol>
+    <li><strong>Meter Log</strong>: Record readings (manual or automated)</li>
+    <li>System calculates when maintenance is due</li>
+</ol>
+
+<h2>8.3 Planning</h2>
+<ol>
+    <li><strong>Prognosis (Forecast)</strong>: Run to see upcoming maintenance</li>
+    <li><strong>Prognosis Approval</strong>: Review and approve</li>
+</ol>
+
+<h2>8.4 Execution</h2>
+<ol>
+    <li><strong>Request OT</strong>: Create maintenance request</li>
+    <li><strong>Requests Approval</strong>: Approve request</li>
+    <li><strong>Work Order (OT)</strong>: Execute and complete</li>
+</ol>
+
+<h2>8.5 Work Order Lifecycle</h2>
+<pre>
+Draft (DR) → In Progress (IP) → Complete (CO)
+     ↓
+   Void (VO)
+</pre>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 8.1 Work Order document action - completing a work order</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 8.2 Completed Work Order showing CO status</em></p>
+</div>
+
+<!-- 9. SAMPLE DATA -->
+<div class="page-break" id="sample-data">
+<h1>9. Sample Data</h1>
+
+<h2>9.1 GardenWorld Sample (Recommended)</h2>
+<p>A simplified dataset for learning and testing:</p>
+
+<table>
+<tr><th>Model</th><th>Count</th><th>Records</th></tr>
+<tr><td>Meters</td><td>3</td><td>Kilometers, Operating Hours, Calendar Days</td></tr>
+<tr><td>Assets</td><td>3</td><td>Truck, HVAC, Forklift</td></tr>
+<tr><td>Job Standards</td><td>3</td><td>Oil Change, Filter Replacement, Battery Service</td></tr>
+<tr><td>Job Tasks</td><td>12</td><td>3-5 tasks per job</td></tr>
+<tr><td>Maintenance Schedules</td><td>3</td><td>1 due, 1 soon, 1 upcoming</td></tr>
+<tr><td>Work Orders</td><td>3</td><td>Draft, In Progress, Completed</td></tr>
+<tr><td>Requests</td><td>3</td><td>Various statuses</td></tr>
+</table>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 9.1 Sample data - Work Orders list showing Draft, In Progress, and Completed</em></p>
+
+<p style="text-align:center; color:#525252; margin:20px 0;"><em>Fig 9.2 Sample data - Maintenance schedules for 3 assets</em></p>
+
+<h2>9.2 Loading Sample Data</h2>
+<pre>
+# Option 1: Via 2Pack (recommended)
+cp SampleData2Pack.zip /tmp/packin/202601261000_GardenWorld_SampleData.zip
+# Run silent pack-in...
+
+# Option 2: Direct SQL
+psql -U adempiere -d idempiere -f data/GardenWorldSample.sql
+
+# Don't forget to sync sequences!
+</pre>
+
+<h2>9.3 Quick Verification</h2>
+<pre>
+SELECT 'MP_Meter' as tbl, COUNT(*) FROM mp_meter WHERE ad_client_id=11
+UNION ALL SELECT 'MP_JobStandar', COUNT(*) FROM mp_jobstandar WHERE ad_client_id=11
+UNION ALL SELECT 'MP_Maintain', COUNT(*) FROM mp_maintain WHERE ad_client_id=11
+UNION ALL SELECT 'MP_OT', COUNT(*) FROM mp_ot WHERE ad_client_id=11;
+</pre>
+
+<p>Expected: 3 records in each table.</p>
+</div>
+
+<!-- 10. TROUBLESHOOTING -->
+<div class="page-break" id="troubleshooting">
+<h1>10. Troubleshooting</h1>
+
+<h2>10.1 Duplicate Key Error After SQL Import</h2>
+<p><strong>Cause:</strong> Sequences not synchronized</p>
+<p><strong>Solution:</strong> Run Sequence Check (System Admin → Sequence Check)</p>
+
+<h2>10.2 Pack-In: "Tenant does not exist"</h2>
+<p><strong>Cause:</strong> Filename ClientValue doesn't match AD_Client.Value</p>
+<p><strong>Solution:</strong> Use exact case: <code>SYSTEM</code> not <code>System</code></p>
+<pre>
+# Check correct values
+SELECT AD_Client_ID, Value, Name FROM AD_Client;
+-- SYSTEM (0), GardenWorld (11)
+</pre>
+
+<h2>10.3 FitNesse: Connection Refused</h2>
+<p><strong>Cause:</strong> iDempiere FitNesse plugins not started</p>
+<p><strong>Solution:</strong> Start plugins in OSGi console:
+<pre>
+osgi> start org.idempiere.fitnesse.server
+osgi> start org.idempiere.fitnesse.fixture
+</pre>
+
+<h2>10.4 PostgreSQL Not Running (Docker)</h2>
+<pre>
+# Check status
+docker ps -a | grep postgres
+
+# Start if stopped
+docker start postgres
+</pre>
+
+<h2>10.5 DocType Not Set on Work Order</h2>
+<p><strong>Expected:</strong> DocType auto-set to "Maintenance Order" (ID 50010)</p>
+<p><strong>Verify default:</strong></p>
+<pre>
+SELECT defaultvalue FROM ad_column c
+JOIN ad_table t ON c.ad_table_id=t.ad_table_id
+WHERE t.tablename='MP_OT' AND c.columnname='C_DocType_ID';
+-- Should return @SQL=...DocBaseType='MOF'...
+</pre>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>Asset Maintenance User Guide • Version 2.1.0.4 • January 2026</p>
+<p>Copyright © RED1.org • Licensed under GPLv2</p>
+<p>Source: <a href="https://github.com/red1oon/idempiere-asset-maintenance">github.com/red1oon/idempiere-asset-maintenance</a></p>
+</div>
+
+</body>
+</html>

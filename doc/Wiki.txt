@@ -6,7 +6,7 @@ Copyright: red1org@gmail.com
 
 Sponsor: zeeshan@sysnova.com
 
-Current Version: 2.1.0.3 for iDempiere 13
+Current Version: 2.1.0.4 for iDempiere 13
 
 License: GPLv2
 
@@ -55,6 +55,13 @@ The plugin is server-side only (no Swing client) - simplified as a single OSGi b
 ---
 
 Release Notes:
+
+Version 2.1.0.4 (January 2026) - iDempiere 13
+* NEW: FitNesse acceptance test suite (11 tests covering all models)
+* NEW: Silent FitNesse test runner for CI/CD integration
+* NEW: Comprehensive HTML User Guide with IBM professional styling
+* TOOL: RUN_FitNesseTest.sh - generic silent test runner
+* TOOL: RUN_AssetMaintenanceTests.sh - plugin-specific test suite
 
 Version 2.1.0.3 (January 2026) - iDempiere 13
 * NEW: Silent pack-in support with proper filename format

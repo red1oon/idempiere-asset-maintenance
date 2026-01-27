@@ -245,7 +245,7 @@ public class WMPRequestOT
 		requestLayout.appendChild(center);
 		center.appendChild(requestTable);
 		requestTable.setWidth("99%");
-		requestTable.setHeight("99%");
+		// Don't set height - vflex is set by ListboxFactory and Center handles sizing
 		center.setStyle("border: none");
 		//
 		center = new Center();
@@ -757,7 +757,7 @@ public class WMPRequestOT
 		}
 		*/
 		List<MMPJobStandardResource> list = new Query(Env.getCtx(),MMPJobStandardResource.Table_Name,MMPJobStandardResource.COLUMNNAME_MP_JobStandar_Task_ID+"=?",null)
-		.setParameters("")
+		.setParameters(oldTask_ID)
 		.list();
 		for (MMPJobStandardResource job:list){
 			MMPOTResource re=new MMPOTResource(Env.getCtx(), 0,null);

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Org.Asset.Maintenance
 Bundle-SymbolicName: org.asset.maintenance;singleton:=true
-Bundle-Version: 13.0.0.qualifier
+Bundle-Version: 2.1.0.qualifier
 Require-Bundle: org.adempiere.base,
  org.adempiere.base.process,
  org.adempiere.plugin.utils,
@@ -17,7 +17,7 @@ Export-Package: org.maintenance.model;
    org.adempiere.base,
    org.compiere.util",
  org.maintenance.process
-Bundle-Activator: org.adempiere.plugin.utils.AdempiereActivator
+Bundle-Activator: org.adempiere.plugin.utils.Version2PackActivator
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Service-Component: OSGI-INF/Maintenance_ModelFactory.xml
 Bundle-Vendor: OFB Consulting CHILE

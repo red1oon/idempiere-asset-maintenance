@@ -96,12 +96,12 @@ INSERT INTO mp_maintain (mp_maintain_id, ad_client_id, ad_org_id, created, creat
                          programmingtype, interval, lastmp, nextmp, lastread, currentmp, promuse, range,
                          datelastrun, datenextrun, docstatus, priorityrule, mp_maintain_uu)
 VALUES
-(1000001, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F001', 'N', 1000001, 1000001, 1000001, 'M', 5000, 40000, 45000, 45000, 45000, 500, 1000, '2025-11-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000002, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F002', 'N', 1000001, 1000002, 1000001, 'M', 10000, 40000, 50000, 45000, 45000, 1000, 2000, '2025-10-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000003, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F003', 'N', 1000002, 1000001, 1000001, 'M', 5000, 30000, 35000, 32000, 32000, 500, 1000, '2025-12-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000004, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F004', 'N', 1000003, 1000003, 1000002, 'M', 250, 1000, 1250, 1200, 1200, 50, 100, '2025-10-20', NULL, 'AT', '3', uuid_generate_v4()),
-(1000005, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F005', 'N', 1000004, 1000003, 1000002, 'M', 250, 750, 1000, 850, 850, 50, 100, '2025-11-15', NULL, 'AT', '3', uuid_generate_v4()),
-(1000006, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F006', 'N', 1000005, 1000005, NULL, 'C', 14, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-05', '2026-01-19', 'AT', '7', uuid_generate_v4());
+(1000001, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F001', 'N', 1000001, 1000001, 1000001, 'M', 5000, 40000, 45000, 45000, 45000, 500, 1000, '2025-11-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000002, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F002', 'N', 1000001, 1000002, 1000001, 'M', 10000, 40000, 50000, 45000, 45000, 1000, 2000, '2025-10-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000003, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F003', 'N', 1000002, 1000001, 1000001, 'M', 5000, 30000, 35000, 32000, 32000, 500, 1000, '2025-12-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000004, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F004', 'N', 1000003, 1000003, 1000002, 'M', 250, 1000, 1250, 1200, 1200, 50, 100, '2025-10-20 00:00:00', NULL, 'AT', '3', uuid_generate_v4()),
+(1000005, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F005', 'N', 1000004, 1000003, 1000002, 'M', 250, 750, 1000, 850, 850, 50, 100, '2025-11-15 00:00:00', NULL, 'AT', '3', uuid_generate_v4()),
+(1000006, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-F006', 'N', 1000005, 1000005, NULL, 'C', 14, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-05 00:00:00', '2026-01-19 00:00:00', 'AT', '7', uuid_generate_v4());
 
 INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                               isactive, mp_maintain_id, description, duration, c_uom_id, mp_maintain_task_uu)
@@ -134,23 +134,23 @@ VALUES
 INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                                isactive, mp_assetmeter_id, datetrx, amt, currentamt, description, mp_assetmeter_log_uu)
 VALUES
-(1000001, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-11-01', 500, 40500, 'Weekly reading', uuid_generate_v4()),
-(1000002, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-11-15', 1000, 41500, 'Bi-weekly', uuid_generate_v4()),
-(1000003, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-12-01', 1500, 43000, 'Monthly', uuid_generate_v4()),
-(1000004, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-12-15', 1000, 44000, 'Bi-weekly', uuid_generate_v4()),
-(1000005, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2026-01-01', 1000, 45000, 'New Year', uuid_generate_v4()),
-(1000006, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2025-11-01', 400, 30400, 'Weekly', uuid_generate_v4()),
-(1000007, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2025-12-01', 800, 31200, 'Monthly', uuid_generate_v4()),
-(1000008, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2026-01-01', 800, 32000, 'Monthly', uuid_generate_v4()),
-(1000009, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2025-11-01', 50, 1050, 'Bi-weekly', uuid_generate_v4()),
-(1000010, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2025-12-01', 75, 1125, 'Monthly', uuid_generate_v4()),
-(1000011, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2026-01-01', 75, 1200, 'Monthly', uuid_generate_v4()),
-(1000012, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2025-11-01', 40, 790, 'Bi-weekly', uuid_generate_v4()),
-(1000013, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2025-12-01', 30, 820, 'Monthly', uuid_generate_v4()),
-(1000014, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2026-01-01', 30, 850, 'Monthly', uuid_generate_v4()),
-(1000015, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2025-11-01', 150, 8200, 'Monthly', uuid_generate_v4()),
-(1000016, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2025-12-01', 180, 8380, 'Monthly', uuid_generate_v4()),
-(1000017, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2026-01-01', 120, 8500, 'Monthly', uuid_generate_v4());
+(1000001, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-11-01 00:00:00', 500, 40500, 'Weekly reading', uuid_generate_v4()),
+(1000002, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-11-15 00:00:00', 1000, 41500, 'Bi-weekly', uuid_generate_v4()),
+(1000003, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-12-01 00:00:00', 1500, 43000, 'Monthly', uuid_generate_v4()),
+(1000004, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2025-12-15 00:00:00', 1000, 44000, 'Bi-weekly', uuid_generate_v4()),
+(1000005, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000001, '2026-01-01 00:00:00', 1000, 45000, 'New Year', uuid_generate_v4()),
+(1000006, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2025-11-01 00:00:00', 400, 30400, 'Weekly', uuid_generate_v4()),
+(1000007, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2025-12-01 00:00:00', 800, 31200, 'Monthly', uuid_generate_v4()),
+(1000008, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000002, '2026-01-01 00:00:00', 800, 32000, 'Monthly', uuid_generate_v4()),
+(1000009, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2025-11-01 00:00:00', 50, 1050, 'Bi-weekly', uuid_generate_v4()),
+(1000010, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2025-12-01 00:00:00', 75, 1125, 'Monthly', uuid_generate_v4()),
+(1000011, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000003, '2026-01-01 00:00:00', 75, 1200, 'Monthly', uuid_generate_v4()),
+(1000012, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2025-11-01 00:00:00', 40, 790, 'Bi-weekly', uuid_generate_v4()),
+(1000013, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2025-12-01 00:00:00', 30, 820, 'Monthly', uuid_generate_v4()),
+(1000014, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000004, '2026-01-01 00:00:00', 30, 850, 'Monthly', uuid_generate_v4()),
+(1000015, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2025-11-01 00:00:00', 150, 8200, 'Monthly', uuid_generate_v4()),
+(1000016, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2025-12-01 00:00:00', 180, 8380, 'Monthly', uuid_generate_v4()),
+(1000017, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000005, '2026-01-01 00:00:00', 120, 8500, 'Monthly', uuid_generate_v4());
 
 
 -- ============================================
@@ -247,15 +247,15 @@ INSERT INTO mp_maintain (mp_maintain_id, ad_client_id, ad_org_id, created, creat
                          programmingtype, interval, lastmp, nextmp, lastread, currentmp, promuse, range,
                          datelastrun, datenextrun, docstatus, priorityrule, mp_maintain_uu)
 VALUES
-(1000101, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B001', 'N', 1000101, 1000101, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15', '2026-01-14', 'AT', '5', uuid_generate_v4()),
-(1000102, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B002', 'N', 1000101, 1000102, 1000101, 'M', 2000, 12000, 14000, 12500, 12500, 200, 500, '2025-10-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000103, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B003', 'N', 1000102, 1000101, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15', '2026-01-14', 'AT', '5', uuid_generate_v4()),
-(1000104, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B004', 'N', 1000103, 1000104, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20', '2026-01-19', 'AT', '3', uuid_generate_v4()),
-(1000105, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B005', 'N', 1000103, 1000105, NULL, 'C', 365, NULL, NULL, NULL, NULL, NULL, NULL, '2025-06-01', '2026-06-01', 'AT', '3', uuid_generate_v4()),
-(1000106, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B006', 'N', 1000104, 1000104, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20', '2026-01-19', 'AT', '3', uuid_generate_v4()),
-(1000107, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B007', 'N', 1000106, 1000106, NULL, 'C', 90, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-15', '2026-01-13', 'AT', '3', uuid_generate_v4()),
-(1000108, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B008', 'N', 1000107, 1000107, NULL, 'C', 365, NULL, NULL, NULL, NULL, NULL, NULL, '2025-03-01', '2026-03-01', 'AT', '3', uuid_generate_v4()),
-(1000109, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B009', 'N', 1000108, 1000108, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15', '2026-01-14', 'AT', '5', uuid_generate_v4());
+(1000101, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B001', 'N', 1000101, 1000101, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15 00:00:00', '2026-01-14 00:00:00', 'AT', '5', uuid_generate_v4()),
+(1000102, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B002', 'N', 1000101, 1000102, 1000101, 'M', 2000, 12000, 14000, 12500, 12500, 200, 500, '2025-10-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000103, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B003', 'N', 1000102, 1000101, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15 00:00:00', '2026-01-14 00:00:00', 'AT', '5', uuid_generate_v4()),
+(1000104, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B004', 'N', 1000103, 1000104, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20 00:00:00', '2026-01-19 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000105, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B005', 'N', 1000103, 1000105, NULL, 'C', 365, NULL, NULL, NULL, NULL, NULL, NULL, '2025-06-01 00:00:00', '2026-06-01 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000106, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B006', 'N', 1000104, 1000104, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20 00:00:00', '2026-01-19 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000107, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B007', 'N', 1000106, 1000106, NULL, 'C', 90, NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-15 00:00:00', '2026-01-13 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000108, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B008', 'N', 1000107, 1000107, NULL, 'C', 365, NULL, NULL, NULL, NULL, NULL, NULL, '2025-03-01 00:00:00', '2026-03-01 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000109, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-B009', 'N', 1000108, 1000108, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-15 00:00:00', '2026-01-14 00:00:00', 'AT', '5', uuid_generate_v4());
 
 INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                               isactive, mp_maintain_id, description, duration, c_uom_id, mp_maintain_task_uu)
@@ -306,24 +306,24 @@ VALUES
 INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                                isactive, mp_assetmeter_id, datetrx, amt, currentamt, description, mp_assetmeter_log_uu)
 VALUES
-(1000101, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-10-01', 350, 11800, 'Monthly', uuid_generate_v4()),
-(1000102, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-11-01', 380, 12180, 'Monthly', uuid_generate_v4()),
-(1000103, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-12-01', 320, 12500, 'Monthly', uuid_generate_v4()),
-(1000104, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-10-01', 340, 11820, 'Monthly', uuid_generate_v4()),
-(1000105, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-11-01', 360, 12180, 'Monthly', uuid_generate_v4()),
-(1000106, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-12-01', 320, 12500, 'Monthly', uuid_generate_v4()),
-(1000107, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-10-01', 2500, 80000, 'Monthly', uuid_generate_v4()),
-(1000108, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-11-01', 2800, 82800, 'Monthly', uuid_generate_v4()),
-(1000109, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-12-01', 2200, 85000, 'Monthly', uuid_generate_v4()),
-(1000110, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-10-01', 2400, 77200, 'Monthly', uuid_generate_v4()),
-(1000111, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-11-01', 2600, 79800, 'Monthly', uuid_generate_v4()),
-(1000112, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-12-01', 2200, 82000, 'Monthly', uuid_generate_v4()),
-(1000113, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-10-01', 800, 23400, 'Monthly', uuid_generate_v4()),
-(1000114, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-11-01', 900, 24300, 'Monthly', uuid_generate_v4()),
-(1000115, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-12-01', 700, 25000, 'Monthly', uuid_generate_v4()),
-(1000116, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-10-15', 2, 116, 'Monthly test', uuid_generate_v4()),
-(1000117, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-11-15', 2, 118, 'Monthly test', uuid_generate_v4()),
-(1000118, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-12-15', 2, 120, 'Monthly test', uuid_generate_v4());
+(1000101, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-10-01 00:00:00', 350, 11800, 'Monthly', uuid_generate_v4()),
+(1000102, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-11-01 00:00:00', 380, 12180, 'Monthly', uuid_generate_v4()),
+(1000103, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000101, '2025-12-01 00:00:00', 320, 12500, 'Monthly', uuid_generate_v4()),
+(1000104, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-10-01 00:00:00', 340, 11820, 'Monthly', uuid_generate_v4()),
+(1000105, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-11-01 00:00:00', 360, 12180, 'Monthly', uuid_generate_v4()),
+(1000106, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000102, '2025-12-01 00:00:00', 320, 12500, 'Monthly', uuid_generate_v4()),
+(1000107, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-10-01 00:00:00', 2500, 80000, 'Monthly', uuid_generate_v4()),
+(1000108, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-11-01 00:00:00', 2800, 82800, 'Monthly', uuid_generate_v4()),
+(1000109, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000103, '2025-12-01 00:00:00', 2200, 85000, 'Monthly', uuid_generate_v4()),
+(1000110, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-10-01 00:00:00', 2400, 77200, 'Monthly', uuid_generate_v4()),
+(1000111, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-11-01 00:00:00', 2600, 79800, 'Monthly', uuid_generate_v4()),
+(1000112, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000104, '2025-12-01 00:00:00', 2200, 82000, 'Monthly', uuid_generate_v4()),
+(1000113, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-10-01 00:00:00', 800, 23400, 'Monthly', uuid_generate_v4()),
+(1000114, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-11-01 00:00:00', 900, 24300, 'Monthly', uuid_generate_v4()),
+(1000115, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000105, '2025-12-01 00:00:00', 700, 25000, 'Monthly', uuid_generate_v4()),
+(1000116, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-10-15 00:00:00', 2, 116, 'Monthly test', uuid_generate_v4()),
+(1000117, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-11-15 00:00:00', 2, 118, 'Monthly test', uuid_generate_v4()),
+(1000118, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000106, '2025-12-15 00:00:00', 2, 120, 'Monthly test', uuid_generate_v4());
 
 
 -- ============================================
@@ -418,14 +418,14 @@ INSERT INTO mp_maintain (mp_maintain_id, ad_client_id, ad_org_id, created, creat
                          programmingtype, interval, lastmp, nextmp, lastread, currentmp, promuse, range,
                          datelastrun, datenextrun, docstatus, priorityrule, mp_maintain_uu)
 VALUES
-(1000201, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M001', 'N', 1000201, 1000201, 1000203, 'M', 500, 4000, 4500, 4500, 4500, 50, 100, '2025-11-15', NULL, 'AT', '3', uuid_generate_v4()),
-(1000202, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M002', 'N', 1000201, 1000202, 1000203, 'M', 2000, 4000, 6000, 4500, 4500, 200, 500, '2025-09-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000203, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M003', 'N', 1000202, 1000203, 1000203, 'M', 1000, 3000, 4000, 3800, 3800, 100, 200, '2025-10-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000204, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M004', 'N', 1000203, 1000204, NULL, 'C', 7, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13', '2026-01-20', 'AT', '5', uuid_generate_v4()),
-(1000205, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M005', 'N', 1000203, 1000205, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20', '2026-01-19', 'AT', '3', uuid_generate_v4()),
-(1000206, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M006', 'N', 1000205, 1000206, 1000201, 'M', 4000, 16000, 20000, 18500, 18500, 500, 1000, '2025-08-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000207, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M007', 'N', 1000205, 1000207, 1000201, 'M', 2000, 18000, 20000, 18500, 18500, 200, 500, '2025-11-01', NULL, 'AT', '5', uuid_generate_v4()),
-(1000208, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M008', 'N', 1000206, 1000208, 1000202, 'M', 10000, 40000, 50000, 45000, 45000, 1000, 2000, '2025-07-15', NULL, 'AT', '5', uuid_generate_v4());
+(1000201, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M001', 'N', 1000201, 1000201, 1000203, 'M', 500, 4000, 4500, 4500, 4500, 50, 100, '2025-11-15 00:00:00', NULL, 'AT', '3', uuid_generate_v4()),
+(1000202, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M002', 'N', 1000201, 1000202, 1000203, 'M', 2000, 4000, 6000, 4500, 4500, 200, 500, '2025-09-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000203, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M003', 'N', 1000202, 1000203, 1000203, 'M', 1000, 3000, 4000, 3800, 3800, 100, 200, '2025-10-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000204, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M004', 'N', 1000203, 1000204, NULL, 'C', 7, NULL, NULL, NULL, NULL, NULL, NULL, '2026-01-13 00:00:00', '2026-01-20 00:00:00', 'AT', '5', uuid_generate_v4()),
+(1000205, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M005', 'N', 1000203, 1000205, NULL, 'C', 30, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-20 00:00:00', '2026-01-19 00:00:00', 'AT', '3', uuid_generate_v4()),
+(1000206, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M006', 'N', 1000205, 1000206, 1000201, 'M', 4000, 16000, 20000, 18500, 18500, 500, 1000, '2025-08-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000207, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M007', 'N', 1000205, 1000207, 1000201, 'M', 2000, 18000, 20000, 18500, 18500, 200, 500, '2025-11-01 00:00:00', NULL, 'AT', '5', uuid_generate_v4()),
+(1000208, 11, 11, NOW(), 100, NOW(), 100, 'Y', 'MP-M008', 'N', 1000206, 1000208, 1000202, 'M', 10000, 40000, 50000, 45000, 45000, 1000, 2000, '2025-07-15 00:00:00', NULL, 'AT', '5', uuid_generate_v4());
 
 INSERT INTO mp_maintain_task (mp_maintain_task_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                               isactive, mp_maintain_id, description, duration, c_uom_id, mp_maintain_task_uu)
@@ -470,26 +470,26 @@ VALUES
 INSERT INTO mp_assetmeter_log (mp_assetmeter_log_id, ad_client_id, ad_org_id, created, createdby, updated, updatedby,
                                isactive, mp_assetmeter_id, datetrx, amt, currentamt, description, mp_assetmeter_log_uu)
 VALUES
-(1000201, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-10-01', 150, 4050, 'Monthly', uuid_generate_v4()),
-(1000202, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-11-01', 200, 4250, 'Monthly', uuid_generate_v4()),
-(1000203, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-12-01', 180, 4430, 'Monthly', uuid_generate_v4()),
-(1000204, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2026-01-01', 70, 4500, 'Monthly', uuid_generate_v4()),
-(1000205, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-10-01', 120, 3440, 'Monthly', uuid_generate_v4()),
-(1000206, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-11-01', 180, 3620, 'Monthly', uuid_generate_v4()),
-(1000207, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-12-01', 130, 3750, 'Monthly', uuid_generate_v4()),
-(1000208, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2026-01-01', 50, 3800, 'Monthly', uuid_generate_v4()),
-(1000209, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-10-01', 8000, 109000, 'Monthly', uuid_generate_v4()),
-(1000210, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-11-01', 9000, 118000, 'Monthly', uuid_generate_v4()),
-(1000211, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-12-01', 7000, 125000, 'Monthly', uuid_generate_v4()),
-(1000212, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-10-01', 6000, 77000, 'Monthly', uuid_generate_v4()),
-(1000213, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-11-01', 7000, 84000, 'Monthly', uuid_generate_v4()),
-(1000214, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-12-01', 5000, 89000, 'Monthly', uuid_generate_v4()),
-(1000215, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-10-01', 350, 17800, 'Monthly', uuid_generate_v4()),
-(1000216, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-11-01', 400, 18200, 'Monthly', uuid_generate_v4()),
-(1000217, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-12-01', 300, 18500, 'Monthly', uuid_generate_v4()),
-(1000218, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-10-01', 1500, 42000, 'Monthly', uuid_generate_v4()),
-(1000219, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-11-01', 1800, 43800, 'Monthly', uuid_generate_v4()),
-(1000220, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-12-01', 1200, 45000, 'Monthly', uuid_generate_v4());
+(1000201, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-10-01 00:00:00', 150, 4050, 'Monthly', uuid_generate_v4()),
+(1000202, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-11-01 00:00:00', 200, 4250, 'Monthly', uuid_generate_v4()),
+(1000203, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2025-12-01 00:00:00', 180, 4430, 'Monthly', uuid_generate_v4()),
+(1000204, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000201, '2026-01-01 00:00:00', 70, 4500, 'Monthly', uuid_generate_v4()),
+(1000205, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-10-01 00:00:00', 120, 3440, 'Monthly', uuid_generate_v4()),
+(1000206, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-11-01 00:00:00', 180, 3620, 'Monthly', uuid_generate_v4()),
+(1000207, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2025-12-01 00:00:00', 130, 3750, 'Monthly', uuid_generate_v4()),
+(1000208, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000202, '2026-01-01 00:00:00', 50, 3800, 'Monthly', uuid_generate_v4()),
+(1000209, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-10-01 00:00:00', 8000, 109000, 'Monthly', uuid_generate_v4()),
+(1000210, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-11-01 00:00:00', 9000, 118000, 'Monthly', uuid_generate_v4()),
+(1000211, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000203, '2025-12-01 00:00:00', 7000, 125000, 'Monthly', uuid_generate_v4()),
+(1000212, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-10-01 00:00:00', 6000, 77000, 'Monthly', uuid_generate_v4()),
+(1000213, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-11-01 00:00:00', 7000, 84000, 'Monthly', uuid_generate_v4()),
+(1000214, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000204, '2025-12-01 00:00:00', 5000, 89000, 'Monthly', uuid_generate_v4()),
+(1000215, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-10-01 00:00:00', 350, 17800, 'Monthly', uuid_generate_v4()),
+(1000216, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-11-01 00:00:00', 400, 18200, 'Monthly', uuid_generate_v4()),
+(1000217, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000205, '2025-12-01 00:00:00', 300, 18500, 'Monthly', uuid_generate_v4()),
+(1000218, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-10-01 00:00:00', 1500, 42000, 'Monthly', uuid_generate_v4()),
+(1000219, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-11-01 00:00:00', 1800, 43800, 'Monthly', uuid_generate_v4()),
+(1000220, 11, 11, NOW(), 100, NOW(), 100, 'Y', 1000206, '2025-12-01 00:00:00', 1200, 45000, 'Monthly', uuid_generate_v4());
 
 
 -- ============================================

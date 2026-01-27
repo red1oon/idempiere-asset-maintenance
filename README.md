@@ -40,7 +40,7 @@ start <id>    # Start the bundle
 
 ### Step 3: Verify 2Pack Installation
 
-When the plugin starts, it automatically installs the 2Pack from `META-INF/2Pack.zip`:
+When the plugin starts, it automatically installs the 2Pack from `META-INF/2Pack_1_0.zip`:
 
 1. Check the server log for: `2Pack PreventiveMaintenance installed`
 2. Or check: System Admin → General Rules → System Rules → Installed Plug-ins
@@ -86,8 +86,7 @@ Key windows:
 ```
 org.asset.maintenance/
 ├── META-INF/
-│   ├── 2Pack.zip           # System dictionary (AD_Client_ID=0) with Help content
-│   ├── 2Pack_13.0.0.zip    # Versioned copy
+│   ├── 2Pack_1_0.zip       # System dictionary (AD_Client_ID=0) with Help content
 │   └── MANIFEST.MF
 ├── data/
 │   ├── GardenWorldSample.zip  # Sample data (AD_Client_ID=11)
@@ -99,7 +98,7 @@ org.asset.maintenance/
 
 ## Version History
 
-- **13.0.0** - iDempiere 13 compatibility, Help content, English names
+- **1.0** - Help content, English field names, iDempiere 13 compatibility
 - **1.0.a** - Original OSGi conversion from OFB Consulting code
 
 ## Support
